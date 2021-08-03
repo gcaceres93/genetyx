@@ -2,3 +2,8 @@
 	path = gcaceres93/odoo_paraguay
 	url = git@github.com:gcaceres93/odoo_paraguay.git
 	branch = 12.0
+
+[submodule "gcaceres93/accounting_reports_paraguay"]
+	path = gcaceres93/accounting_reports_paraguay
+	url = git@github.com:gcaceres93/accounting_reports_paraguay.git
+	branch = 12.1
