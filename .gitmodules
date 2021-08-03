@@ -1,0 +1,4 @@
+[submodule "gcaceres93/odoo_paraguay"]
+	path = gcaceres93/odoo_paraguay
+	url = git@github.com:gcaceres93/odoo_paraguay.git
+	branch = 12.0
