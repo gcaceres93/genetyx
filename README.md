@@ -1,1 +1,1 @@
-# genetyx
+# genetyx project
