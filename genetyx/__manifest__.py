@@ -25,6 +25,7 @@
     'data': [
         'views/account_invoice.xml',
         'reports/factura_report.xml',
+        'reports/genetyx_reports.xml'
     ],
 }
 
