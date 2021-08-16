@@ -34,3 +34,10 @@ class factura (models.Model):
         # print(tipo)
         print(bandera)
         return bandera
+
+    @api.multi
+    def tipofactura(self, n):
+        if (n == 2):
+            return 'Credito'
+        elif (n == 1):
+            return 'Contado'
