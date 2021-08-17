@@ -12,6 +12,7 @@ class factura (models.Model):
     isrucinternacional = fields.Boolean(string='Imprimir Ruc Internacional',
                                         help="ANTES DE IMPRIMIR DEBE VERIFICAR SI ESTA CARGADO EL RUC INTERNACIONAL EN LA FICHA DEL CLIENTE")
     isredondeo = fields.Boolean(string='Redondeo', help="SE APLICA SOLO AL BANCO CENTRAL DEL PARAGUAY")
+    comercial = fields.Many2one('res.partner',string="Comercial")
 
     @api.constrains('partner_id')
     def verificar_mora(self):
