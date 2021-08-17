@@ -8,10 +8,3 @@
 	path = gcaceres93/account_payment
 	url = git@github.com:gcaceres93/account_payment.git
 	branch = 12.1
-
-
-
-[submodule "gcaceres93/tesaka"]
-	path = gcaceres93/tesaka
-	url = git@github.com:gcaceres93/tesaka.git
-	branch = 12.0
