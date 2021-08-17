@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 <template id="report_factura">
-        <t t-call="web.html_container">
+
+         <t t-call="web.html_container">
               <t t-foreach="docs" t-as="o">
                   <span t-call="web.basic_layout">
                       <link rel="stylesheet" href="/genetyx/static/src/css/factura_genetyx.css"/>
@@ -17,13 +18,14 @@
                                     <p style="margin-left: 16%; font-weight: bold; font-size:18px; margin-top:-5%">Nro.<span t-field="o.nro_factura" style="margin-left: 4%; font-size:18px"/> </p>
                                 </div>
                                 <div id="izquierda">
-                                   <p style="text-align: right; margin-right: 3%; font-size:13px; margin-top:1cm;"><span>Desde 1983</span></p><br/>
-                                    <p style="margin-top: -9.5%; text-align: right;margin-right: 3%; font-size:13px"><span>______________________________________</span></p>
-                                    <span style="position:absolute; top:2.50cm; left:12.50cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>
-                                    <span style="position:absolute; font-size:13px; top:3cm; left:8.95cm"><span t-field="o.company_id.street"/><span> | <span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/> </span> </span>
-                                     <span style="position:absolute; top:3.50cm; left:9.95cm; font-size:13px"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
-                                     <span style="position:absolute; top:4cm; left:8.15cm; font-size:13px"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>
-                                     <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 80%; margin-top:-1.50cm"/>
+                                   <span style="position:absolute; top:1.50cm;left:8.60cm; font-size:13px">Comercio al por mayor de otros productos n.c.p.</span>
+                                    <span style="position:absolute; top:2.0cm;left:8.60cm; font-size:13px"> Otras producciones de ganados vacunos n.c.p.</span>
+                                    <span style="position:absolute; top:2.50cm;left:8.60cm; font-size:13px">Casa Matriz: Avda. Bernardino Caballero e/ Ceibo</span>
+                                    <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
+                                    <span style="position:absolute; font-size:13px; top:3cm; left:8.60cm"><span t-field="o.company_id.street"/><span> | <span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/> </span> </span>
+                                     <span style="position:absolute; top:3.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
+                                     <span style="position:absolute; top:4cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>
+                                     <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 45%; margin-top:1cm"/>
                                 </div>
                           </div>
 
@@ -397,7 +399,7 @@
                                        </td>
                                        <td style="text-align:left; font-size:15px;">(10%)
                                           <t t-if="suma_10_porciento &gt; 0">
-                                            <t t-if='o.partner_id.id == 25976'>
+                                            <t t-if="o.partner_id.id == 25976">
                                                 <t t-if="o.isredondeo">
                                                     <t t-set="iva_10" t-value="o.get_redondeo_iva(suma_10_porciento/11,o.currency_id.name)"/>
                                                     <span t-esc="o.agregar_punto_de_miles(iva_10,o.currency_id.name)"/>
@@ -407,7 +409,7 @@
                                                     <span t-esc="o.agregar_punto_de_miles(iva_10,o.currency_id.name)"/>
                                                 </t>
                                               </t>
-                                              <t t-else=''>
+                                              <t t-else="">
                                               <t t-set="iva_10" t-value="o.get_redondeo_iva(suma_10_porciento/11,o.currency_id.name)"/>
                                               <span t-esc="o.agregar_punto_de_miles(iva_10,o.currency_id.name)"/>
                                            </t>
@@ -431,11 +433,11 @@
 <!--                                           <span t-field="o.amount_tax" style="margin-left:5%"/>-->
                                            </t>
                                            <t t-elif="suma_10_porciento &gt; 0">
-                                             <t t-if='suma_5_porciento &lt; 1'>
+                                             <t t-if="suma_5_porciento &lt; 1">
 <!--                                              <t t-set="iva_10" t-value="suma_10_porciento/11"/>-->
                                               <span class="total_iva-1" t-esc="o.agregar_punto_de_miles(iva_10,o.currency_id.name)" style="margin-left:5%"/>
                                               </t>
-                                              <t t-elif='suma_5_porciento &gt; 0'>
+                                              <t t-elif="suma_5_porciento &gt; 0">
 <!--                                               <span  class="total_iva-1" t-esc="o.agregar_punto_de_miles(o.amount_tax, o.currency_id.name)" style="margin-left:5%"/>-->
 <!--                                               <span class="total_iva-1" t-field="o.amount_tax" style="margin-left:5%"/>-->
                                                   <span class="total_iva-1" t-esc="o.agregar_punto_de_miles((iva_10+iva_5),o.currency_id.name)" style="margin-left:5%"/>
@@ -447,9 +449,9 @@
 
 
                           <div style="border: 1px solid black; width:903px; margin-left:1%; height:200px;">
-                              <span style="font-size:12px; margin-left: 1%;">Recibi conforme las mercaderias y/o servicios detalladas en esta factura y pagare el importe del vencimiento del plazo señalado...........................................................</span>
-                              <span style="font-size:12px; margin-left: 1%;">Todos los efectos legales emergentes de esta obligacion quedan sometidos a la juridicion de los tribunales ordinarios de Asuncion.........................................................</span>
-                              <span style="font-size:12px; margin-left: 1%;">A partir del vencimiento, la firma quedara facultada a aplicar intereses legales y recargado por mora.......................................................................................................</span>
+                              <span style="font-size:12px; margin-left: 1%;">GENETYX S.A. no se responsabiliza por las mercaderias retiradas del empaque, ni del uso a que sean sometidas. Uso inseminacion artificial bovina. Producto retirado no retornable. La falta de pago de esta factura a su</span>
+                              <span style="font-size:12px; margin-left: 1%;">vencimiento establecerá la mora, en forma automática y sin necesidad de notificación judicial, devengando un interés del .........% mensual, autorizando la inclusión a la Base de Datos de Informconf S.A., conforme a lo</span>
+                              <span style="font-size:12px; margin-left: 1%;">establecido en la Ley 6534/2020, como tambien para que se pueda proveer la información a terceros interesados.</span>
                                <span style="font-size:12px; margin-left: 1%;">En caso de un atraso de 90 dias en el pago, este documento autoriza la inclusión de mi nombre personal o razón social que represento a la base de datos del registro</span>
                               <span style="font-size:12px; margin-left: 1%;">General de Morosos de informconf(Equifax S.A.).</span><br/>
                               <span style="font-size:12px; margin-left: 1%;">El unico comprobante de la cancelacion de la factura de venta constituye nuestro recibo oficial...............................................................................................................</span><br/>
@@ -459,7 +461,7 @@
                           </div>
                           </div>
                           <p style="position:absolute; top:38.40cm; left:1.10cm; font-size:15px; font-weight:bold;">ORIGINAL CLIENTE</p>
-                          <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: 350050007238</p>
+                          <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: 350010009443</p>
                           <p style="position:absolute; top:8.70cm; left:10.0cm; font-size:15px;">DESCRIPCION</p>
                       </body>
                   </span>
