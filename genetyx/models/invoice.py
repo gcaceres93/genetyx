@@ -14,27 +14,6 @@ class factura (models.Model):
     isredondeo = fields.Boolean(string='Redondeo', help="SE APLICA SOLO AL BANCO CENTRAL DEL PARAGUAY")
     comercial = fields.Many2one('res.partner',string="Comercial")
 
-    @api.constrains('partner_id')
-    def verificar_mora(self):
-        if not self.user_has_groups('keeper.group_aprobar_verificar_mora'):
-            for rec in self:
-                if rec.type == 'out_invoice':
-                    if rec.partner_id.credit_limit > 0:
-                        if rec.partner_id.credit > rec.partner_id.credit_limit:
-                            raise ValidationError("Ha sobrepasado el limite de credito para este Cliente")
-
-                    if rec.partner_id.parent_id:
-                        partner = rec.partner_id.parent_id
-                    else:
-                        partner = rec.partner_id
-                    deudas = self.env['account.invoice'].search(
-                        [('partner_id', '=', partner.id), ('type', '=', 'out_invoice'), ('state', '=', 'open')]).mapped(
-                        'move_id.line_ids').filtered(
-                        lambda x: x.reconciled == False)
-                    # raise ValidationError(rec.partner_id)
-                    if any(x.days_overdue > partner.dias_mora for x in deudas):
-                        raise ValidationError(
-                            'No puede confirmar una factura para este cliente debido a que posee facturas en mora con más de %s días' % rec.partner_id.dias_mora)
 
     # FUNCION PARA EVALUAR LA OPCION POR SECCION
     @api.multi
