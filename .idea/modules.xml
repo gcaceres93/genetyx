@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/odoo/12/.idea/12.iml" filepath="$USER_HOME$/odoo/12/.idea/12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/genetyx.iml" filepath="$PROJECT_DIR$/.idea/genetyx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../odoo_paraguay/.idea/odoo_paraguay.iml" filepath="$PROJECT_DIR$/../odoo_paraguay/.idea/odoo_paraguay.iml" />
+    </modules>
+  </component>
+</project>

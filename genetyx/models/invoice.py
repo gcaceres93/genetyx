@@ -15,7 +15,12 @@ class factura (models.Model):
     comercial = fields.Many2one('res.partner',string="Comercial")
 
 
-    # FUNCION PARA EVALUAR LA OPCION POR SECCION
+    @api.multi
+    def calcular_rate(self):
+            tasas = self.env['res.currency.rate'].search([('rate','=',1)])
+            for t in tasas:
+                t.rate = 1 / t.set_venta
+
     @api.multi
     def get_seccion(self, seccion):
         seleccion = 0
