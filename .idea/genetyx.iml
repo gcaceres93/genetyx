@@ -6,6 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="odoo_paraguay" />
     <orderEntry type="module" module-name="12" />
+    <orderEntry type="module" module-name="tesaka" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
