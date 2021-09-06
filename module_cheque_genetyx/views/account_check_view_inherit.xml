@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+            <record model="ir.ui.view" id="account_check_form_inherit">
+                <field name="name">account.check.form.inherit</field>
+                <field name="model">account.check</field>
+                <field name="type">form</field>
+                <field name="inherit_id" ref="account_check.view_account_check_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//field[@name='company_id']" position="after">
+                        <field name="a_nombre_de"/>
+                    </xpath>
+                </field>
+            </record>
+
+    </data>
+
+</odoo>

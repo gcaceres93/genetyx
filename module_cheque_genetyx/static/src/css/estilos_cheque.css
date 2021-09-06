@@ -1,0 +1,182 @@
+
+
+body{
+    font-size: 30px;
+}
+/*
+EL MONTO ESTA UBICADO A LA DERECHA Y ARRIBA DEL CHEQUE
+*/
+#monto{
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    left: 5.70cm;
+    /*left: 22.4cm;*/
+    top: 23.90cm;
+    font-size: 15px;
+    width: 5cm;
+    /*border: 1px solid black;*/
+}
+
+/*
+MONTO DEL TALONARIO SERIA EL CAMPO TOTAL DEL CHEQUE
+*/
+#monto_talonario{
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    /*left: 3.1cm;*/
+    left: 0.30cm;
+    top: 4.90cm;
+    font-size: 11px;
+    width: 4cm;
+    /*border: 1px solid black;*/
+}
+
+
+/*
+FECHA DEL TALONARIO UBICADO EN LA IZQUIERDA Y ARRIBA DEL CHEQUE
+*/
+#fecha_talonario{
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    /*left: 3.2cm;*/
+    left: 5.95cm;
+    top: 3.95cm;
+    font-size: 14px;
+}
+
+/*
+ORDEN ESTA UBICADA DE BAJO DE LA FECHA TALONARIO
+*/
+#orden{
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    /*left: 3.2cm;*/
+    /*left: -5cm;*/
+    /*top: 3.2cm;*/
+    left: 4.55cm;
+    font-size: 7px;
+    top: 4.74cm;
+    text-align: left;
+    width: 130px;
+    /*border: 1px solid black;*/
+    /*white-space:nowrap;*/
+}
+
+#concepto{
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    /*left: 3.7cm;*/
+    left: 3.36cm;
+    width: 150px;
+    line-height: 0.50cm;
+    top: 3.65cm;
+    font-size: 7px;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    text-indent: 10em;
+}
+
+/*HACE REFERENCIA AL CAMPO PAGUESE A LA ORDEN DE*/
+#proveedor{
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    /*left: 8cm;*/
+    left: -2.40cm;
+    /*!*left: 10.9cm;*!*/
+    /*!*top: 2.9cm;*!*/
+    top: 17.63cm;
+    /*left: -2.5cm;*/
+    /*top: 4.5cm;*/
+    /*top: 19.80cm;*/
+    font-size: 12px;
+    /*white-space:nowrap;*/
+    width: 16cm;
+    /*border: 1px solid black;*/
+    text-indent: 3em;
+    /*width: 100%;*/
+}
+
+/*HACE REFERENCIA AL CAMPO LA SUMA DE GUARANIES*/
+#letras{
+    -webkit-transform: rotate(100grad);
+    /*transform: rotateX(99deg);*/
+    /*transform: rotate(180grad);*/
+    position: absolute;
+    /*left: 11.5cm;*/
+    /*left: 7.7cm;*/
+    left: -4.16cm;
+    /*top: 4.5cm;*/
+    top: 15.88cm;
+    font-size: 12px;
+    /*width: 800px;*/
+    width: 18.0cm;
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 12em;
+    /*border:1px solid black;*/
+}
+
+/*
+ES LA EMISION DE LA FECHA QUE SE UTILIZA EN EL CHEQUE
+*/
+
+#emision_dia{
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    left: 6.47cm;
+    /*left: 17.3cm;*/
+    top: 17.07cm;
+    /*font-size: 14px;*/
+    font-size:18px;
+}
+#emision_mes{
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    left: 6.47cm;
+    /*left: 18.6cm;*/
+    top: 18.35cm;
+    /*font-size: 14px;*/
+    font-size:18px;
+}
+#emision_ano{
+    /*-webkit-transform: rotate(99grad);*/
+    /*position: absolute;*/
+    /*!*left: 21.5cm;*!*/
+    /*left:22.5cm;*/
+    /*top: 2.30cm;*/
+    /*!*font-size: 14px;*!*/
+    /*font-size:16px;*/
+    -webkit-transform: rotate(100grad);
+    position: absolute;
+    left: 6.47cm;
+    /*left: 18.6cm;*/
+    top: 20.25cm;
+    /*font-size: 14px;*/
+    font-size:18px;
+
+}
+
+#pago_dia{
+    position: absolute;
+    left: 26.3cm;
+    /*left: 23.6cm;*/
+    top: 2.32cm;
+    /*font-size: 14px;*/
+    font-size:16px;
+}
+#pago_mes{
+    position: absolute;
+    left: 27.7cm;
+    /*left: 25.2cm;*/
+    top: 2.32cm;
+    /*font-size: 14px;*/
+    font-size:16px;
+}
+#pago_ano{
+    position: absolute;
+    /*left: 27.5cm;*/
+    left: 30cm;
+    top: 2.32cm;
+    /*font-size: 14px;*/
+    font-size:16px;
+}

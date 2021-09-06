@@ -1,0 +1,161 @@
+<odoo>
+  <template id="cheque_report_dolar_genetyx">
+      <t t-call="web.html_container">
+          <t t-foreach="docs" t-as="o">
+              <t t-call="web.basic_layout">
+<!--                  <link rel="stylesheet" href="/module_cheque_genetyx/static/src/css/estilos_cheque_dolar.css"/>-->
+                  <body style="font-size: 30px;">
+    <!--                  fecha para talonario -->
+                      <p id="fecha_talonario" style="-webkit-transform: rotate(100grad);
+                                                        position: absolute;
+                                                        left: 5.95cm;
+                                                        top: 3.95cm;
+                                                        font-size: 14px;">
+                          <span><span t-field="o.issue_date"/></span>
+                      </p>
+    <!--                  monto para talonario-->
+                      <p id="monto_talonario" style="-webkit-transform: rotate(100grad);
+                                                    position: absolute;
+                                                    left: 0.30cm;
+                                                    top: 4.90cm;
+                                                    font-size: 11px;
+                                                    width: 4cm;">
+                          <span><span t-esc="o.agregar_punto_de_miles(o.amount,o.currency_id.name)"/>.-</span>
+                      </p>
+    <!--                  Monto en numeros-->
+                      <p id="monto" style="-webkit-transform: rotate(100grad);
+                                            position: absolute;
+                                            left: 5.70cm;
+                                            top: 23.90cm;
+                                            font-size: 15px;
+                                            width: 5cm;">
+                          <span><span t-esc="o.agregar_punto_de_miles(o.amount,o.currency_id.name)"/>.-</span>
+                      </p>
+    <!--                  Paguese a la orden de-->
+                      <!--                  Paguese a la orden de-->
+                      <t t-if="o.a_nombre_de">
+                          <p id = "proveedor" style="-webkit-transform: rotate(100grad);
+                                                position: absolute;
+                                                /*left: 8cm;*/
+                                                left: -2.40cm;
+                                                top: 17.63cm;
+                                                font-size: 12px;
+                                                /*white-space:nowrap;*/
+                                                width: 16cm;
+                                                /*border: 1px solid black;*/
+                                                text-indent: 3em;">
+                             <span><span t-esc = "o.cantidaddecaracteres55(o.a_nombre_de)"/></span>
+
+                          </p>
+                          <p id = "orden" style="-webkit-transform: rotate(100grad);
+                                                position: absolute;
+                                                left: 4.55cm;
+                                                font-size: 7px;
+                                                top: 4.74cm;
+                                                text-align: left;
+                                                width: 130px;">
+
+                              <span><span t-esc = "o.cantidaddecaracteres24(o.a_nombre_de)"/></span>
+
+                          </p>
+                      </t>
+                      <t t-else="">
+                          <t t-if="o.destiny_partner_id.name">
+                              <p id="proveedor" style="-webkit-transform: rotate(100grad);
+                                                position: absolute;
+                                                /*left: 8cm;*/
+                                                left: -2.40cm;
+                                                top: 17.63cm;
+                                                font-size: 12px;
+                                                /*white-space:nowrap;*/
+                                                width: 16cm;
+                                                /*border: 1px solid black;*/
+                                                text-indent: 3em;">
+                                    <span><span t-esc = "o.cantidaddecaracteres55(o.destiny_partner_id.name)"/></span>
+                              </p>
+
+                              <p id = "orden" style="-webkit-transform: rotate(100grad);
+                                                position: absolute;
+                                                left: 4.55cm;
+                                                font-size: 7px;
+                                                top: 4.74cm;
+                                                text-align: left;
+                                                width: 130px;">
+
+                                  <span><span t-esc = "o.cantidaddecaracteres24(o.destiny_partner_id.name)"/></span>
+
+                              </p>
+                          </t>
+                      </t>
+    <!--                  concepto /comentario para talonario-->
+                      <t t-if="o.comentario">
+                          <p id="concepto" style="-webkit-transform: rotate(100grad);
+                                                    position: absolute;
+                                                    /*left: 3.7cm;*/
+                                                    left: 3.36cm;
+                                                    width: 150px;
+                                                    line-height: 0.50cm;
+                                                    top: 3.65cm;
+                                                    font-size: 7px;
+                                                    /*border: 1px solid black;*/
+                                                    overflow-wrap: break-word;
+                                                    text-indent: 10em;">
+
+                                <span><span t-esc = "o.cantidaddecaracteres35(o.comentario)"/></span>
+
+                          </p>
+                      </t>
+    <!--                  Monto en letras-->
+                      <p id="letras" style="-webkit-transform: rotate(100grad);
+                                            position: absolute;
+                                            left: -4.16cm;
+                                            top: 15.88cm;
+                                            font-size: 12px;
+                                            width: 18.0cm;
+                                            overflow-wrap: break-word;
+                                            line-height: 2em;
+                                            text-indent: 12em;">
+                          <span><span t-esc="o.calcular_letras_dolar(o.amount)" /></span>
+                      </p>
+    <!--                  fechas separadas por DD/MM/AAAA-->
+
+    <!--                  fecha de emision-->
+                      <p id="emision_dia" style="-webkit-transform: rotate(100grad);
+                                                position: absolute;
+                                                left: 6.47cm;
+                                                top: 17.07cm;
+                                                /*font-size: 14px;*/
+                                                font-size:18px;">
+                          <span><span t-esc="o.dia(o.issue_date)"/></span>
+                      </p>
+                      <p id="emision_mes" style="-webkit-transform: rotate(100grad);
+                                                position: absolute;
+                                                left: 6.47cm;
+                                                top: 18.35cm;
+                                                /*font-size: 14px;*/
+                                                font-size:18px;">
+                         <span><span t-esc="o.mes(o.issue_date)"/></span>
+                      </p>
+                      <p id="emision_ano" style="-webkit-transform: rotate(100grad);
+                                                 position: absolute;
+                                                 left: 6.47cm;
+                                                 top: 20.25cm;
+                                                 font-size:18px;">
+                          <span><span t-esc="o.ano(o.issue_date)"/></span>
+                      </p>
+<!--                      fecha de pago-->
+<!--                      <div class="pago_dia">-->
+<!--                          <span t-esc="o.dia(o.payment_date)"/>-->
+<!--                      </div>-->
+<!--                      <div class="pago_mes">-->
+<!--                          <span t-esc="o.mes(o.payment_date)"/>-->
+<!--                      </div>-->
+<!--                      <div class="pago_ano">-->
+<!--                          <span t-esc="o.ano(o.payment_date)"/>-->
+<!--                      </div>-->
+                  </body>
+              </t>
+          </t>
+      </t>
+  </template>
+</odoo>
