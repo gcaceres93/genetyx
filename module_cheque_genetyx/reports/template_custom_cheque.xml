@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="template_cheque">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+<!--                        <link rel="stylesheet" href="/module_cheque_genetyx/static/src/css/estilos_cheque.css"/>-->
+                        <body>
+                            <t t-set="i" t-value="0"/>
+                            <!--########LISTA DE CHEQUE#############-->
+<!--                            <span t-esc="o.longitud(o.cheque)"/>-->
+                            <t t-set="cheque_ordenados" t-value="o.ordenar_cheque_por_numero()"/>
+                            <t t-foreach="cheque_ordenados" t-as="c">
+<!--                                <span t-esc="c_size"/>-->
+<!--                                <span t-esc="c_index"/>-->
+                                <!--#########VAIABLES NATIVAS DEL ODOO########
+                                #############SE UTILIZA SOLO EN BUCLES########
+                                ##########$as es reemplazado por la variable que se especifica en el t-as="" del foreach
+                                ##########$as_index: hace referencia al indice de la iteracion actual, el primer indice tiene un valor igual a 0
+                                ##########$as_first: hace referencia a la primera iteracion
+                                ##########$as_size: hace referencia al tamaño de la lista iterada
+                                -->
+
+                                 <t t-set="i" t-value="i + 1"/>
+<!--                                 <span t-esc="i"/>-->
+                                <!--PRIMER CHEQUE-->
+<!--                                <t t-if="c_first">-->
+                                <t t-if="i == 1">
+
+                                    <!--fecha para talonario -->
+                                      <div class="fecha_talonario01" style="position: absolute;
+                                                                            top: 2.0cm;
+                                                                            left: 1.40cm;
+                                                                            font-size: 11px;">
+                                          <span t-field="c.issue_date"/>
+                                      </div>
+
+                                    <!--monto para talonario-->
+                                      <div class="monto_talonario01" style="position: absolute;
+                                                                            top: 6.90cm;
+                                                                            left: 1.20cm;
+                                                                            font-size: 11px;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                      </div>
+
+                                    <!--Monto que hace referencia al total que se ubica en la parte superior derecha del cheque-->
+                                    <t t-if="'PYG' in c.currency_id.name">
+                                        <div class="monto01" style="position: absolute;
+                                                                    top: 0.70cm;
+                                                                    left: 20.10cm;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                        </div>
+                                    </t>
+                                    <t t-elif="'USD' in c.currency_id.name">
+                                        <div class="monto01_dolar" style="position: absolute;
+                                                                        top: 0.55cm;
+                                                                        left: 20.85cm;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                        </div>
+                                    </t>
+                                    <!--Paguese a la orden de-->
+<!--                                      <t t-if="c.a_nombre_de">-->
+<!--                                      <div class = "proveedor01">-->
+
+<!--                                          <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>-->
+
+<!--                                      </div>-->
+
+<!--                                          <div class = "orden01">-->
+
+<!--                                              <span t-esc = "o.cantidaddecaracteres24(c.a_nombre_de)"/>-->
+
+<!--                                          </div>-->
+
+<!--                                      </t>-->
+                                      <t t-if="c.a_nombre_de">
+<!--                                          <t t-if="c.destiny_partner_id.name">-->
+                                          <t t-if="'PYG' in c.currency_id.name">
+                                              <div class="proveedor01" style="font-size: 14px;
+                                                                            position: absolute;
+                                                                            top: 3.30cm;
+                                                                            left: 9.05cm;
+                                                                            width: 14.85cm;">
+                                                    <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>
+                                              </div>
+                                          </t>
+                                          <t t-elif="'USD' in c.currency_id.name">
+                                              <div class="proveedor01_dolar" style="font-size: 14px;
+                                                                                    position: absolute;
+                                                                                    top: 3.20cm;
+                                                                                    left: 9.50cm;
+                                                                                    width: 14.50cm;">
+                                                    <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>
+                                              </div>
+                                          </t>
+                                              <div class = "orden01" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:2.80cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.a_nombre_de)"/>
+
+                                              </div>
+<!--                                           </t>-->
+                                      </t>
+                                      <t t-elif="c.destiny_partner_id">
+                                          <t t-if="c.destiny_partner_id.name">
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor01" style="font-size: 14px;
+                                                                                position: absolute;
+                                                                                top: 3.30cm;
+                                                                                left: 9.05cm;
+                                                                                width: 14.85cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.destiny_partner_id.name)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor01_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 3.20cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.destiny_partner_id.name)"/>
+                                                  </div>
+                                              </t>
+
+                                              <div class = "orden01" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:2.80cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.destiny_partner_id.name)"/>
+
+                                              </div>
+                                           </t>
+                                      </t>
+                                      <t t-elif="c.pago_voucher.partner_id">
+                                          <t t-if="c.pago_voucher.partner_id.name">
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                              <div class="proveedor01" style="font-size: 14px;
+                                                                            position: absolute;
+                                                                            top: 3.30cm;
+                                                                            left: 9.05cm;
+                                                                            width: 14.85cm;">
+                                                    <span t-esc = "o.cantidaddecaracteres70(c.pago_voucher.partner_id.name)"/>
+                                              </div>
+                                          </t>
+                                          <t t-elif="'USD' in c.currency_id.name">
+                                              <div class="proveedor01_dolar" style="font-size: 14px;
+                                                                                    position: absolute;
+                                                                                    top: 3.20cm;
+                                                                                    left: 9.50cm;
+                                                                                    width: 14.50cm;">
+                                                    <span t-esc = "o.cantidaddecaracteres70(c.pago_voucher.partner_id.name)"/>
+                                              </div>
+                                          </t>
+
+                                              <div class = "orden01" style="width: 150px;
+                                                                        font-size: 9px;
+                                                                        position: absolute;
+                                                                        top:2.80cm;
+                                                                        left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.pago_voucher.partner_id.name)"/>
+
+                                              </div>
+                                           </t>
+                                      </t>
+
+                                    <!--COMENTARIO-->
+                                     <t t-if="c.comentario">
+                                          <div class="concepto01" style="position: absolute;
+                                                                        top: 3.40cm;
+                                                                        left: 0.50cm;
+                                                                        width: 150px;
+                                                                        font-size: 9px;
+                                                                        line-height: 2em;
+                                                                        overflow-wrap: break-word;
+                                                                        text-indent: 5em;">
+
+                                                 <span t-esc = "o.cantidaddecaracteres35(c.comentario)"/>
+
+                                          </div>
+                                     </t>
+
+                                     <!--Monto en letras-->
+                                    <t t-if="'PYG' in c.currency_id.name">
+                                      <div class="letras01" style="width: 19.0cm;
+                                                                font-size: 14px;
+                                                                position: absolute;
+                                                                top: 3.90cm;
+                                                                left: 05.15cm;
+                                                                /*border: 1px solid black;*/
+                                                                overflow-wrap: break-word;
+                                                                line-height: 2em;
+                                                                text-indent: 11em;">
+<!--                                              <t t-if="o.currency_id.ambito == 'VENTA'">-->
+                                                <span  t-esc="o.calcular_letras(c.amount)"/>
+                                      </div>
+                                     </t>
+                                    <t t-elif="'USD' in c.currency_id.name">
+            <!--                                              <t t-if="o.currency_id.ambito == 'VENTA'">-->
+                                        <div class="letras01_dolar" style="width: 17.35cm;
+                                                                        font-size: 14px;
+                                                                        position: absolute;
+                                                                        top: 3.85cm;
+                                                                        left: 06.80cm;
+                                                                        /*border: 1px solid black;*/
+                                                                        overflow-wrap: break-word;
+                                                                        line-height: 2em;
+                                                                        text-indent: 10em;">
+<!--                                                <span  t-esc="o.calcular_letras_dolar(c.amount)"/>-->
+                                                <span  t-esc="o.calcular_letras_dolar(c.amount)"/>
+            <!--                                              </t>-->
+                                        </div>
+                                    </t>
+
+
+                                    <!--fecha de emision-->
+                                    <t t-if="c.issue_date">
+                                        <t t-if="'PYG' in c.currency_id.name">
+                                              <div class="emision_dia01" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 2.0cm;
+                                                                                left: 15.10cm;">
+                                                  <span t-esc="o.dia(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_mes01" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 2.0cm;
+                                                                                left: 16.25cm;">
+                                                  <span t-esc="o.mes(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_ano01" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 2.0cm;
+                                                                                left: 18.35cm;">
+                                                  <span t-esc="o.ano(c.issue_date)"/>
+                                              </div>
+                                        </t>
+                                        <t t-elif="'USD' in c.currency_id.name">
+                                            <div class="emision_dia01_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 1.90cm;
+                                                                                    left: 15.25cm;">
+                                                  <span t-esc="o.dia(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_mes01_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 1.90cm;
+                                                                                    left: 16.40cm;">
+                                                  <span t-esc="o.mes(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_ano01_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 1.90cm;
+                                                                                    left: 18.50cm;">
+                                                  <span t-esc="o.ano(c.issue_date)"/>
+                                              </div>
+                                        </t>
+                                     </t>
+
+                                </t>
+                                <t t-elif="i == 2">
+
+                                    <!--fecha para talonario -->
+                                      <div class="fecha_talonario02" style="position: absolute;
+                                                                            top: 11.10cm;
+                                                                            left: 1.40cm;
+                                                                            font-size: 11px;">
+                                          <span t-field="c.issue_date"/>
+                                      </div>
+
+                                    <!--monto para talonario-->
+                                      <div class="monto_talonario02" style="position: absolute;
+                                                                            top: 15.85cm;
+                                                                            left: 1.20cm;
+                                                                            font-size: 11px;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                      </div>
+
+                                    <!--Monto que hace referencia al total que se ubica en la parte superior derecha del cheque-->
+                                      <t t-if="'PYG' in c.currency_id.name">
+                                        <div class="monto02" style="position: absolute;
+                                                                    top: 9.80cm;
+                                                                    left: 20.10cm;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                        </div>
+                                    </t>
+                                    <t t-elif="'USD' in c.currency_id.name">
+                                        <div class="monto02_dolar" style="position: absolute;
+                                                                            top: 9.65cm;
+                                                                            left: 20.85cm;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                        </div>
+                                    </t>
+
+                                    <!--Paguese a la orden de-->
+<!--                                      <t t-if="c.a_nombre_de">-->
+<!--                                      <div class = "proveedor01">-->
+
+<!--                                          <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>-->
+
+<!--                                      </div>-->
+
+<!--                                          <div class = "orden01">-->
+
+<!--                                              <span t-esc = "o.cantidaddecaracteres24(c.a_nombre_de)"/>-->
+
+<!--                                          </div>-->
+
+<!--                                      </t>-->
+                                      <t t-if="c.a_nombre_de">
+<!--                                          <t t-if="c.destiny_partner_id.name">-->
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor02" style="font-size: 14px;
+                                                                                position: absolute;
+                                                                                top: 12.30cm;
+                                                                                left: 8.90cm;
+                                                                                width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor02_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 12.20cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>
+                                                  </div>
+                                              </t>
+
+                                              <div class = "orden02" style=" width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:11.75cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.a_nombre_de)"/>
+
+                                              </div>
+<!--                                           </t>-->
+                                      </t>
+                                      <t t-elif="c.destiny_partner_id">
+                                          <t t-if="c.destiny_partner_id.name">
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor02" style="font-size: 14px;
+                                                                                position: absolute;
+                                                                                top: 12.30cm;
+                                                                                left: 8.90cm;
+                                                                                width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.destiny_partner_id.name)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor02_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 12.20cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.destiny_partner_id.name)"/>
+                                                  </div>
+                                              </t>
+
+                                              <div class = "orden02" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:11.75cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.destiny_partner_id.name)"/>
+
+                                              </div>
+                                           </t>
+                                      </t>
+                                      <t t-elif="c.pago_voucher.partner_id">
+                                          <t t-if="c.pago_voucher.partner_id.name">
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor02" style="font-size: 14px;
+                                                                                  position: absolute;
+                                                                                  top: 12.30cm;
+                                                                                  left: 8.90cm;
+                                                                                  width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.pago_voucher.partner_id.name)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor02_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 12.20cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.pago_voucher.partner_id.name)"/>
+                                                  </div>
+                                              </t>
+
+                                              <div class = "orden02" style="width: 150px;
+                                                                        font-size: 9px;
+                                                                        position: absolute;
+                                                                        top:11.75cm;
+                                                                        left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.pago_voucher.partner_id.name)"/>
+
+                                              </div>
+                                           </t>
+                                      </t>
+
+                                    <!--COMENTARIO-->
+                                     <t t-if="c.comentario">
+                                          <div class="concepto02" style="position: absolute;
+                                                                        top: 12.40cm;
+                                                                        left: 0.50cm;
+                                                                        width: 150px;
+                                                                        font-size: 9px;
+                                                                        line-height: 2em;
+                                                                        overflow-wrap: break-word;
+                                                                        text-indent: 5em;">
+
+                                                 <span t-esc = "o.cantidaddecaracteres35(c.comentario)"/>
+
+                                          </div>
+                                     </t>
+
+                                     <!--Monto en letras-->
+                                       <t t-if="'PYG' in c.currency_id.name">
+                                      <div class="letras02" style=" width: 19.0cm;
+                                                                    font-size: 14px;
+                                                                    position: absolute;
+                                                                    top: 12.93cm;
+                                                                    left: 5.15cm;
+                                                                    /*border: 1px solid black;*/
+                                                                    overflow-wrap: break-word;
+                                                                    line-height: 2em;
+                                                                    text-indent: 11em;">
+<!--                                              <t t-if="o.currency_id.ambito == 'VENTA'">-->
+                                                <span  t-esc="o.calcular_letras(c.amount)"/>
+                                      </div>
+                                     </t>
+                                    <t t-elif="'USD' in c.currency_id.name">
+            <!--                                              <t t-if="o.currency_id.ambito == 'VENTA'">-->
+                                        <div class="letras02_dolar" style=" width: 17.35cm;
+                                                                        font-size: 14px;
+                                                                        position: absolute;
+                                                                        top: 12.94cm;
+                                                                        left: 6.80cm;
+                                                                        /*border: 1px solid black;*/
+                                                                        overflow-wrap: break-word;
+                                                                        line-height: 2em;
+                                                                        text-indent: 10em;">
+<!--                                                <span  t-esc="o.calcular_letras_dolar(c.amount)"/>-->
+                                                <span  t-esc="o.calcular_letras_dolar(c.amount)"/>
+            <!--                                              </t>-->
+                                        </div>
+                                    </t>
+
+                                    <!--fecha de emision-->
+                                    <t t-if="c.issue_date">
+                                          <t t-if="'PYG' in c.currency_id.name">
+                                              <div class="emision_dia02" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 11.15cm;
+                                                                                left: 15.10cm;">
+                                                  <span t-esc="o.dia(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_mes02" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 11.15cm;
+                                                                                left: 16.25cm;">
+                                                  <span t-esc="o.mes(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_ano02" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 11.15cm;
+                                                                                left: 18.35cm;">
+                                                  <span t-esc="o.ano(c.issue_date)"/>
+                                              </div>
+                                        </t>
+                                        <t t-elif="'USD' in c.currency_id.name">
+                                            <div class="emision_dia02_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 11.05cm;
+                                                                                    left: 15.25cm;">
+                                                  <span t-esc="o.dia(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_mes02_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 11.05cm;
+                                                                                    left: 16.40cm;">
+                                                  <span t-esc="o.mes(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_ano02_dolar" style="font-size: 18px;
+                                                                                       position: absolute;
+                                                                                       top: 11.05cm;
+                                                                                       left: 18.50cm;">
+                                                  <span t-esc="o.ano(c.issue_date)"/>
+                                              </div>
+                                        </t>
+                                     </t>
+                                </t>
+
+                                <t t-elif="i == 3">
+
+                                    <!--fecha para talonario -->
+                                      <div class="fecha_talonario03" style="position: absolute;
+                                                                        top: 20.05cm;
+                                                                        left: 1.40cm;
+                                                                        font-size: 11px;">
+                                          <span t-field="c.issue_date"/>
+                                      </div>
+
+                                    <!--monto para talonario-->
+                                      <div class="monto_talonario03" style="position: absolute;
+                                                                            top: 24.79cm;
+                                                                            left: 1.20cm;
+                                                                            font-size: 11px;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                      </div>
+
+                                    <!--Monto que hace referencia al total que se ubica en la parte superior derecha del cheque-->
+                                      <t t-if="'PYG' in c.currency_id.name">
+                                        <div class="monto03" style="position: absolute;
+                                                                    top: 18.55cm;
+                                                                    left: 20.10cm;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                        </div>
+                                    </t>
+                                    <t t-elif="'USD' in c.currency_id.name">
+                                        <div class="monto03_dolar" style=" position: absolute;
+                                                                        top: 18.50cm;
+                                                                        left: 20.85cm;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                        </div>
+                                    </t>
+
+                                    <!--Paguese a la orden de-->
+<!--                                      <t t-if="c.a_nombre_de">-->
+<!--                                      <div class = "proveedor01">-->
+
+<!--                                          <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>-->
+
+<!--                                      </div>-->
+
+<!--                                          <div class = "orden01">-->
+
+<!--                                              <span t-esc = "o.cantidaddecaracteres24(c.a_nombre_de)"/>-->
+
+<!--                                          </div>-->
+
+<!--                                      </t>-->
+                                      <t t-if="c.a_nombre_de">
+<!--                                          <t t-if="c.destiny_partner_id.name">-->
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor03" style="font-size: 14px;
+                                                                                position: absolute;
+                                                                                top: 21.13cm;
+                                                                                left: 8.90cm;
+                                                                                width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor03_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 21.23cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>
+                                                  </div>
+                                              </t>
+
+                                              <div class = "orden03" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:20.68cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.a_nombre_de)"/>
+
+                                              </div>
+<!--                                           </t>-->
+                                      </t>
+                                      <t t-elif="c.destiny_partner_id">
+                                          <t t-if="c.destiny_partner_id.name">
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor03" style="font-size: 14px;
+                                                                                position: absolute;
+                                                                                top: 21.13cm;
+                                                                                left: 8.90cm;
+                                                                                width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.destiny_partner_id.name)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor03_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 21.23cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.destiny_partner_id.name)"/>
+                                                  </div>
+                                              </t>
+
+
+                                              <div class = "orden03" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:20.68cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.destiny_partner_id.name)"/>
+
+                                              </div>
+                                           </t>
+                                      </t>
+                                      <t t-elif="c.pago_voucher.partner_id">
+                                          <t t-if="c.pago_voucher.partner_id.name">
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor03" style="font-size: 14px;
+                                                                                    position: absolute;
+                                                                                    top: 21.13cm;
+                                                                                    left: 8.90cm;
+                                                                                    width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.pago_voucher.partner_id.name)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor03_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 21.23cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;
+                                                                                        /*border: 1px solid black;*/">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.pago_voucher.partner_id.name)"/>
+                                                  </div>
+                                              </t>
+
+
+                                              <div class = "orden03" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:20.68cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.pago_voucher.partner_id.name)"/>
+
+                                              </div>
+                                           </t>
+                                      </t>
+
+                                    <!--COMENTARIO-->
+                                     <t t-if="c.comentario">
+                                          <div class="concepto03" style=" position: absolute;
+                                                                        top: 21.33cm;
+                                                                        left: 0.50cm;
+                                                                        width: 150px;
+                                                                        font-size: 9px;
+                                                                        line-height: 2em;
+                                                                        overflow-wrap: break-word;
+                                                                        text-indent: 5em;">
+
+                                                 <span t-esc = "o.cantidaddecaracteres35(c.comentario)"/>
+
+                                          </div>
+                                     </t>
+
+                                     <!--Monto en letras-->
+                                       <t t-if="'PYG' in c.currency_id.name">
+                                      <div class="letras03" style="width: 19.0cm;
+                                                                font-size: 14px;
+                                                                position: absolute;
+                                                                top: 21.90cm;
+                                                                left: 05.15cm;
+                                                                /*border: 1px solid black;*/
+                                                                overflow-wrap: break-word;
+                                                                line-height: 2em;
+                                                                text-indent: 11em;">
+<!--                                              <t t-if="o.currency_id.ambito == 'VENTA'">-->
+                                                <span  t-esc="o.calcular_letras(c.amount)"/>
+                                      </div>
+                                     </t>
+                                    <t t-elif="'USD' in c.currency_id.name">
+            <!--                                              <t t-if="o.currency_id.ambito == 'VENTA'">-->
+                                        <div class="letras03_dolar" style="width: 17.35cm;
+                                                                        font-size: 14px;
+                                                                        position: absolute;
+                                                                        top: 21.85cm;
+                                                                        left: 06.80cm;
+                                                                        /*border: 1px solid black;*/
+                                                                        overflow-wrap: break-word;
+                                                                        line-height: 2em;
+                                                                        text-indent: 10em;">
+<!--                                                <span  t-esc="o.calcular_letras_dolar(c.amount)"/>-->
+                                                <span  t-esc="o.calcular_letras_dolar(c.amount)"/>
+            <!--                                              </t>-->
+                                        </div>
+                                    </t>
+
+                                    <!--fecha de emision-->
+                                    <t t-if="c.issue_date">
+                                          <t t-if="'PYG' in c.currency_id.name">
+                                              <div class="emision_dia03" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 20.0cm;
+                                                                                left: 15.10cm;">
+                                                  <span t-esc="o.dia(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_mes03" style="font-size: 18px;
+                                                                            position: absolute;
+                                                                            top: 20.0cm;
+                                                                            left: 16.25cm;">
+                                                  <span t-esc="o.mes(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_ano03" style="font-size: 18px;
+                                                                            position: absolute;
+                                                                            top: 20.0cm;
+                                                                            left: 18.35cm;">
+                                                  <span t-esc="o.ano(c.issue_date)"/>
+                                              </div>
+                                        </t>
+                                        <t t-elif="'USD' in c.currency_id.name">
+                                            <div class="emision_dia03_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 20.0cm;
+                                                                                    left: 15.25cm;">
+                                                  <span t-esc="o.dia(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_mes03_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 20.0cm;
+                                                                                    left: 16.40cm;">
+                                                  <span t-esc="o.mes(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_ano03_dolar" style="font-size: 18px;
+                                                                                        position: absolute;
+                                                                                        top: 20.0cm;
+                                                                                        left: 18.50cm;">
+                                                  <span t-esc="o.ano(c.issue_date)"/>
+                                              </div>
+                                        </t>
+                                     </t>
+                                </t>
+
+                                <t t-elif="i == 4">
+
+                                    <!--fecha para talonario -->
+                                      <div class="fecha_talonario04" style="position: absolute;
+                                                                            top: 29.0cm;
+                                                                            left: 1.40cm;
+                                                                            font-size: 11px;">
+                                          <span t-field="c.issue_date"/>
+                                      </div>
+
+                                    <!--monto para talonario-->
+                                      <div class="monto_talonario04" style="position: absolute;
+                                                                            top: 33.80cm;
+                                                                            left: 1.20cm;
+                                                                            font-size: 11px;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                      </div>
+
+                                    <!--Monto que hace referencia al total que se ubica en la parte superior derecha del cheque-->
+                                      <t t-if="'PYG' in c.currency_id.name">
+                                        <div class="monto04" style="position: absolute;
+                                                                    top: 27.70cm;
+                                                                    left: 20.10cm;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                        </div>
+                                    </t>
+                                    <t t-elif="'USD' in c.currency_id.name">
+                                        <div class="monto04_dolar" style="position: absolute;
+                                                                            top: 27.70cm;
+                                                                            left: 20.85cm;">
+                                          <span t-esc="o.agregar_punto_de_miles(c.amount,c.currency_id.name)"/>.-
+                                        </div>
+                                    </t>
+
+                                    <!--Paguese a la orden de-->
+<!--                                      <t t-if="c.a_nombre_de">-->
+<!--                                      <div class = "proveedor01">-->
+
+<!--                                          <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>-->
+
+<!--                                      </div>-->
+
+<!--                                          <div class = "orden01">-->
+
+<!--                                              <span t-esc = "o.cantidaddecaracteres24(c.a_nombre_de)"/>-->
+
+<!--                                          </div>-->
+
+<!--                                      </t>-->
+                                      <t t-if="c.a_nombre_de">
+<!--                                          <t t-if="c.destiny_partner_id.name">-->
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor04" style="font-size: 14px;
+                                                                                position: absolute;
+                                                                                top: 30.05cm;
+                                                                                left: 8.90cm;
+                                                                                width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor04_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 30.05cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.a_nombre_de)"/>
+                                                  </div>
+                                              </t>
+
+                                              <div class = "orden04" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:29.69cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.a_nombre_de)"/>
+
+                                              </div>
+<!--                                           </t>-->
+                                      </t>
+                                      <t t-elif="c.destiny_partner_id">
+                                          <t t-if="c.destiny_partner_id.name">
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor04" style="font-size: 14px;
+                                                                                position: absolute;
+                                                                                top: 30.05cm;
+                                                                                left: 8.90cm;
+                                                                                width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.destiny_partner_id.name)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor04_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 30.05cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.destiny_partner_id.name)"/>
+                                                  </div>
+                                              </t>
+
+                                              <div class = "orden04" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:29.69cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.destiny_partner_id.name)"/>
+
+                                              </div>
+                                           </t>
+                                      </t>
+                                      <t t-elif="c.pago_voucher.partner_id">
+                                          <t t-if="c.pago_voucher.partner_id.name">
+                                              <t t-if="'PYG' in c.currency_id.name">
+                                                  <div class="proveedor04" style="font-size: 14px;
+                                                                                position: absolute;
+                                                                                top: 30.05cm;
+                                                                                left: 8.90cm;
+                                                                                width: 15.0cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.pago_voucher.partner_id.name)"/>
+                                                  </div>
+                                              </t>
+                                              <t t-elif="'USD' in c.currency_id.name">
+                                                  <div class="proveedor04_dolar" style="font-size: 14px;
+                                                                                        position: absolute;
+                                                                                        top: 30.05cm;
+                                                                                        left: 9.50cm;
+                                                                                        width: 14.50cm;">
+                                                        <span t-esc = "o.cantidaddecaracteres70(c.pago_voucher.partner_id.name)"/>
+                                                  </div>
+                                              </t>
+
+                                              <div class = "orden04" style="width: 150px;
+                                                                            font-size: 9px;
+                                                                            position: absolute;
+                                                                            top:29.69cm;
+                                                                            left: 1.30cm;">
+
+                                                  <span t-esc = "o.cantidaddecaracteres24(c.pago_voucher.partner_id.name)"/>
+
+                                              </div>
+                                           </t>
+                                      </t>
+
+                                    <!--COMENTARIO-->
+                                     <t t-if="c.comentario">
+                                          <div class="concepto04" style="position: absolute;
+                                                                        top: 30.40cm;
+                                                                        left: 0.50cm;
+                                                                        width: 150px;
+                                                                        font-size: 9px;
+                                                                        line-height: 2em;
+                                                                        overflow-wrap: break-word;
+                                                                        text-indent: 5em;">
+
+                                                 <span t-esc = "o.cantidaddecaracteres35(c.comentario)"/>
+
+                                          </div>
+                                     </t>
+
+                                     <!--Monto en letras-->
+                                       <t t-if="'PYG' in c.currency_id.name">
+                                      <div class="letras04" style="width: 19.0cm;
+                                                                    font-size: 14px;
+                                                                    position: absolute;
+                                                                    top: 30.80cm;
+                                                                    left: 05.15cm;
+                                                                    /*border: 1px solid black;*/
+                                                                    overflow-wrap: break-word;
+                                                                    line-height: 2em;
+                                                                    text-indent: 11em;">
+<!--                                              <t t-if="o.currency_id.ambito == 'VENTA'">-->
+                                                <span  t-esc="o.calcular_letras(c.amount)"/>
+                                      </div>
+                                     </t>
+                                    <t t-elif="'USD' in c.currency_id.name">
+            <!--                                              <t t-if="o.currency_id.ambito == 'VENTA'">-->
+                                        <div class="letras04_dolar" style="width: 17.35cm;
+                                                                        font-size: 14px;
+                                                                        position: absolute;
+                                                                        top: 30.80cm;
+                                                                        left: 06.80cm;
+                                                                        /*border: 1px solid black;*/
+                                                                        overflow-wrap: break-word;
+                                                                        line-height: 2em;
+                                                                        text-indent: 10em;">
+<!--                                                <span  t-esc="o.calcular_letras_dolar(c.amount)"/>-->
+                                                <span  t-esc="o.calcular_letras_dolar(c.amount)"/>
+            <!--                                              </t>-->
+                                        </div>
+                                    </t>
+
+                                    <!--fecha de emision-->
+                                    <t t-if="c.issue_date">
+                                          <t t-if="'PYG' in c.currency_id.name">
+                                              <div class="emision_dia04" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 29.15cm;
+                                                                                left: 15.10cm;">
+                                                  <span t-esc="o.dia(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_mes04" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 29.15cm;
+                                                                                left: 16.25cm;">
+                                                  <span t-esc="o.mes(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_ano04" style="font-size: 18px;
+                                                                                position: absolute;
+                                                                                top: 29.15cm;
+                                                                                left: 18.35cm;">
+                                                  <span t-esc="o.ano(c.issue_date)"/>
+                                              </div>
+                                        </t>
+                                        <t t-elif="'USD' in c.currency_id.name">
+                                            <div class="emision_dia04_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 29.15cm;
+                                                                                    left: 15.25cm;">
+                                                  <span t-esc="o.dia(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_mes04_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 29.15cm;
+                                                                                    left: 16.25cm;">
+                                                  <span t-esc="o.mes(c.issue_date)"/>
+                                              </div>
+                                              <div class="emision_ano04_dolar" style="font-size: 18px;
+                                                                                    position: absolute;
+                                                                                    top: 29.15cm;
+                                                                                    left: 18.50cm;">
+                                                  <span t-esc="o.ano(c.issue_date)"/>
+                                              </div>
+                                        </t>
+                                     </t>
+                                </t>
+
+                            </t>
+                        </body>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

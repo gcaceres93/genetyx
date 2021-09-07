@@ -1,0 +1,614 @@
+ /*
+######################################
+#            PRIMER CHEQUE           #
+######################################
+*/
+
+/*FECHA TALONARIO*/
+.fecha_talonario01{
+    position: absolute;
+    top: 2.0cm;
+    left: 1.40cm;
+    font-size: 11px;
+}
+
+/*MONTO TALONARIO*/
+.monto_talonario01{
+    position: absolute;
+    top: 6.90cm;
+    left: 1.20cm;
+    font-size: 11px;
+}
+
+/*MONTO*/
+.monto01{
+    position: absolute;
+    top: 0.70cm;
+    left: 20.10cm;
+}
+/*MONTO DOLAR*/
+ .monto01_dolar{
+     position: absolute;
+    top: 0.55cm;
+    left: 20.85cm;
+  }
+
+/*ORDEN*/
+.orden01{
+    width: 150px;
+    font-size: 9px;
+    position: absolute;
+    top:2.80cm;
+    left: 1.30cm;
+}
+
+/*COMENTARIO*/
+.concepto01{
+    position: absolute;
+    top: 3.40cm;
+    left: 0.50cm;
+    width: 150px;
+    font-size: 9px;
+    line-height: 2em;
+    overflow-wrap: break-word;
+    text-indent: 5em;
+}
+
+
+/*PROVEEDOR*/
+.proveedor01{
+    font-size: 14px;
+    position: absolute;
+    top: 3.30cm;
+    left: 9.05cm;
+    width: 14.85cm;
+    /*border: 1px solid black;*/
+}
+
+/*PROVEEDOR DOLAR*/
+.proveedor01_dolar{
+    font-size: 14px;
+    position: absolute;
+    top: 3.20cm;
+    left: 9.50cm;
+    width: 14.50cm;
+    /*border: 1px solid black;*/
+}
+
+
+/*MONTO LETRA*/
+.letras01{
+    width: 19.0cm;
+    font-size: 14px;
+    position: absolute;
+    top: 3.90cm;
+    left: 05.15cm;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 11em;
+}
+/*MONTO LETRA DOLAR*/
+ .letras01_dolar{
+    width: 17.35cm;
+    font-size: 14px;
+    position: absolute;
+    top: 3.85cm;
+    left: 06.80cm;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 10em;
+}
+
+/*FECHA DE EMISION*/
+
+/*emision dia*/
+.emision_dia01{
+    font-size: 18px;
+    position: absolute;
+    top: 2.0cm;
+    left: 15.10cm;
+}
+
+/*emision dia dolar*/
+.emision_dia01_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 1.90cm;
+    left: 15.25cm;
+}
+
+
+/*emision mes*/
+.emision_mes01{
+    font-size: 18px;
+    position: absolute;
+    top: 2.0cm;
+    left: 16.25cm;
+}
+
+/*emision mes dolar*/
+.emision_mes01_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 1.90cm;
+    left: 16.40cm;
+}
+
+/*emision anho*/
+.emision_ano01{
+    font-size: 18px;
+    position: absolute;
+    top: 2.0cm;
+    left: 18.35cm;
+}
+
+
+/*emision anho dolar*/
+.emision_ano01_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 1.90cm;
+    left: 18.50cm;
+}
+/*
+######################################
+#            SEGUNDO CHEQUE          #
+######################################
+*/
+
+/*FECHA TALONARIO*/
+.fecha_talonario02{
+    position: absolute;
+    top: 11.10cm;
+    left: 1.40cm;
+    font-size: 11px;
+}
+
+/*MONTO TALONARIO*/
+.monto_talonario02{
+    position: absolute;
+    top: 15.85cm;
+    left: 1.20cm;
+    font-size: 11px;
+}
+
+/*MONTO*/
+.monto02{
+    position: absolute;
+    top: 9.80cm;
+    left: 20.10cm;
+}
+/*MONTO DOLAR*/
+ .monto02_dolar{
+     position: absolute;
+    top: 9.65cm;
+    left: 20.85cm;
+  }
+
+/*ORDEN*/
+.orden02{
+    width: 150px;
+    font-size: 9px;
+    position: absolute;
+    top:11.75cm;
+    left: 1.30cm;
+}
+
+/*COMENTARIO*/
+.concepto02{
+    position: absolute;
+    top: 12.40cm;
+    left: 0.50cm;
+    width: 150px;
+    font-size: 9px;
+    line-height: 2em;
+    overflow-wrap: break-word;
+    text-indent: 5em;
+}
+
+
+/*PROVEEDOR*/
+.proveedor02{
+    font-size: 14px;
+    position: absolute;
+    top: 12.30cm;
+    left: 8.90cm;
+    width: 15.0cm;
+    /*border: 1px solid black;*/
+}
+
+/*PROVEEDOR DOLAR*/
+.proveedor02_dolar{
+    font-size: 14px;
+    position: absolute;
+    top: 12.20cm;
+    left: 9.50cm;
+    width: 14.50cm;
+    /*border: 1px solid black;*/
+}
+
+/*MONTO LETRA*/
+.letras02{
+    width: 19.0cm;
+    font-size: 14px;
+    position: absolute;
+    top: 12.93cm;
+    left: 5.15cm;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 11em;
+}
+/*MONTO LETRA DOLAR*/
+ .letras02_dolar{
+     width: 17.35cm;
+    font-size: 14px;
+    position: absolute;
+    top: 12.94cm;
+    left: 6.80cm;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 10em;
+}
+
+/*FECHA DE EMISION*/
+
+/*emision dia*/
+.emision_dia02{
+    font-size: 18px;
+    position: absolute;
+    top: 11.15cm;
+    left: 15.10cm;
+}
+
+/*emision dia dolar*/
+.emision_dia02_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 11.05cm;
+    left: 15.25cm;
+}
+
+/*emision mes*/
+.emision_mes02{
+    font-size: 18px;
+    position: absolute;
+    top: 11.15cm;
+    left: 16.25cm;
+}
+
+/*emision mes dolar*/
+.emision_mes02_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 11.05cm;
+    left: 16.40cm;
+}
+
+/*emision anho*/
+.emision_ano02{
+    font-size: 18px;
+    position: absolute;
+    top: 11.15cm;
+    left: 18.35cm;
+}
+
+/*emision anho dolar*/
+.emision_ano02_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 11.05cm;
+    left: 18.50cm;
+}
+
+
+/*
+######################################
+#            TERCER CHEQUE           #
+######################################
+*/
+
+/*FECHA TALONARIO*/
+.fecha_talonario03{
+    position: absolute;
+    top: 20.05cm;
+    left: 1.40cm;
+    font-size: 11px;
+}
+
+/*MONTO TALONARIO*/
+.monto_talonario03{
+    position: absolute;
+    top: 24.79cm;
+    left: 1.20cm;
+    font-size: 11px;
+}
+
+/*MONTO*/
+.monto03{
+    position: absolute;
+    top: 18.55cm;
+    left: 20.10cm;
+}
+/*MONTO DOLAR*/
+ .monto03_dolar{
+     position: absolute;
+    top: 18.50cm;
+    left: 20.85cm;
+  }
+/*ORDEN*/
+.orden03{
+    width: 150px;
+    font-size: 9px;
+    position: absolute;
+    top:20.68cm;
+    left: 1.30cm;
+}
+
+/*COMENTARIO*/
+.concepto03{
+    position: absolute;
+    top: 21.33cm;
+    left: 0.50cm;
+    width: 150px;
+    font-size: 9px;
+    line-height: 2em;
+    overflow-wrap: break-word;
+    text-indent: 5em;
+}
+
+
+/*PROVEEDOR*/
+.proveedor03{
+    font-size: 14px;
+    position: absolute;
+    top: 21.13cm;
+    left: 8.90cm;
+    width: 15.0cm;
+    /*border: 1px solid black;*/
+}
+
+/*PROVEEDOR DOLAR*/
+.proveedor03_dolar{
+    font-size: 14px;
+    position: absolute;
+    top: 21.23cm;
+    left: 9.50cm;
+    width: 14.50cm;
+    /*border: 1px solid black;*/
+}
+
+
+/*MONTO LETRA*/
+.letras03{
+    width: 19.0cm;
+    font-size: 14px;
+    position: absolute;
+    top: 21.90cm;
+    left: 05.15cm;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 11em;
+}
+/*MONTO LETRA DOLAR*/
+ .letras03_dolar{
+    width: 17.35cm;
+    font-size: 14px;
+    position: absolute;
+    top: 21.85cm;
+    left: 06.80cm;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 10em;
+}
+
+/*FECHA DE EMISION*/
+
+/*emision dia*/
+.emision_dia03{
+    font-size: 18px;
+    position: absolute;
+    top: 20.0cm;
+    left: 15.10cm;
+}
+
+/*emision dia dolar*/
+.emision_dia03_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 20.0cm;
+    left: 15.25cm;
+}
+
+
+/*emision mes*/
+.emision_mes03{
+    font-size: 18px;
+    position: absolute;
+    top: 20.0cm;
+    left: 16.25cm;
+}
+
+/*emision mes dolar*/
+.emision_mes03_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 20.0cm;
+    left: 16.40cm;
+}
+
+
+/*emision anho*/
+.emision_ano03{
+    font-size: 18px;
+    position: absolute;
+    top: 20.0cm;
+    left: 18.35cm;
+}
+
+
+/*emision anho dolar*/
+.emision_ano03_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 20.0cm;
+    left: 18.50cm;
+}
+
+
+/*
+######################################
+#            CUARTO CHEQUE           #
+######################################
+*/
+
+/*FECHA TALONARIO*/
+.fecha_talonario04{
+    position: absolute;
+    top: 29.0cm;
+    left: 1.40cm;
+    font-size: 11px;
+}
+
+/*MONTO TALONARIO*/
+.monto_talonario04{
+    position: absolute;
+    top: 33.80cm;
+    left: 1.20cm;
+    font-size: 11px;
+}
+
+/*MONTO*/
+.monto04{
+    position: absolute;
+    top: 27.70cm;
+    left: 20.10cm;
+}
+/*MONTO DOLAR*/
+ .monto04_dolar{
+     position: absolute;
+    top: 27.70cm;
+    left: 20.85cm;
+  }
+
+/*ORDEN*/
+.orden04{
+    width: 150px;
+    font-size: 9px;
+    position: absolute;
+    top:29.69cm;
+    left: 1.30cm;
+}
+
+/*COMENTARIO*/
+.concepto04{
+    position: absolute;
+    top: 30.40cm;
+    left: 0.50cm;
+    width: 150px;
+    font-size: 9px;
+    line-height: 2em;
+    overflow-wrap: break-word;
+    text-indent: 5em;
+}
+
+/*PROVEEDOR*/
+.proveedor04{
+    font-size: 14px;
+    position: absolute;
+    top: 30.05cm;
+    left: 8.90cm;
+    width: 15.0cm;
+    /*border: 1px solid black;*/
+}
+
+/*PROVEEDOR DOLAR*/
+.proveedor04_dolar{
+    font-size: 14px;
+    position: absolute;
+    top: 30.05cm;
+    left: 9.50cm;
+    width: 14.50cm;
+    /*border: 1px solid black;*/
+}
+
+/*MONTO LETRA*/
+.letras04{
+    width: 19.0cm;
+    font-size: 14px;
+    position: absolute;
+    top: 30.80cm;
+    left: 05.15cm;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 11em;
+}
+/*MONTO LETRA DOLAR*/
+ .letras04_dolar{
+    width: 17.35cm;
+    font-size: 14px;
+    position: absolute;
+    top: 30.80cm;
+    left: 06.80cm;
+    /*border: 1px solid black;*/
+    overflow-wrap: break-word;
+    line-height: 2em;
+    text-indent: 10em;
+}
+
+/*FECHA DE EMISION*/
+
+/*emision dia*/
+.emision_dia04{
+    font-size: 18px;
+    position: absolute;
+    top: 29.15cm;
+    left: 15.10cm;
+}
+
+/*emision dia dolar*/
+.emision_dia04_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 29.15cm;
+    left: 15.25cm;
+}
+
+/*emision mes*/
+.emision_mes04{
+    font-size: 18px;
+    position: absolute;
+    top: 29.15cm;
+    left: 16.25cm;
+}
+
+/*emision mes dolar*/
+.emision_mes04_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 29.15cm;
+    left: 16.25cm;
+}
+
+/*emision anho*/
+.emision_ano04{
+    font-size: 18px;
+    position: absolute;
+    top: 29.15cm;
+    left: 18.35cm;
+}
+
+/*emision anho dolar*/
+.emision_ano04_dolar{
+    font-size: 18px;
+    position: absolute;
+    top: 29.15cm;
+    left: 18.50cm;
+}
+
