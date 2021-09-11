@@ -43,8 +43,7 @@ class Inventory(models.Model):
             if account_move :
                 account_move.button_cancel()
 
-            valuation = self.env['stock.valuation.layer'].sudo().search([('stock_move_id','=',move.id)],order="id desc", limit=1)
-            valuation.sudo().unlink()
+
     
     def action_reset_draft(self):
         self.write({'line_ids': [(5,)],'state': 'draft'})
