@@ -32,10 +32,7 @@ class factura (models.Model):
                         'move_id.line_ids').filtered(
                         lambda x: x.reconciled == False)
                     # raise ValidationError(rec.partner_id)
-                    if any(x.days_overdue > partner.dias_mora for x in deudas):
-                        raise ValidationError(
-                            'No puede confirmar una factura para este cliente debido a que posee facturas en mora con más de %s días' % rec.partner_id.dias_mora)
-
+                 
     # FUNCION PARA EVALUAR LA OPCION POR SECCION
     @api.multi
     def get_seccion(self, seccion):
