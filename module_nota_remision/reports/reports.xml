@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+
+          <!--FORMATO PAPEL NOTA DE REMISION-->
+      <record id="paperformat_nota_remision" model="report.paperformat">
+                <field name="name">Formato Nota Remision</field>
+                <field name="default" eval="True"/>
+                <field name="format">custom</field>
+                <field name="page_height">332</field>
+                <field name="page_width">213</field>
+                <field name="orientation">Portrait</field>
+                <field name="margin_top">10</field>
+                <field name="margin_bottom">10</field>
+                <field name="margin_left">10</field>
+                <field name="margin_right">10</field>
+                <field name="header_line" eval="False"/>
+                <field name="header_spacing">0</field>
+                <field name="dpi">90</field>
+      </record>
+
+             <!--nota remision-->
+        <report
+            id="report_nota_remision"
+            model="stock.picking"
+            string="Nota Remision 2"
+            report_type="qweb-pdf"
+            name="module_nota_remision.nota_remision_report"
+            file="module_nota_remision.nota_remision_report"
+            attachment_use="False"
+            paperformat="paperformat_nota_remision"
+        />
+
+        </data>
+</odoo>

@@ -1,0 +1,547 @@
+ /*##########################################################################*/
+/*                                                                          */
+/*                             NOTA REMISION                         */
+/*                                                                          */
+/*##########################################################################*/
+body{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+ /*##########################CONTAINER 01##################*/
+
+ .container_01_left_top{
+     width: 24cm;
+     height: 7cm;
+     border: 1px solid black;
+ }
+ /*################LOGO#################*/
+ #logo{
+     max-height: 39%;
+     margin-top:1.90cm;
+     margin-left: 0.50cm;
+ }
+
+ /*################NOMBRE DE LA EMPRESA#################*/
+ #nombre_empresa{
+     position: absolute;
+     width: 10cm;
+     /*border:1px solid black;*/
+     top: 1.50cm;
+     left: 15.15cm;
+    font-size: 26px;
+
+ }
+
+  /*################DIRECCION DE LA EMPRESA#################*/
+ #direccion_empresa{
+     position: absolute;
+     width: 6cm;
+     /*border:1px solid black;*/
+     top: 2.80cm;
+     left: 11cm;
+     font-size: 16px;
+     font-weight: bold;
+ }
+
+ /*################TELEFONO DE LA EMPRESA#################*/
+ #telefono_empresa{
+     position: absolute;
+     width: 7cm;
+     /*border:1px solid black;*/
+     top: 2.80cm;
+     left: 17cm;
+     font-size: 16px;
+ }
+
+  /*################CORREO DE LA EMPRESA#################*/
+ #correo_empresa{
+     position: absolute;
+     width: 8cm;
+     /*border:1px solid black;*/
+     top: 3.60cm;
+     left: 14cm;
+     font-size: 21px;
+
+ }
+
+ /*################CIUDAD EMPRESA#####################*/
+ #ciudad_empresa{
+
+     position: absolute;
+     width: 09cm;
+     /*border:1px solid black;*/
+     top: 4.60cm;
+     left: 13.70cm;
+     font-size: 22px;
+ }
+
+ /*##########################FIN CONTAINER 01##################*/
+
+  /*##########################CONTAINER 02##################*/
+
+ .container_02_right_top{
+     position: absolute;
+     top:0.01cm;
+     left: 24.40cm;
+     width: 11.70cm;
+     height: 7cm;
+     border: 1px solid black;
+     line-height: 0.40cm;
+ }
+
+  /*##########################FECHA VENCIMIENTO TIMBRADO##################*/
+ #fecha_vencimiento_timbrado{
+
+     /*position: absolute;*/
+     width: 7cm;
+     /*border:1px solid black;*/
+     margin-top: 1.60cm;
+     margin-left: 4.0cm;
+    font-size: 18px;
+ }
+
+  /*##########################TIMBRADO NUMERO##################*/
+ #timbrado_nro{
+
+     /*position: absolute;*/
+     /*margin-top: 2.80cm;*/
+     width: 9cm;
+     /*border:1px solid black;*/
+     /*top: 2.80cm;*/
+     margin-left: 2cm;
+    font-size: 24px;
+ }
+
+  /*##########################RUC NUMERO##################*/
+ #ruc_nro{
+
+     /*position: absolute;*/
+     /*margin-top: 2.80cm;*/
+     width: 8cm;
+     /*border:1px solid black;*/
+     /*top: 2.80cm;*/
+     margin-left: 2.50cm;
+    font-size: 24px;
+ }
+
+ /*##########################NOTA DE REMISION##################*/
+ #nota_remision{
+
+     /*position: absolute;*/
+     /*margin-top: 2.80cm;*/
+     width: 9cm;
+     /*border:1px solid black;*/
+     /*top: 2.80cm;*/
+     margin-left: 1.50cm;
+    font-size: 32px;
+ }
+
+ /*##########################NUMERO DE REMISION##################*/
+ #nro_remision{
+
+     /*position: absolute;*/
+     /*margin-top: 2.80cm;*/
+     width: 8cm;
+     /*border:1px solid black;*/
+     /*top: 2.80cm;*/
+     margin-left: 1.60cm;
+    font-size: 30px;
+ }
+ /*##########################FIN CONTAINER 02##################*/
+
+ /*##############################DESTINATARIO DE LA MERCADERIA CUADRO###########################*/
+.container_destinatario{
+    width: 35.70cm;
+    height: 4.50cm;
+    border: 1px solid black;
+    line-height: 0.40cm;
+}
+
+ /*#############################FECHA EMISION###########################*/
+#fecha_emision{
+      width: 10cm;
+     /*border:1px solid black;*/
+     margin-top: 0.60cm;
+     margin-left: 0.30cm;
+     font-size: 20px;
+}
+
+ /*#############################DESTINATARIO DE LA MERCADERIA###########################*/
+#destinatario_mercaderia{
+      width: 31cm;
+     /*border:1px solid black;*/
+     margin-left: 0.30cm;
+     font-size: 23px;
+}
+
+ /*#############################RAZON SOCIAL###########################*/
+#razon_social{
+      width: 31cm;
+     /*border:1px solid black;*/
+     margin-left: 0.30cm;
+     font-size: 20px;
+}
+
+ /*#############################DOMICILIO###########################*/
+#domicilio{
+     width: 32cm;
+     /*border:1px solid black;*/
+     margin-left: 0.30cm;
+     font-size: 20px;
+}
+
+ /*##############################FIN DESTINATARIO DE LA MERCADERIA CUADRO###########################*/
+
+  /*##############################CUADRO DATOS TRASLADO###########################*/
+
+ .container_traslado{
+     width: 35.70cm;
+     height: 18.0cm;
+     border: 1px solid black;
+     line-height: 0.40cm;
+ }
+ /*######################DATOS DEL TRASLADO###############*/
+
+ #datos_traslado{
+      width: 10cm;
+     /*border:1px solid black;*/
+     margin-top: 0.60cm;
+     margin-left: 0.30cm;
+     font-size: 24px;
+ }
+
+ /*######################MOTIVO DEL TRASLADO###############*/
+
+ #motivo_traslado{
+      width: 19cm;
+      /*border:1px solid black;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+ /*######################COMPROBANTE DE VENTA NRO###############*/
+
+ #comprobante_venta_nro{
+      width: 20cm;
+      line-height: 0.50cm;
+      /*border:1px solid black;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+     /*height: 1cm;*/
+ }
+
+ /*######################FECHA EXPEDICION###############*/
+
+ #fecha_expdicion{
+      width: 14.50cm;
+      /*border:1px solid black;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+ /*######################COMPROBANTE DE VENTA###############*/
+
+ #comprobante_venta{
+      width: 13cm;
+      /*border:1px solid black;*/
+      margin-top:-2.70cm;
+      margin-left: 21.0cm;
+      font-size: 20px;
+ }
+
+ /*######################NRO TIMBRADO###############*/
+
+ #nro_timbrado{
+      width: 13cm;
+      /*border:1px solid black;*/
+      margin-left: 21.0cm;
+      font-size: 20px;
+ }
+
+ /*######################FECHA DE INICIO DE TRASLADO###############*/
+
+ #fecha_inicio_traslado{
+      width: 14.50cm;
+      /*border:1px solid black;*/
+      margin-top: 1.30cm;
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+ /*######################FECHA ESTIMADA DE TERMINO DEL TRASLADO###############*/
+
+ #fecha_estimada_termino_traslado{
+      width: 18cm;
+      /*border:1px solid black;*/
+      margin-top: -0.85cm;
+      margin-left: 16cm;
+      font-size: 20px;
+ }
+
+  /*######################Direccion del Punto de Partida###############*/
+
+ #direccion_punto_partida{
+      width: 25cm;
+      /*border:1px solid black;*/
+      /*margin-top: -0.50cm;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+  /*######################CIUDAD###############*/
+
+ #ciudad{
+      width: 12cm;
+      /*border:1px solid black;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+
+ /*######################DEPARTAMENTO###############*/
+
+ #departamento{
+      width: 13cm;
+      /*border:1px solid black;*/
+      margin-top: -0.85cm;
+      margin-left: 21.0cm;
+      font-size: 20px;
+ }
+
+   /*######################Direccion del Punto de Llegada###############*/
+
+ #direccion_punto_llegada{
+      width: 25cm;
+      /*border:1px solid black;*/
+      /*margin-top: -0.50cm;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+  /*######################CIUDAD LLEGADA###############*/
+
+ #ciudad_llegada{
+      width: 12cm;
+      /*border:1px solid black;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+
+ /*######################DEPARTAMENTO LLEGADA###############*/
+
+ #departamento_llegada{
+      width: 13cm;
+      /*border:1px solid black;*/
+      margin-top: -0.85cm;
+      margin-left: 21.0cm;
+      font-size: 20px;
+ }
+
+ /*######################Kilometros estimados de recorrido###############*/
+
+ #kilometro_estimado_recorrido{
+      width: 25cm;
+      /*border:1px solid black;*/
+      /*margin-top: -0.50cm;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+ /*######################Cambio de Fecha de termino de traslado y/o punto de llegada###############*/
+
+ #cambio_fecha_termino_traslado_llegada{
+      width: 35cm;
+      /*border:1px solid black;*/
+      /*margin-top: -0.50cm;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+ /*######################Motivo Cambio de Fecha de termino de traslado y/o punto de llegada###############*/
+
+ #motivo{
+      width: 35cm;
+      /*border:1px solid black;*/
+      /*margin-top: -0.50cm;*/
+      margin-left: 0.30cm;
+      font-size: 20px;
+ }
+
+
+ /*######################DATOS DEL TRASLADO###############*/
+
+ #datos_vehiculo_transporte{
+     width: 15cm;
+     margin-top: 0.80cm;
+     margin-left: 0.30cm;
+     font-size: 24px;
+ }
+
+ /*######################MARCA DEL VEHICULO###############*/
+
+ #marca_vehiculo{
+     width: 25cm;
+     /*border:1px solid black;*/
+     margin-left: 0.30cm;
+     font-size: 20px;
+ }
+
+ /*######################RUA###############*/
+
+ #rua{
+     width: 35cm;
+     /*border:1px solid black;*/
+     margin-left: 0.30cm;
+     font-size: 20px;
+ }
+
+ /*######################RUA REMOLQUE###############*/
+
+ #rua_remolque{
+     width: 35cm;
+     /*border:1px solid black;*/
+     margin-left: 0.30cm;
+     font-size: 20px;
+ }
+
+ /*######################DATOS DEL CONDUCTOR###############*/
+
+ #datos_del_conductor{
+     width: 15cm;
+     margin-top: 0.80cm;
+     margin-left: 0.30cm;
+     font-size: 24px;
+ }
+
+ /*##################NOMBRE RAZON SOCIAL CONDUCTOR###################*/
+
+ #nombre_razon_social_conductor{
+     width: 35cm;
+     /*border:1px solid black;*/
+     margin-left: 0.30cm;
+     font-size: 20px;
+ }
+
+ /*##################DOMICILIO CONDUCTOR###################*/
+
+ #domicilio_conductor{
+     width: 35cm;
+     /*border:1px solid black;*/
+     margin-left: 0.30cm;
+     font-size: 20px;
+ }
+
+ /*##############################FIN CUADRO DATOS TRASLADO###########################*/
+
+ /*############################CUANDRO LISTA DE MERCADERIAS##########################*/
+ .container_lista_mercaderia{
+     width: 35.70cm;
+     height: 28.0cm;
+     /*border: 1px solid black;*/
+     /*line-height: 0.40cm;*/
+ }
+
+ /*##################LISTA DE PRODUCTOS#######################*/
+
+/*######################TABLA PRODUCTO########################*/
+.tabla_productos{
+    width: 35.70cm;
+    font-size: 20px;
+    height: 28.0cm;
+    border: 1px solid;
+    /*margin-left: 0.30cm;*/
+}
+.tabla_productos tbody, td{
+    /*border:1px solid black;*/
+    line-height: 0.40cm;
+
+}
+
+#dato_de_la_mercaderia{
+    border-right:1px solid black;
+    border-left:1px solid black;
+    border-bottom:1px solid black;
+    /*width: 35.70cm;*/
+}
+
+#cantidad{
+    border:1px solid black;
+    width: 5.0cm;
+    text-align: center;
+}
+
+#unidad_medida{
+    text-align: center;
+    border:1px solid black;
+    width: 5.0cm;
+}
+
+#descripcion{
+    border:1px solid black;
+    width: 25.70cm;
+}
+
+/*###############DATO DE LA MERCADERIA*/
+#dato_de_la_mercaderia{
+    width: 35.70cm;
+}
+/*#######################CODIGO##########################*/
+#id_codigo{
+    width: 2.80cm;
+    font-size:10px;
+    text-align:left;
+}
+/*#######################CANTIDAD#########################*/
+#id_cantidad{
+    width: 2.90cm;
+    text-align:center;
+    padding-top: 0.50cm;
+    border-right: 1px solid black;
+    /*font-size:15px;*/
+}
+
+/*######################UNIDAD DE MEDIDA####################*/
+#id_unidad_medida{
+    width: 3.20cm;
+    text-align:center;
+    border-right: 1px solid black;
+    /*font-size:15px;*/
+}
+
+/*#################DESCRIPCION#############################*/
+#id_descripcion{
+    /*font-size: 15px;*/
+    width: 28.50cm;
+    text-align:left;
+    padding-left: 0.30cm;
+
+}
+/*##########tfoot###########*/
+ #recepcion_de_la_mercaderia{
+     /*height: 2cm;*/
+     padding-top: 0.30cm;
+     padding-left: 0.30cm;
+     padding-bottom: 0.30cm;
+     font-weight: bold;
+     font-size: 22px;
+     border:1px solid black;
+ }
+ /*#########firma#########*/
+ #firma{
+     padding-top: 0.30cm;
+     padding-left: 0.30cm;
+     padding-bottom: 0.30cm;
+     width: 7cm;
+ }
+ #aclaracion{
+     width: 7cm;
+
+ }
+ #ruc_cedula_identidad{
+     width: 21.70cm;
+ }
+ /*############################FIN CUANDRO LISTA DE MERCADERIAS##########################*/
+
+
