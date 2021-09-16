@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a9923b8-3d45-415c-b39f-d5a4a310cb1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../odoo_paraguay/paraguay_backoffice/models/invoice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_paraguay/paraguay_backoffice/models/invoice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="0559fb80-480d-4c2e-9fac-3d16426e3291" name="Revert &quot;Revert &quot;Revert &quot;Revert &quot;calculo de iva y redondeo correcto&quot;&quot;&quot;&quot;" comment="Revert &quot;Revert &quot;Revert &quot;Revert &quot;calculo de iva y redondeo correcto&quot;&quot;&quot;&quot;&#10;&#10;This reverts commit 853b3866" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../account_payment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,6 +56,7 @@
       <workItem from="1631044582584" duration="598000" />
       <workItem from="1631385038094" duration="284000" />
       <workItem from="1631557264540" duration="760000" />
+      <workItem from="1631826534269" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="Se comenta funcion de redondeo moneda">
       <created>1629688104906</created>

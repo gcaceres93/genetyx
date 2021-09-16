@@ -1,0 +1,229 @@
+<odoo>
+
+    <template id="nota_remision_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page" >
+                        <link rel="stylesheet" href="/module_nota_remision/static/src/css/estilos_nota_remision.css"/>
+                        <body>
+
+                            <!--##############################NOTA REMISION###########################-->
+
+                            <!--##############################PRIMER CUADRO DATOS DE LA EMPRESA###########################-->
+
+                            <div class="container_01_left_top">
+                                <img t-att-src="image_data_uri(o.company_id.logo)" id="logo"/>
+                                <p id="nombre_empresa"><span t-field="o.company_id.name"/></p><!--##NOMBRE EMPRESA##-->
+
+                                <p id="direccion_empresa"><!--##DIRECCION EMPRESA##-->
+                                    <span t-field="o.company_id.street"/>
+                                    <t t-if="o.company_id.street2">
+                                        y <span t-field="o.company_id.street"/>
+                                    </t>
+                                </p>
+                                <p id="telefono_empresa"><!--##TELEFONO EMPRESA##-->
+                                   <span> Tel: <span t-field="o.company_id.phone"/></span>
+
+                                </p>
+
+                                <p id="correo_empresa"><!--##CORREO EMPRESA##-->
+                                     <span t-field="o.company_id.email"/>
+                                </p>
+
+                                <p id="ciudad_empresa"><!--##CIUDAD EMPRESA##-->
+                                     <span t-field="o.company_id.city"/>-<span t-field="o.company_id.country_id.name"/>
+                                </p>
+
+                            </div>
+
+                            <!--##############################SEGUNDO CUADRO DATOS DEL TALONARIO###########################-->
+
+                            <div class="container_02_right_top">
+
+                                <p id="fecha_vencimiento_timbrado"><!--##FECHA VENCIMIENTO TIMBRADO##-->
+                                     <span> Válido hasta  </span><span t-field="o.talonario_remision.fecha_final"/><span/>
+                                </p>
+
+                                <p id="timbrado_nro"><!--##TIMBRADO NUMERO##-->
+                                     <span> TIMBRADO Nº </span><span t-field="o.talonario_remision.name"/><span/>
+                                </p>
+
+                                <p id="ruc_nro"><!--##RUC NUMERO##-->
+                                     <span> RUC: </span><span t-field="o.company_id.ruc"/>-<span t-field="o.company_id.dv"/><span/>
+                                </p>
+
+                                <p id="nota_remision"><!--##NOTA DE REMISION##-->
+                                     <span> NOTA DE REMISIÓN</span>
+                                </p>
+
+                                <p id="nro_remision"><!--##NUMERO REMISION##-->
+                                     <span> Nº <span t-field="o.numero_remision"/></span>
+                                </p>
+
+                            </div>
+
+                            <!--##############################DESTINATARIO DE LA MERCADERIA CUADRO###########################-->
+
+                            <div class="container_destinatario">
+                                <p id="fecha_emision"><!--##FECHA EMISION##-->
+                                     <span> Fecha de Emisión: <span t-field="o.scheduled_date"/></span>
+                                </p>
+                                <p id="destinatario_mercaderia"><!--##DESTINATARIO MERCADERIA##-->
+                                     <span> DESTINATARIO DE LA MERCADERIA: </span>
+                                </p>
+                                <p id="razon_social"><!--##RAZON SOCIAL##-->
+                                     <span> Nombre o Razón Social: <span t-field="o.partner_id.name"/> </span>
+                                </p>
+                                <p id="domicilio"><!--##DOMICILIO##-->
+                                     <span> Domicilio: <span t-field="o.partner_id.street"/>
+                                         <t t-if="o.partner_id.street2">
+                                           y <span t-field="o.partner_id.street2"/>
+                                         </t>
+                                     </span>
+                                </p>
+
+                            </div>
+
+                            <!--##############################DATOS DEL TRASLADO###########################-->
+
+                            <div class="container_traslado">
+                                <p id="datos_traslado"><!--##DATOS DEL TRASLADO##-->
+                                     <span> DATOS DEL TRASLADO </span>
+                                </p>
+                                <p id="motivo_traslado"><!--##MOTIVO TRASLADO##-->
+                                     <span> Motivo del Traslado: </span>
+                                </p>
+                                <p id="comprobante_venta_nro"><!--##COMPROBANTE DE VENTA NRO##-->
+                                     <span>Comprobante de Venta Nº: <span t-field="o.nro_factura"/> </span>
+                                </p>
+                                <p id="fecha_expdicion"><!--##FECHA EXPEDICION ##-->
+                                     <span>Fecha de Expedición: </span>
+                                </p>
+                                <p id="comprobante_venta"><!--##COMPROBANTE DE VENTA ##-->
+                                     <span>Comprobante de Venta:  </span>
+                                </p>
+                                <p id="nro_timbrado"><!--##NRO TIMBRADO ##-->
+                                     <span>Nº de Timbrado: </span>
+                                </p>
+                                <p id="fecha_inicio_traslado"><!--##FECHA DE INICIO DE TRASLADO##-->
+                                     <span>Fecha de Inicio de Traslado: </span>
+                                </p>
+                                <p id="fecha_estimada_termino_traslado"><!--##FECHA ESTIMADA DE TERMINO DEL TRASLADO##-->
+                                     <span>Fecha Estimada de Término del Traslado:<span t-field="o.fecha_estimada"/></span>
+                                </p>
+                                <p id="direccion_punto_partida"><!--##DIRECCION DEL PUNTO DE PARTIDA##-->
+                                     <span>Direción del Punto de Partida: <span t-field="o.punto_de_partida"/> </span>
+                                </p>
+                                <p id="ciudad"><!--##CIUDAD##-->
+                                     <span>Ciudad: </span>
+                                </p>
+                                <p id="departamento"><!--##DEPARTAMENTO##-->
+                                     <span>Departamento: </span>
+                                </p>
+                                 <p id="direccion_punto_llegada"><!--##DIRECCION DEL PUNTO DE LLEGADA##-->
+                                     <span>Direción del Punto de Llegada: <span t-field="o.punto_de_llegada"/> </span>
+                                </p>
+                                <p id="ciudad_llegada"><!--##CIUDAD LLEGADA##-->
+                                     <span>Ciudad: </span>
+                                </p>
+                                <p id="departamento_llegada"><!--##DEPARTAMENTO LLEGADA##-->
+                                     <span>Departamento: </span>
+                                </p>
+                                <p id="kilometro_estimado_recorrido"><!--##KILOMETROS ESTIMADOS DE RECORRIDO##-->
+                                     <span>Kilometros estimados de recorrido: </span>
+                                </p>
+                                 <p id="cambio_fecha_termino_traslado_llegada"><!--##CAMBIO DE FECHA DE TERMINO DE TRASLADO Y/O PUNTO DE LLEGADA##-->
+                                     <span>Cambio de Fecha de término de traslado y/o punto de llegada: </span>
+                                </p>
+                                <p id="motivo"><!--##MOTIVO CAMBIO DE FECHA DE TERMINO DE TRASLADO Y/O PUNTO DE LLEGADA##-->
+                                     <span>Motivo: </span>
+                                </p>
+                                <p id="datos_vehiculo_transporte"><!--##DATOS DEL VEHICULO DE TRANSPORTE##-->
+                                     <span> DATOS DEL VEHICULO DE TRANSPORTE </span>
+                                </p>
+                                <p id="marca_vehiculo"><!--##MARCA DEL VEHICULO DE TRANSPORTE##-->
+                                     <span> Marca del Vehículo: </span>
+                                </p>
+                                <p id="rua"><!--##Numero de Registro Unico del Automotor##-->
+                                     <span> Número de Registro Único del Automotor (RUA): </span>
+                                </p>
+                                <p id="rua_remolque"><!--##Numero de Registro Unico del Automotor De Remolque/Tracto/Semiremolque##-->
+                                     <span> Número de Registro Único del Automotor (RUA) de Remolque/Tracto/Semiremolque: </span>
+                                </p>
+                                <p id="datos_del_conductor"><!--##DATOS DEL CONDUCTOR##-->
+                                     <span> DATOS DEL CONDUCTOR </span>
+                                </p>
+                                <p id="nombre_razon_social_conductor"><!--##Nombre y Apellido o Razon Social Conductor##-->
+                                     <span>Nombre y Apellido o Razón Social: </span>
+                                </p>
+                                <p id="domicilio_conductor"><!--##Domicilio Conductor##-->
+                                     <span>Domicilio: </span>
+                                </p>
+
+                            </div>
+                            <!--################################DATOS DE LA MERCADERIA##################################-->
+                            <div class="container_lista_mercaderia">
+
+<!--                                                            LISTADO DE PRODUCTOS-->
+                                    <table class="tabla_productos">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3" id="dato_de_la_mercaderia">
+                                                    DATO DE LA MERCADERIA
+                                                </th>
+                                            </tr>
+
+                                            <tr>
+                                                <th id="cantidad">CANTIDAD</th>
+                                                <th id="unidad_medida">UNIDAD DE MEDIDA</th>
+                                                <th id="descripcion">DESCRIPCION DETALLADA (Incluir Cantidad o porcentaje de tolerancia de quebra o de merca/Datos de relevancia de la mercaderia)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tabla_cuerpo-1">
+                                            <tr t-foreach="o.move_ids_without_package" t-as="p">
+
+                                                <!--Codigo producto original-->
+<!--                                                <td id="id_codigo"><span  t-field="p.product_id.default_code"></span></td>-->
+
+                                                <!--Cantidad original-->
+                                                <t t-set="var" t-value="p.reserved_availability"/>
+                                                <t t-set="var2" t-value="int(var)"/>
+                                                <t t-set="var3" t-value="var-var2"/>
+                                                <t t-if="var3>0">
+                                                    <td id="id_cantidad"><span  t-field="p.reserved_availability"></span></td>
+                                                </t>
+                                                <t t-else="">
+                                                    <td id="id_cantidad"><span t-esc="'%.0f'%(p.reserved_availability)" t-field-options="{'widget':'Integer'}" ></span></td>
+                                                </t>
+
+                                                <!--Unidad de Medida-->
+                                                <td id="id_unidad_medida"><span t-field="p.product_uom"/> </td>
+
+                                                <!--Descripcion original-->
+                                                <t t-set="descripcion" t-value="p.product_id.name"/>
+                                                <td id="id_descripcion"><span  t-esc="descripcion"></span></td>
+
+                                            </tr>
+                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan ="3" id="recepcion_de_la_mercaderia">RECEPCION DE LA MERCADERIA</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="firma">Firma:</td>
+                                                <td id="aclaracion">Aclaración:</td>
+                                                <td id="ruc_cedula_identidad">RUC/Cédula de Identidad:</td>
+                                            </tr>
+                                        </tfoot>
+                                     </table>
+                            </div>
+
+                        </body>
+                    </div> <!-- page -->
+                </t> <!-- web.basic - layout-->
+            </t> <!-- foreach doc-->
+        </t><!-- web html container-->
+    </template>
+
+</odoo>

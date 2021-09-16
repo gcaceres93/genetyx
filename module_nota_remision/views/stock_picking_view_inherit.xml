@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+            <record model="ir.ui.view" id="stock_picking_inherit">
+            <field name="name">notaRemision</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//field[@name='origin']" position="after">-->
+<!--                    <field name="direccion_partida"/>-->
+<!--                    <field name="ciudad_partida"/>-->
+<!--                    <field name="direccion_llegada"/>-->
+<!--                    <field name="ciudad_llegada"/>-->
+<!--                    <field name="inicio_traslado"/>-->
+<!--                    <field name="fin_traslado"/>-->
+<!--                    <field name="km_recorrido"/>-->
+<!--                </xpath>-->
+
+                <xpath expr="//page[@name='note']" position="before">
+                        <page string="Detalles Remision">
+                            <group>
+                                <field name="fecha_estimada"/>
+                                <field name="punto_de_partida"/>
+                                <field name="punto_de_llegada"/>
+                                <field name="nro_factura"/>
+
+<!--                                <field name="marca_vehiculo"/>-->
+<!--                                <field name="nombre_transportista"/>-->
+<!--                                <field name="ruc_transportista"/>-->
+<!--                                <field name="chapa1_numero"/>-->
+<!--                                <field name="chapa2_numero"/>-->
+<!--                                <field name="nombre_conductor"/>-->
+<!--                                <field name="ci_conductor"/>-->
+<!--                                <field name="motivo_traslado"/>-->
+<!--                                <field name="comprobante_venta"/>-->
+<!--                                <field name="timbrado_numero"/>-->
+<!--                                <field name="direccion_conductor"/>-->
+                            </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>
