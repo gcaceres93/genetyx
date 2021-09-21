@@ -18,13 +18,13 @@
                                     <p style="margin-left: 16%; font-weight: bold; font-size:18px; margin-top:-5%">Nro.<span t-field="o.nro_factura" style="margin-left: 4%; font-size:18px"/> </p>
                                 </div>
                                 <div id="izquierda">
-                                   <span style="position:absolute; top:1.50cm;left:8.60cm; font-size:13px">Comercio al por mayor de otros productos n.c.p.</span>
-                                    <span style="position:absolute; top:2.0cm;left:8.60cm; font-size:13px"> Otras producciones de ganados vacunos n.c.p.</span>
-                                    <span style="position:absolute; top:2.50cm;left:8.60cm; font-size:13px">Casa Matriz: Avda. Bernardino Caballero e/ Ceibo</span>
+                                   <span style="position:absolute; top:1.50cm;left:8.20cm; font-size:13px">Comercio al por mayor de otros productos n.c.p.</span>
+                                    <span style="position:absolute; top:2.0cm;left:8.20cm; font-size:13px"> Otras producciones de ganados vacunos n.c.p.</span>
+                                    <span style="position:absolute; top:2.50cm;left:8.20cm; font-size:13px">Casa Matriz: Avda. Bernardino Caballero e/ Ceibo</span>
                                     <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
-                                    <span style="position:absolute; font-size:13px; top:3cm; left:8.60cm"><span t-field="o.company_id.street"/><span> | <span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/> </span> </span>
-                                     <span style="position:absolute; top:3.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
-                                     <span style="position:absolute; top:4cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>
+                                    <span style="position:absolute; font-size:13px; top:3cm; left:8.20cm"><span t-field="o.company_id.street"/><span> | <span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/> </span> </span>
+                                     <span style="position:absolute; top:3.50cm; left:8.20cm; font-size:13px"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
+                                     <span style="position:absolute; top:4cm; left:8.20cm; font-size:13px"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>
                                      <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 45%; margin-top:1cm"/>
                                 </div>
                           </div>
