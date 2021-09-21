@@ -443,14 +443,14 @@ body{
      /*line-height: 0.40cm;*/
  }
 
- /*##################LISTA DE PRODUCTOS#######################*/
+  /*##################LISTA DE PRODUCTOS#######################*/
 
 /*######################TABLA PRODUCTO########################*/
 .tabla_productos{
     width: 35.70cm;
     font-size: 20px;
-    height: 28.0cm;
-    border: 1px solid;
+    /*height: 28.0cm;*/
+    /*border: 1px solid;*/
     /*margin-left: 0.30cm;*/
 }
 .tabla_productos tbody, td{
@@ -498,7 +498,7 @@ body{
     width: 2.90cm;
     text-align:center;
     padding-top: 0.50cm;
-    border-right: 1px solid black;
+    /*border-right: 1px solid black;*/
     /*font-size:15px;*/
 }
 
@@ -506,7 +506,7 @@ body{
 #id_unidad_medida{
     width: 3.20cm;
     text-align:center;
-    border-right: 1px solid black;
+    /*border-right: 1px solid black;*/
     /*font-size:15px;*/
 }
 
@@ -518,7 +518,18 @@ body{
     padding-left: 0.30cm;
 
 }
-/*##########tfoot###########*/
+
+
+/*##########Pie pagina###########*/
+
+ .pie_pagina{
+     position: absolute;
+     top:52.50cm;
+     width: 35.70cm;
+     height: 3cm;
+
+ }
+
  #recepcion_de_la_mercaderia{
      /*height: 2cm;*/
      padding-top: 0.30cm;
@@ -528,20 +539,25 @@ body{
      font-size: 22px;
      border:1px solid black;
  }
+
+ #f_a_r{
+     width: 35.70cm;
+     font-size: 18px;
+     border-left: 1px solid black;
+     border-bottom: 1px solid black;
+     border-right: 1px solid black;
+     margin-top: -0.50cm;
+ }
+
  /*#########firma#########*/
  #firma{
-     padding-top: 0.30cm;
-     padding-left: 0.30cm;
-     padding-bottom: 0.30cm;
-     width: 7cm;
+    margin-left: 0.10cm;
  }
  #aclaracion{
-     width: 7cm;
+      margin-left: 8cm;
 
  }
  #ruc_cedula_identidad{
-     width: 21.70cm;
+     margin-left: 12cm;
  }
  /*############################FIN CUANDRO LISTA DE MERCADERIAS##########################*/
-
-
