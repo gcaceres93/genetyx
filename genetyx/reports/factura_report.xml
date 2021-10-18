@@ -18,6 +18,7 @@
                                     <p style="margin-left: 16%; font-weight: bold; font-size:18px; margin-top:-5%">Nro.<span t-field="o.nro_factura" style="margin-left: 4%; font-size:18px"/> </p>
                                 </div>
                                 <div id="izquierda">
+                                    <span style="position:absolute; top:0.75cm;left:8.20cm; font-size:13px">GENETYX S.A.</span>     
                                    <span style="position:absolute; top:1.50cm;left:8.20cm; font-size:13px">Comercio al por mayor de otros productos n.c.p.</span>
                                     <span style="position:absolute; top:2.0cm;left:8.20cm; font-size:13px"> Otras producciones de ganados vacunos n.c.p.</span>
                                     <span style="position:absolute; top:2.50cm;left:8.20cm; font-size:13px">Casa Matriz: Avda. Bernardino Caballero e/ Ceibo</span>
