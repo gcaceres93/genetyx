@@ -1,5 +1,4 @@
 <odoo>
-
     <template id="nota_remision_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
@@ -7,34 +6,20 @@
                     <div class="page" >
                         <link rel="stylesheet" href="/module_nota_remision/static/src/css/estilos_nota_remision.css"/>
                         <body>
-
+                            
                             <!--##############################NOTA REMISION###########################-->
 
                             <!--##############################PRIMER CUADRO DATOS DE LA EMPRESA###########################-->
 
                             <div class="container_01_left_top">
-                                <img t-att-src="image_data_uri(o.company_id.logo)" id="logo"/>
-                                <p id="nombre_empresa"><span t-field="o.company_id.name"/></p><!--##NOMBRE EMPRESA##-->
-
-                                <p id="direccion_empresa"><!--##DIRECCION EMPRESA##-->
-                                    <span t-field="o.company_id.street"/>
-                                    <t t-if="o.company_id.street2">
-                                        y <span t-field="o.company_id.street"/>
-                                    </t>
-                                </p>
-                                <p id="telefono_empresa"><!--##TELEFONO EMPRESA##-->
-                                   <span> Tel: <span t-field="o.company_id.phone"/></span>
-
-                                </p>
-
-                                <p id="correo_empresa"><!--##CORREO EMPRESA##-->
-                                     <span t-field="o.company_id.email"/>
-                                </p>
-
-                                <p id="ciudad_empresa"><!--##CIUDAD EMPRESA##-->
-                                     <span t-field="o.company_id.city"/>-<span t-field="o.company_id.country_id.name"/>
-                                </p>
-
+                               <span style="position:absolute; top:1.25cm;left:11.90cm; font-size:18px">Comercio al por mayor de otros productos n.c.p.</span>
+                                    <span style="position:absolute; top:1.85cm;left:11.90cm; font-size:18px"> Otras producciones de ganados vacunos n.c.p.</span>
+                                    <span style="position:absolute; top:2.45cm;left:11.90cm; font-size:18px">Casa Matriz: Bernardino Caballero e/ Ceibo</span>
+                                    <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
+                                    <span style="position:absolute; font-size:18px; top:2.95cm; left:11.90cm; width:12.45cm;"><span t-field="o.company_id.street"/><span> | <span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/> </span> </span>
+                                     <span style="position:absolute; top:3.95cm; left:11.90cm; font-size:18px"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
+                                     <span style="position:absolute; top:4.55cm; left:11.90cm; font-size:18px"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>
+                                     <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 44%; margin-top:1cm"/>
                             </div>
 
                             <!--##############################SEGUNDO CUADRO DATOS DEL TALONARIO###########################-->
@@ -206,18 +191,21 @@
 
                                             </tr>
                                          </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan ="3" id="recepcion_de_la_mercaderia">RECEPCION DE LA MERCADERIA</td>
-                                            </tr>
-                                            <tr>
-                                                <td id="firma">Firma:</td>
-                                                <td id="aclaracion">Aclaración:</td>
-                                                <td id="ruc_cedula_identidad">RUC/Cédula de Identidad:</td>
-                                            </tr>
-                                        </tfoot>
                                      </table>
-                            </div>
+
+                                     <div class="pie_pagina">
+                                         <p  id="recepcion_de_la_mercaderia">RECEPCION DE LA MERCADERIA</p>
+                                         <p id="f_a_r">     <span id="firma">Firma:</span>  <span id="aclaracion">Aclaración:</span> <span id="ruc_cedula_identidad">RUC/Cédula de Identidad:</span> </p>
+                                     </div>
+                                        <p>
+                                             <span style="position:absolute; top:54.90cm; font-size:18px; font-weight:bold;">ORIGINAL: Cliente</span>
+                                             <span style="position:absolute; top:54.90cm; left:9.10cm; font-size:18px; font-weight:bold;">DUPLICADO: Arch.Tributario</span>
+                                             <span style="position:absolute; top:54.90cm; left:17.10cm; font-size:18px; font-weight:bold;">TRIPLICADO: Contabilidad</span>
+                                             <span style="position:absolute; top:54.90cm; left:24.10cm; font-size:18px; font-weight:bold;">CUADRUPLICADO: Contabilidad</span>
+                                         </p>
+                                        <p style="position:absolute; top:56.10cm; font-size:18px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: 350010009443</p>
+
+                                </div>
 
                         </body>
                     </div> <!-- page -->
