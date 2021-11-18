@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gcaceres93/account_payment" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/gcaceres93/accounting_reports_paraguay2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/gcaceres93/odoo_paraguay" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/gcaceres93/tesaka" vcs="Git" />
