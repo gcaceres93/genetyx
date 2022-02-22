@@ -19,33 +19,10 @@
           <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
         </record>
 
-        <record model="ir.ui.menu" id="point_of_sale.menu_point_root">
-          <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
-        </record>
-
-        <record model="ir.ui.menu" id="project.menu_main_pm">
-          <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
-        </record>
-
-        <record model="ir.ui.menu" id="base.menu_board_root">
-          <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
-        </record>
-
-        <record model="ir.ui.menu" id="crm.crm_menu_root">
-          <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
-        </record>
-
-        <record model="ir.ui.menu" id="calendar.mail_menu_calendar">
-          <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
-        </record>
-
         <record model="ir.ui.menu" id="contacts.menu_contacts">
           <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
         </record>
 
-        <record model="ir.ui.menu" id="mrp.menu_mrp_root">
-          <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
-        </record>
 
 
     </data>
