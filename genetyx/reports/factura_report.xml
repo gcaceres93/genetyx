@@ -30,6 +30,7 @@
                                 </div>
                           </div>
 <!--hola mundo -->
+
                           <!-- !!Datos de la factura!! consta de tres divs la mayor contiene a los mas divs mas pequeños vea el CSS-->
                           <div id="body2">
                               <!--datos lado derecho-->
