@@ -21,20 +21,20 @@ body{
      margin-top:1.90cm;
      margin-left: 0.50cm;
  }
- #tel
- {
-     position:absolute;
-     top:4.50cm;
-     left:11.90cm;
-     font-size:18px
- }
- #correo
- {
-     position:absolute;
-     top:5cm;
-     left:11.90cm;
-     font-size:18px
- }
+ /*#tel*/
+ /*{*/
+ /*    position:absolute;*/
+ /*    top:4.50cm;*/
+ /*    left:11.90cm;*/
+ /*    font-size:18px*/
+ /*}*/
+ /*#correo*/
+ /*{*/
+ /*    position:absolute;*/
+ /*    top:5cm;*/
+ /*    left:11.90cm;*/
+ /*    font-size:18px*/
+ /*}*/
 
  /*################NOMBRE DE LA EMPRESA#################*/
  #nombre_empresa{
