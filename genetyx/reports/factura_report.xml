@@ -25,7 +25,7 @@
                                         <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
                                      <span id="compa"><span t-field="o.company_id.street"/><span>|<span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/></span></span>
                                      <span id="tel"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
-<!--                                     <span id="correo"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>-->
+<!--                                     <span id="correo"><span t-field="o.company_id.email"/><span> | </span> <span t-field="o.company_id.website"/> </span>-->
                                      <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 45%; margin-top:1cm"/>
                                 </div>
                           </div>
