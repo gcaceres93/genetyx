@@ -257,7 +257,20 @@ td{
     /*border:1px solid black;*/
     line-height: 0.60cm;
 }
-
+#tel
+{
+    font-size:13px;
+    left:8.20cm;
+    top:4.20cm;
+    position:absolute;
+}
+#correo
+{
+    font-size:13px;
+    left:8.20cm;
+    top:4cm;
+    position:absolute;
+}
 #compa{
     left:8.20cm;
      top:3cm;
