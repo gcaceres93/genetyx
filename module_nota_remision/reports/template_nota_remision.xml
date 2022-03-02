@@ -172,14 +172,14 @@
 <!--                                                <td id="id_codigo"><span  t-field="p.product_id.default_code"></span></td>-->
 
                                                 <!--Cantidad original-->
-                                                <t t-set="var" t-value="p.reserved_availability"/>
+                                                <t t-set="var" t-value="p.move_ids_withut_package"/>
                                                 <t t-set="var2" t-value="int(var)"/>
                                                 <t t-set="var3" t-value="var-var2"/>
                                                 <t t-if="var3>0">
-                                                    <td id="id_cantidad"><span  t-field="p.reserved_availability"></span></td>
+                                                    <td id="id_cantidad"><span  t-field="p.move_ids_withut_package"></span></td>
                                                 </t>
                                                 <t t-else="">
-                                                    <td id="id_cantidad"><span t-esc="'%.0f'%(p.reserved_availability)" t-field-options="{'widget':'Integer'}" ></span></td>
+                                                    <td id="id_cantidad"><span t-esc="'%.0f'%(p.move_ids_withut_package)" t-field-options="{'widget':'Integer'}" ></span></td>
                                                 </t>
 
                                                 <!--Unidad de Medida-->
