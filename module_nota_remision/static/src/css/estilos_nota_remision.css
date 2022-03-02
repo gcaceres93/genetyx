@@ -498,9 +498,8 @@ body{
     width: 2.90cm;
     text-align:center;
     padding-top: 0.50cm;
-    border-right: 1px solid red;
+    /*border-right: 1px solid black;*/
     /*font-size:15px;*/
-
 }
 
 /*######################UNIDAD DE MEDIDA####################*/
