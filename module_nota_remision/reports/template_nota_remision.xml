@@ -94,9 +94,9 @@
                                 <p id="fecha_inicio_traslado"><!--##FECHA DE INICIO DE TRASLADO##-->
                                      <span>Fecha de Inicio de Traslado: </span>
                                 </p>
-                                <p id="fecha_estimada_termino_traslado"><!--##FECHA ESTIMADA DE TERMINO DEL TRASLADO##-->
-                                     <span>Fecha Estimada de Término del Traslado:<span t-field="o.fecha_estimada"/></span>
-                                </p>
+<!--                                <p id="fecha_estimada_termino_traslado">&lt;!&ndash;##FECHA ESTIMADA DE TERMINO DEL TRASLADO##&ndash;&gt;-->
+<!--                                     <span>Fecha Estimada de Término del Traslado:<span t-field="o.fecha_estimada"/></span>-->
+<!--                                </p>-->
                                 <p id="direccion_punto_partida"><!--##DIRECCION DEL PUNTO DE PARTIDA##-->
                                      <span>Direción del Punto de Partida: <span t-field="o.punto_de_partida"/> </span>
                                 </p>
