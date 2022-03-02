@@ -257,6 +257,16 @@ td{
     /*border:1px solid black;*/
     line-height: 0.60cm;
 }
+
+#compa{
+    left:8.20cm;
+     top:3cm;
+    font-size:13px;
+    position:absolute;
+    border: 1px solid black;
+
+
+}
 /*#id_cantidad_seccion{
     width: 3cm;
 }
