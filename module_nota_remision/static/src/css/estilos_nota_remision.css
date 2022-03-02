@@ -498,7 +498,7 @@ body{
     width: 2.90cm;
     text-align:center;
     padding-top: 0.50cm;
-    /*border-right: 1px solid black;*/
+    border-right: 1px solid red;
     /*font-size:15px;*/
 }
 
