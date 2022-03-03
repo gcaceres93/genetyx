@@ -12,7 +12,7 @@
                             <!--##############################PRIMER CUADRO DATOS DE LA EMPRESA###########################-->
 
                             <div class="container_01_left_top">
-                               <span style="position:absolute; top:1.15cm;left:11.90cm; font-size:18px">Comercio al por mayor de otros productos n.c.p.</span>
+                               <span style="position:absolute; top:1cm;left:11.90cm; font-size:18px">Comercio al por mayor de otros productos n.c.p.</span>
                                     <span style="position:absolute; top:1.85cm;left:11.90cm; font-size:18px"> Otras producciones de ganados vacunos n.c.p.</span>
                                     <span style="position:absolute; top:2.45cm;left:11.90cm; font-size:18px">Casa Matriz: Bernardino Caballero e/ Ceibo</span>
                                     <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
