@@ -181,7 +181,6 @@
                                                 <t t-else="">
                                                     <td id="id_cantidad"><span t-esc="'%.0f'%(p.quantity_done)" t-field-options="{'widget':'Integer'}" ></span></td>
                                                 </t>
-
                                                 <!--Unidad de Medida-->
                                                 <td id="id_unidad_medida"><span t-field="p.product_uom"/> </td>
 
