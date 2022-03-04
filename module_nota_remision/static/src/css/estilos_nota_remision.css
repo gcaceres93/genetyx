@@ -485,6 +485,7 @@ body{
     border-bottom:1px solid black;
     width: 5.0cm;
     text-align: center;
+    color: red;
 }
 
 #unidad_medida{
