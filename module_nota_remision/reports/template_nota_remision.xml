@@ -175,7 +175,10 @@
 <!--                                                <t t-set="var" t-value="p.quantity_done"/>-->
 <!--                                                <t t-set="var2" t-value="int(var)"/>-->
 <!--                                                <t t-set="var3" t-value="var-var2"/>-->
-                                                <t t-if="var>0">
+<!--                                                <t t-if="var>0">-->
+<!--                                                    <td id="id_cantidad"><span  t-field="p.quantity_done"></span></td>-->
+<!--                                                </t> -->
+                                                <t>
                                                     <td id="id_cantidad"><span  t-field="p.quantity_done"></span></td>
                                                 </t>
 <!--                                                <t t-else="">-->
