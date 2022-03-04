@@ -21,14 +21,14 @@ body{
      margin-top:1.90cm;
      margin-left: 0.50cm;
  }
- #tel
- {
-     color:red;
-     position:absolute;
-     top:4.50cm;
-     left:11.90cm;
-     font-size:18px
- }
+ /*#tel*/
+ /*{*/
+ /*    color:red;*/
+ /*    position:absolute;*/
+ /*    top:4.50cm;*/
+ /*    left:11.90cm;*/
+ /*    font-size:18px*/
+ /*}*/
  /*#correo*/
  /*{*/
  /*    position:absolute;*/
