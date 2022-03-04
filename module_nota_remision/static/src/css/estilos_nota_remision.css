@@ -468,7 +468,7 @@ body{
     /*margin-left: 0.30cm;*/
 }
 .tabla_productos tbody, td{
-    border:1px solid black;
+    /*border:1px solid black;*/
     line-height: 0.40cm;
 
 }
@@ -514,7 +514,6 @@ body{
     padding-top: 0.50cm;
     /*border-right: 1px solid black;*/
     /*font-size:15px;*/
-    color: red;
 }
 
 /*######################UNIDAD DE MEDIDA####################*/
