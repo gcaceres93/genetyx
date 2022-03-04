@@ -513,7 +513,7 @@ body{
 /*#######################CANTIDAD#########################*/
 #id_cantidad
 {
-    color:fuchsia;
+    /*color:fuchsia;*/
     width: 2.90cm;
     text-align:center;
     padding-top: 0.50cm;
