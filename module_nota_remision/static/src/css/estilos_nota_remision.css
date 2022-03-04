@@ -481,7 +481,7 @@ body{
 }
 
 #cantidad{
-    color: red;
+    /*color: red;*/
     width: 5.0cm;
     text-align: center;
 }
