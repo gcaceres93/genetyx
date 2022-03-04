@@ -18,7 +18,7 @@
                                     <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
                                     <span style="position:absolute; font-size:18px; top:2.95cm; left:11.90cm; width:12.45cm;"><span t-field="o.company_id.street"/><span> | <span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/> </span> </span>
                                      <span style="position:absolute; top:4.80cm; left:11.90cm; font-size:18px"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
-<!--                                     <span style="position:absolute; top:5.30cm; left:11.90cm; font-size:17px"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>-->
+                                     <span style="position:absolute; top:5.30cm; left:11.90cm; font-size:17px"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>
                                      <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 44%; margin-top:1cm"/>
                             </div>
 
