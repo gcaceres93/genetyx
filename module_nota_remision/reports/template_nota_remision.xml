@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
-<t t-name="module_nota_remision.nota_remision_report">
+<odoo>
+    <template id="nota_remision_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
-                    <div class="page">
+                    <div class="page" >
                         <link rel="stylesheet" href="/module_nota_remision/static/src/css/estilos_nota_remision.css"/>
                         <body>
 
@@ -17,7 +17,7 @@
                                     <span style="position:absolute; top:2.45cm;left:11.90cm; font-size:18px">Casa Matriz: Bernardino Caballero e/ Ceibo</span>
                                     <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
                                     <span style="position:absolute; font-size:18px; top:2.95cm; left:11.90cm; width:12.45cm;"><span t-field="o.company_id.street"/><span> | <span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/> </span> </span>
-                                     <span style="position:absolute; top:4.80cm; left:11.90cm; font-size:18px;color:red;"> <span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
+                                     <span style="position:absolute; top:4.80cm; left:11.90cm; font-size:18px;color:red;" > <span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
                                      <span style="position:absolute; top:5.30cm; left:11.90cm; font-size:17px"><span t-field="o.company_id.email"/><span> | </span><span t-field="o.company_id.website"/> </span>
                                      <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 44%; margin-top:1cm"/>
                             </div>
@@ -175,11 +175,11 @@
                                                 <t t-set="var" t-value="p.reserved_availability"/>
                                                 <t t-set="var2" t-value="int(var)"/>
                                                 <t t-set="var3" t-value="var-var2"/>
-                                                <t t-if="var3&gt;0">
-                                                    <td id="id_cantidad"><span t-field="p.reserved_availability"/></td>
+                                                <t t-if="var3>0">
+                                                    <td id="id_cantidad"><span  t-field="p.reserved_availability"></span></td>
                                                 </t>
                                                 <t t-else="">
-                                                    <td id="id_cantidad"><span t-esc="'%.0f'%(p.reserved_availability)" t-field-options="{'widget':'Integer'}"/></td>
+                                                    <td id="id_cantidad"><span t-esc="'%.0f'%(p.reserved_availability)" t-field-options="{'widget':'Integer'}" ></span></td>
                                                 </t>
 
                                                 <!--Unidad de Medida-->
@@ -187,14 +187,14 @@
 
                                                 <!--Descripcion original-->
                                                 <t t-set="descripcion" t-value="p.product_id.name"/>
-                                                <td id="id_descripcion"><span t-esc="descripcion"/></td>
+                                                <td id="id_descripcion"><span  t-esc="descripcion"></span></td>
 
                                             </tr>
                                          </tbody>
                                      </table>
 
                                      <div class="pie_pagina">
-                                         <p id="recepcion_de_la_mercaderia">RECEPCION DE LA MERCADERIA</p>
+                                         <p  id="recepcion_de_la_mercaderia">RECEPCION DE LA MERCADERIA</p>
                                          <p id="f_a_r">     <span id="firma">Firma:</span>  <span id="aclaracion">Aclaración:</span> <span id="ruc_cedula_identidad">RUC/Cédula de Identidad:</span> </p>
                                      </div>
                                         <p>
@@ -212,5 +212,6 @@
                 </t> <!-- web.basic - layout-->
             </t> <!-- foreach doc-->
         </t><!-- web html container-->
-    </t>
+    </template>
 
+</odoo>
