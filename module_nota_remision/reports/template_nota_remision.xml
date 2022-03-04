@@ -176,10 +176,10 @@
                                                 <t t-set="var2" t-value="int(var)"/>
                                                 <t t-set="var3" t-value="var-var2"/>
                                                 <t t-if="var3>0">
-                                                    <td id="id_cantidad"><span  t-field="p.reserved_availability"></span></td>
+                                                    <td id="id_cantidad"><span  t-field="p.quantity_done"></span></td>
                                                 </t>
                                                 <t t-else="">
-                                                    <td id="id_cantidad"><span t-esc="'%.0f'%(p.reserved_availability)" t-field-options="{'widget':'Integer'}" ></span></td>
+                                                    <td id="id_cantidad"><span t-esc="'%.0f'%(p.p.quantity_done)" t-field-options="{'widget':'Integer'}" ></span></td>
                                                 </t>
 
                                                 <!--Unidad de Medida-->
