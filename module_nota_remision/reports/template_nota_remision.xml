@@ -172,7 +172,7 @@
 <!--                                                <td id="id_codigo"><span  t-field="p.product_id.default_code"></span></td>-->
 
                                                 <!--Cantidad original-->
-                                                <t t-set="var" t-value="p.reserved_availability"/>
+                                                <t t-set="var" t-value="p.quantity_done"/>
                                                 <t t-set="var2" t-value="int(var)"/>
                                                 <t t-set="var3" t-value="var-var2"/>
                                                 <t t-if="var3>0">
