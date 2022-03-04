@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/genetyx.iml" filepath="$PROJECT_DIR$/.idea/genetyx.iml" />
       <module fileurl="file://$PROJECT_DIR$/../odoo_paraguay/.idea/odoo_paraguay.iml" filepath="$PROJECT_DIR$/../odoo_paraguay/.idea/odoo_paraguay.iml" />
       <module fileurl="file://$PROJECT_DIR$/../tesaka/.idea/tesaka.iml" filepath="$PROJECT_DIR$/../tesaka/.idea/tesaka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ventix/.idea/ventix.iml" filepath="$PROJECT_DIR$/../ventix/.idea/ventix.iml" />
     </modules>
   </component>
 </project>
