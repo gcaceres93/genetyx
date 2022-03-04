@@ -485,7 +485,7 @@ body{
     border-bottom:1px solid black;
     width: 5.0cm;
     text-align: center;
-    color: red;
+    /*color: red;*/
 }
 
 #unidad_medida{
@@ -510,7 +510,9 @@ body{
     text-align:left;
 }
 /*#######################CANTIDAD#########################*/
-#id_cantidad{
+#id_cantidad
+{
+    color:fuchsia;
     width: 2.90cm;
     text-align:center;
     padding-top: 0.50cm;
