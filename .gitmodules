@@ -5,7 +5,6 @@
 
 
 
-
 [submodule "gcaceres93/account_payment"]
 	path = gcaceres93/account_payment
 	url = git@github.com:gcaceres93/account_payment.git
