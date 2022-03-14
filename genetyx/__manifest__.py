@@ -27,6 +27,7 @@
         'security/menu.xml',
         'views/account_invoice.xml',
         'reports/factura_report.xml',
+        'reports/nota_de_credito_report.xml',
         'reports/genetyx_reports.xml'
     ],
 }
