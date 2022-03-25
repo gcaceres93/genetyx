@@ -423,110 +423,110 @@ class WizardCurrencyRevaluation(models.TransientModel):
             [('date', '<=', self.revaluation_date), ('move_id.state', '=', 'posted'), ('account_id', 'in', (cuentas))])
         moneda = None
         tasa = 1
-        for cuen in account_ids:
-            dife=0
-            suma=sum(account_move_line.filtered(lambda r:r.account_id==cuen and r.amount_currency != 0).mapped('amount_currency'))
-
-            if suma != 0:
-                if moneda:
-                    if moneda != cuen.currency_id:
-                        moneda = cuen.currency_id
-                        tasa = self.env['res.currency.rate'].search(
-                            [('name', '=', self.revaluation_date), ('company_id', '=', self.env.user.company_id.id),
-                             ('currency_id', '=', moneda.id)])
-                        # print(tasa)
-                else:
-                    moneda = cuen.currency_id
-                    tasa = self.env['res.currency.rate'].search(
-                        [('name', '=', self.revaluation_date), ('company_id', '=', self.env.user.company_id.id),
-                         ('currency_id', '=', moneda.id)])
-                total_cambio = suma * tasa.set_venta
-                suma_con_diferencia = sum(account_move_line.filtered(lambda r:r.account_id==cuen and r.balance != 0).mapped('balance'))
-
-                dife = total_cambio - suma_con_diferencia
-                if dife != 0:
-                    label = self._format_label(
-                        self.label, cuen.id, moneda.id, tasa.rate
-                    )
-
-                    # Write an entry to adjust balance
-                    sums = {'foreign_balance': 0,
-                    'balance': 0,
-                    'revaluated_balance': 0,
-                    'currency_rate':0}
-                    new_ids = self._write_adjust_balance(
-                        cuen.id,
-                        moneda.id,
-                        None,
-                        dife,
-                        label,
-                        self,
-                        sums
-                    )
-                    created_ids.extend(new_ids)
-                    print('dife %s cuenta %s suma %s new_ids %s' % (dife,cuen.name,suma,new_ids))
-            else:
-                balance = sum(account_move_line.filtered(lambda r:r.account_id==cuen and r.amount_currency != 0).mapped('balance'))
-                if balance != 0:
-                    asientos = self.env['account.move.line'].browse(created_ids)
-                    moveasi= asientos.filtered(lambda r:r.account_id == cuen)
-                    if moveasi:
-                        if len(moveasi)==1:
-                            moveasi.move_id.button_cancel()
-                            difere= abs(balance) - abs(moveasi.balance)
-                            if difere > 0:
-                                #sumas= difere + moveasi.balance
-                                if balance < 0:
-                                    if moveasi.debit > 0 :
-                                        ii=moveasi.move_id.line_ids.filtered(lambda r:r.credit>0)
-
-
-                                        moveasi.with_context(check_move_validity=False).debit = 0
-                                        ii.with_context(check_move_validity=False).credit = 0
-
-                                        ii.with_context(check_move_validity=False).credit = abs(balance)
-                                        moveasi.with_context(check_move_validity=False).debit = abs(balance)
-                                        moveasi.with_context(check_move_validity=False).balance = balance
-                                        ii.with_context(check_move_validity=False).balance = balance
-                                    else:
-                                        # revaluation_loss_account_id
-                                        # revaluation_gain_account_id
-
-                                        moveasi.with_context(check_move_validity=False).debit = 0
-                                        ii.with_context(check_move_validity=False).credit = 0
-
-                                        moveasi.with_context(check_move_validity=False).credit = abs(balance)
-                                        moveasi.with_context(check_move_validity=False).account_id = self.env.user.company_id.revaluation_gain_account_id
-                                        ii.with_context(check_move_validity=False).debit = abs(balance)
-                                        moveasi.with_context(check_move_validity=False).balance = balance
-                                        ii.with_context(check_move_validity=False).balance = balance
-                                elif balance > 0 :
-                                    if moveasi.credit > 0:
-                                        ii = moveasi.move_id.line_ids.filtered(lambda r: r.credit > 0)
-
-                                        moveasi.with_context(check_move_validity=False).debit = 0
-                                        ii.with_context(check_move_validity=False).credit = 0
-
-                                        moveasi.with_context(check_move_validity=False).credit = abs(balance)
-                                        ii.with_context(check_move_validity=False).debit = abs(balance)
-                                        moveasi.with_context(check_move_validity=False).balance = balance
-                                        ii.with_context(check_move_validity=False).balance = balance
-                                    else:
-                                        # revaluation_loss_account_id
-                                        # revaluation_gain_account_id
-
-                                        moveasi.with_context(check_move_validity=False).debit = 0
-                                        ii.with_context(check_move_validity=False).credit = 0
-
-                                        moveasi.with_context(check_move_validity=False).credit = abs(balance)
-                                        moveasi.with_context(
-                                            check_move_validity=False).account_id = self.env.user.company_id.revaluation_loss_account_id
-                                        ii.with_context(check_move_validity=False).debit = abs(balance)
-                                        moveasi.with_context(check_move_validity=False).balance = balance
-                                        ii.with_context(check_move_validity=False).balance = balance
-                            moveasi.move_id.post()
-                            # elif difere < 0:
-
+        # for cuen in account_ids:
+        #     dife=0
+        #     suma=sum(account_move_line.filtered(lambda r:r.account_id==cuen and r.amount_currency != 0).mapped('amount_currency'))
+        #
+        #     if suma != 0:
+        #         if moneda:
+        #             if moneda != cuen.currency_id:
+        #                 moneda = cuen.currency_id
+        #                 tasa = self.env['res.currency.rate'].search(
+        #                     [('name', '=', self.revaluation_date), ('company_id', '=', self.env.user.company_id.id),
+        #                      ('currency_id', '=', moneda.id)])
+        #                 # print(tasa)
+        #         else:
+        #             moneda = cuen.currency_id
+        #             tasa = self.env['res.currency.rate'].search(
+        #                 [('name', '=', self.revaluation_date), ('company_id', '=', self.env.user.company_id.id),
+        #                  ('currency_id', '=', moneda.id)])
+        #         total_cambio = suma * tasa.set_venta
+        #         suma_con_diferencia = sum(account_move_line.filtered(lambda r:r.account_id==cuen and r.balance != 0).mapped('balance'))
+        #
+        #         dife = total_cambio - suma_con_diferencia
+        #         if dife != 0:
+        #             label = self._format_label(
+        #                 self.label, cuen.id, moneda.id, tasa.rate
+        #             )
+        #
+        #             # Write an entry to adjust balance
+        #             sums = {'foreign_balance': 0,
+        #             'balance': 0,
+        #             'revaluated_balance': 0,
+        #             'currency_rate':0}
+        #             new_ids = self._write_adjust_balance(
+        #                 cuen.id,
+        #                 moneda.id,
+        #                 None,
+        #                 dife,
+        #                 label,
+        #                 self,
+        #                 sums
+        #             )
+        #             created_ids.extend(new_ids)
+        #             print('dife %s cuenta %s suma %s new_ids %s' % (dife,cuen.name,suma,new_ids))
+        #     else:
+        #         balance = sum(account_move_line.filtered(lambda r:r.account_id==cuen and r.amount_currency != 0).mapped('balance'))
+        #         if balance != 0:
+        #             asientos = self.env['account.move.line'].browse(created_ids)
+        #             moveasi= asientos.filtered(lambda r:r.account_id == cuen)
+        #             if moveasi:
+        #                 if len(moveasi)==1:
+        #                     moveasi.move_id.button_cancel()
+        #                     difere= abs(balance) - abs(moveasi.balance)
+        #                     if difere > 0:
+        #                         #sumas= difere + moveasi.balance
+        #                         if balance < 0:
+        #                             if moveasi.debit > 0 :
+        #                                 ii=moveasi.move_id.line_ids.filtered(lambda r:r.credit>0)
+        #
+        #
+        #                                 moveasi.with_context(check_move_validity=False).debit = 0
+        #                                 ii.with_context(check_move_validity=False).credit = 0
+        #
+        #                                 ii.with_context(check_move_validity=False).credit = abs(balance)
+        #                                 moveasi.with_context(check_move_validity=False).debit = abs(balance)
+        #                                 moveasi.with_context(check_move_validity=False).balance = balance
+        #                                 ii.with_context(check_move_validity=False).balance = balance
+        #                             else:
+        #                                 # revaluation_loss_account_id
+        #                                 # revaluation_gain_account_id
+        #
+        #                                 moveasi.with_context(check_move_validity=False).debit = 0
+        #                                 ii.with_context(check_move_validity=False).credit = 0
+        #
+        #                                 moveasi.with_context(check_move_validity=False).credit = abs(balance)
+        #                                 moveasi.with_context(check_move_validity=False).account_id = self.env.user.company_id.revaluation_gain_account_id
+        #                                 ii.with_context(check_move_validity=False).debit = abs(balance)
+        #                                 moveasi.with_context(check_move_validity=False).balance = balance
+        #                                 ii.with_context(check_move_validity=False).balance = balance
+        #                         elif balance > 0 :
+        #                             if moveasi.credit > 0:
+        #                                 ii = moveasi.move_id.line_ids.filtered(lambda r: r.credit > 0)
+        #
+        #                                 moveasi.with_context(check_move_validity=False).debit = 0
+        #                                 ii.with_context(check_move_validity=False).credit = 0
+        #
+        #                                 moveasi.with_context(check_move_validity=False).credit = abs(balance)
+        #                                 ii.with_context(check_move_validity=False).debit = abs(balance)
+        #                                 moveasi.with_context(check_move_validity=False).balance = balance
+        #                                 ii.with_context(check_move_validity=False).balance = balance
+        #                             else:
+        #                                 # revaluation_loss_account_id
+        #                                 # revaluation_gain_account_id
+        #
+        #                                 moveasi.with_context(check_move_validity=False).debit = 0
+        #                                 ii.with_context(check_move_validity=False).credit = 0
+        #
+        #                                 moveasi.with_context(check_move_validity=False).credit = abs(balance)
+        #                                 moveasi.with_context(
+        #                                     check_move_validity=False).account_id = self.env.user.company_id.revaluation_loss_account_id
+        #                                 ii.with_context(check_move_validity=False).debit = abs(balance)
+        #                                 moveasi.with_context(check_move_validity=False).balance = balance
+        #                                 ii.with_context(check_move_validity=False).balance = balance
+        #                     moveasi.move_id.post()
+        #                     # elif difere < 0:
+        #
 
 
                 # print('created_ids')
