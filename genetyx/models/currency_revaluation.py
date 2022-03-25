@@ -121,62 +121,62 @@ class WizardCurrencyRevaluation(models.TransientModel):
         """
         return "%(currency)s %(account)s %(rate)s currency revaluation"
 
-    def _create_move_and_lines(
-            self, amount, debit_account_id, credit_account_id,
-            sums, label, form, partner_id, currency_id,
-            analytic_debit_acc_id=False, analytic_credit_acc_id=False):
-
-        base_move = {
-            'journal_id': form.journal_id.id,
-            'date': form.revaluation_date,
-        }
-        if form.journal_id.company_id.reversable_revaluations:
-            base_move['auto_reverse'] = True
-            base_move['reverse_date'] = form.revaluation_date + timedelta(
-                days=1)
-
-        base_line = {
-            'name': label,
-            'partner_id': partner_id,
-            'currency_id': currency_id,
-            'amount_currency': 0.0,
-            'date': form.revaluation_date
-        }
-
-        base_line['gl_foreign_balance'] = sums.get('foreign_balance', 0.0)
-        base_line['gl_balance'] = sums.get('balance', 0.0)
-        base_line['gl_revaluated_balance'] = sums.get(
-            'revaluated_balance', 0.0)
-        base_line['gl_currency_rate'] = sums.get('currency_rate', 0.0)
-
-        debit_line = base_line.copy()
-        credit_line = base_line.copy()
-
-        debit_line.update({
-            'debit': amount,
-            'credit': 0.0,
-            'account_id': debit_account_id,
-        })
-
-        if analytic_debit_acc_id:
-            credit_line.update({
-                'analytic_account_id': analytic_debit_acc_id,
-            })
-
-        credit_line.update({
-            'debit': 0.0,
-            'credit': amount,
-            'account_id': credit_account_id,
-        })
-
-        if analytic_credit_acc_id:
-            credit_line.update({
-                'analytic_account_id': analytic_credit_acc_id,
-            })
-        base_move['line_ids'] = [(0, 0, debit_line), (0, 0, credit_line)]
-        created_move = self.env['account.move'].create(base_move)
-        created_move.post()
-        return [x.id for x in created_move.line_ids]
+    # def _create_move_and_lines(
+    #         self, amount, debit_account_id, credit_account_id,
+    #         sums, label, form, partner_id, currency_id,
+    #         analytic_debit_acc_id=False, analytic_credit_acc_id=False):
+    #
+    #     base_move = {
+    #         'journal_id': form.journal_id.id,
+    #         'date': form.revaluation_date,
+    #     }
+    #     if form.journal_id.company_id.reversable_revaluations:
+    #         base_move['auto_reverse'] = True
+    #         base_move['reverse_date'] = form.revaluation_date + timedelta(
+    #             days=1)
+    #
+    #     base_line = {
+    #         'name': label,
+    #         'partner_id': partner_id,
+    #         'currency_id': currency_id,
+    #         'amount_currency': 0.0,
+    #         'date': form.revaluation_date
+    #     }
+    #
+    #     base_line['gl_foreign_balance'] = sums.get('foreign_balance', 0.0)
+    #     base_line['gl_balance'] = sums.get('balance', 0.0)
+    #     base_line['gl_revaluated_balance'] = sums.get(
+    #         'revaluated_balance', 0.0)
+    #     base_line['gl_currency_rate'] = sums.get('currency_rate', 0.0)
+    #
+    #     debit_line = base_line.copy()
+    #     credit_line = base_line.copy()
+    #
+    #     debit_line.update({
+    #         'debit': amount,
+    #         'credit': 0.0,
+    #         'account_id': debit_account_id,
+    #     })
+    #
+    #     if analytic_debit_acc_id:
+    #         credit_line.update({
+    #             'analytic_account_id': analytic_debit_acc_id,
+    #         })
+    #
+    #     credit_line.update({
+    #         'debit': 0.0,
+    #         'credit': amount,
+    #         'account_id': credit_account_id,
+    #     })
+    #
+    #     if analytic_credit_acc_id:
+    #         credit_line.update({
+    #             'analytic_account_id': analytic_credit_acc_id,
+    #         })
+    #     base_move['line_ids'] = [(0, 0, debit_line), (0, 0, credit_line)]
+    #     created_move = self.env['account.move'].create(base_move)
+    #     created_move.post()
+    #     return [x.id for x in created_move.line_ids]
 
     @api.multi
     def _compute_unrealized_currency_gl(self, currency_id, balances):
@@ -216,25 +216,25 @@ class WizardCurrencyRevaluation(models.TransientModel):
                 'currency_rate': currency.rate,
                 'revaluated_balance': adjusted_balance}
 
-    @api.model
-    def _format_label(self, text, account_id, currency_id, rate):
-        """
-        Return a text with replaced keywords by values
-
-        @param str text: label template, can use
-            %(account)s, %(currency)s, %(rate)s
-        @param int account_id: id of the account to display in label
-        @param int currency_id: id of the currency to display
-        @param float rate: rate to display
-        """
-        account_obj = self.env['account.account']
-        currency_obj = self.env['res.currency']
-        account = account_obj.browse(account_id)
-        currency = currency_obj.browse(currency_id)
-        data = {'account': account.code or False,
-                'currency': currency.name or False,
-                'rate': rate}
-        return text % data
+    # @api.model
+    # def _format_label(self, text, account_id, currency_id, rate):
+    #     """
+    #     Return a text with replaced keywords by values
+    #
+    #     @param str text: label template, can use
+    #         %(account)s, %(currency)s, %(rate)s
+    #     @param int account_id: id of the account to display in label
+    #     @param int currency_id: id of the currency to display
+    #     @param float rate: rate to display
+    #     """
+    #     account_obj = self.env['account.account']
+    #     currency_obj = self.env['res.currency']
+    #     account = account_obj.browse(account_id)
+    #     currency = currency_obj.browse(currency_id)
+    #     data = {'account': account.code or False,
+    #             'currency': currency.name or False,
+    #             'rate': rate}
+    #     return text % data
 
     @api.multi
     def _write_adjust_balance(self, account_id, currency_id,
@@ -551,6 +551,90 @@ class WizardCurrencyRevaluation(models.TransientModel):
                 _("No accounting entry has been posted.")
             )
 
+    @api.model
+    def _format_label(self, text, account_id, currency_id, rate):
+        """
+        Return a text with replaced keywords by values
+
+        @param str text: label template, can use
+            %(account)s, %(currency)s, %(rate)s
+        @param int account_id: id of the account to display in label
+        @param int currency_id: id of the currency to display
+        @param float rate: rate to display
+        """
+        account_obj = self.env['account.account']
+        currency_obj = self.env['res.currency']
+
+        account = account_obj.browse(account_id)
+        currency = currency_obj.browse(currency_id)
+        tasa = self.env['res.currency.rate'].search([('currency_id', '=', currency_id), ('rate', '=', rate)], limit=1)
+
+        # data = {'account': account.code or False,
+        #         'currency': currency.name or False,
+        #         'rate': rate}
+        data = {'account': account.code or False,
+                'currency': currency.name or False,
+                'rate': tasa.set_venta}
+        return text % data
+
+    def _create_move_and_lines(
+            self, amount, debit_account_id, credit_account_id,
+            sums, label, form, partner_id, currency_id,
+            analytic_debit_acc_id=False, analytic_credit_acc_id=False):
+
+        base_move = {
+            'journal_id': form.journal_id.id,
+            'date': form.revaluation_date,
+        }
+        if form.journal_id.company_id.reversable_revaluations:
+            base_move['auto_reverse'] = True
+            base_move['reverse_date'] = form.revaluation_date + timedelta(
+                days=1)
+
+        base_line = {
+            'name': label,
+            'partner_id': partner_id,
+            'currency_id': currency_id,
+            'amount_currency': 0.0,
+            'date': form.revaluation_date
+        }
+
+        base_line['gl_foreign_balance'] = sums.get('foreign_balance', 0.0)
+        base_line['gl_balance'] = sums.get('balance', 0.0)
+        base_line['gl_revaluated_balance'] = sums.get(
+            'revaluated_balance', 0.0)
+        base_line['gl_currency_rate'] = sums.get('currency_rate', 0.0)
+
+        debit_line = base_line.copy()
+        credit_line = base_line.copy()
+
+        debit_line.update({
+            'debit': amount,
+            'credit': 0.0,
+            'account_id': debit_account_id,
+        })
+
+        if analytic_debit_acc_id:
+            credit_line.update({
+                'analytic_account_id': analytic_debit_acc_id,
+            })
+
+        credit_line.update({
+            'debit': 0.0,
+            'credit': amount,
+            'account_id': credit_account_id,
+        })
+
+        if analytic_credit_acc_id:
+            credit_line.update({
+                'analytic_account_id': analytic_credit_acc_id,
+            })
+        base_move['line_ids'] = [(0, 0, debit_line), (0, 0, credit_line)]
+        created_move = self.env['account.move'].create(base_move)
+        created_move.post()
+
+        return [x.id for x in created_move.line_ids]
+
 class AccountAccount(models.Model):
     _inherit = 'account.account'
 
@@ -688,94 +772,6 @@ class account_move(models.Model):
     #         move.reverse_moves(date=date, auto=True)
     #         move.button_cancel()
 
-class WizardCurrencyRevaluations(models.TransientModel):
 
-    _inherit = 'wizard.currency.revaluation'
-
-    @api.model
-    def _format_label(self, text, account_id, currency_id, rate):
-        """
-        Return a text with replaced keywords by values
-
-        @param str text: label template, can use
-            %(account)s, %(currency)s, %(rate)s
-        @param int account_id: id of the account to display in label
-        @param int currency_id: id of the currency to display
-        @param float rate: rate to display
-        """
-        account_obj = self.env['account.account']
-        currency_obj = self.env['res.currency']
-
-        account = account_obj.browse(account_id)
-        currency = currency_obj.browse(currency_id)
-        tasa = self.env['res.currency.rate'].search([('currency_id', '=', currency_id), ('rate', '=', rate)], limit=1)
-
-        # data = {'account': account.code or False,
-        #         'currency': currency.name or False,
-        #         'rate': rate}
-        data = {'account': account.code or False,
-                'currency': currency.name or False,
-                'rate': tasa.set_venta}
-        return text % data
-
-
-
-    def _create_move_and_lines(
-            self, amount, debit_account_id, credit_account_id,
-            sums, label, form, partner_id, currency_id,
-            analytic_debit_acc_id=False, analytic_credit_acc_id=False):
-
-        base_move = {
-            'journal_id': form.journal_id.id,
-            'date': form.revaluation_date,
-        }
-        if form.journal_id.company_id.reversable_revaluations:
-            base_move['auto_reverse'] = True
-            base_move['reverse_date'] = form.revaluation_date + timedelta(
-                days=1)
-
-        base_line = {
-            'name': label,
-            'partner_id': partner_id,
-            'currency_id': currency_id,
-            'amount_currency': 0.0,
-            'date': form.revaluation_date
-        }
-
-        base_line['gl_foreign_balance'] = sums.get('foreign_balance', 0.0)
-        base_line['gl_balance'] = sums.get('balance', 0.0)
-        base_line['gl_revaluated_balance'] = sums.get(
-            'revaluated_balance', 0.0)
-        base_line['gl_currency_rate'] = sums.get('currency_rate', 0.0)
-
-        debit_line = base_line.copy()
-        credit_line = base_line.copy()
-
-        debit_line.update({
-            'debit': amount,
-            'credit': 0.0,
-            'account_id': debit_account_id,
-        })
-
-        if analytic_debit_acc_id:
-            credit_line.update({
-                'analytic_account_id': analytic_debit_acc_id,
-            })
-
-        credit_line.update({
-            'debit': 0.0,
-            'credit': amount,
-            'account_id': credit_account_id,
-        })
-
-        if analytic_credit_acc_id:
-            credit_line.update({
-                'analytic_account_id': analytic_credit_acc_id,
-            })
-        base_move['line_ids'] = [(0, 0, debit_line), (0, 0, credit_line)]
-        created_move = self.env['account.move'].create(base_move)
-        created_move.post()
-
-        return [x.id for x in created_move.line_ids]
 
 
