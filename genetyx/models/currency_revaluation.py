@@ -325,7 +325,7 @@ class WizardCurrencyRevaluation(models.TransientModel):
                      company.provision_pl_loss_account_id) and
                 not (company.provision_bs_gain_account_id and
                      company.provision_pl_gain_account_id))
-    
+
     @api.multi
     def _validate_company_revaluation_configuration(self, company):
         return (
@@ -621,6 +621,36 @@ class AccountAccount(models.Model):
         # print(params)
         # raise ValidationError ('query')
         return query, params
+
+    @api.multi
+    def compute_revaluations(self, revaluation_date):
+        accounts = {}
+        # compute for each account the balance/debit/credit from the move lines
+        query, params = self._revaluation_query(revaluation_date)
+        self.env.cr.execute(query, params)
+
+        lines = self.env.cr.dictfetchall()
+        rec_pay = [self.env.ref("account.data_account_type_receivable").id,
+                   self.env.ref("account.data_account_type_payable").id]
+
+        for line in lines:
+            # generate a tree
+            # - account_id
+            # -- currency_id
+            # --- partner_id
+            # ----- balances
+            account_id, currency_id, partner_id = \
+                line['id'], line['currency_id'], line['partner_id']
+            account_type = self.env['account.account'].browse(
+                account_id).user_type_id
+            accounts.setdefault(account_id, {})
+            partner_id = partner_id if account_type.id in rec_pay else False
+            accounts[account_id].setdefault(partner_id, {})
+            accounts[account_id][partner_id].setdefault(currency_id, {})
+            accounts[account_id][partner_id][currency_id] = line
+
+        return accounts
+
 
 class account_move(models.Model):
     _inherit = 'account.move'
