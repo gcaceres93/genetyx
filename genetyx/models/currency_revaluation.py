@@ -98,6 +98,23 @@ class WizardCurrencyRevaluation(models.TransientModel):
     _inherit = 'wizard.currency.revaluation'
 
     @api.multi
+    def _validate_company_revaluation_configuration(self, company):
+        return (
+                (
+                        company.revaluation_loss_account_id
+                        and company.revaluation_gain_account_id
+                ) or
+                (
+                        company.provision_bs_loss_account_id
+                        and company.provision_pl_loss_account_id
+                ) or
+                (
+                        company.provision_bs_gain_account_id
+                        and company.provision_pl_gain_account_id
+                )
+        )
+
+    @api.multi
     def revaluate_currency(self):
         """
         Compute unrealized currency gain and loss and add entries to
@@ -109,8 +126,8 @@ class WizardCurrencyRevaluation(models.TransientModel):
         account_obj = self.env['account.account']
 
         company = self.journal_id.company_id or self.env.user.company_id
-        if self._check_company(company):
-            raise UserError(
+        if not self._validate_company_revaluation_configuration(company):
+            raise Warning(
                 _("No revaluation or provision account are defined"
                   " for your company.\n"
                   "You must specify at least one provision account or"
