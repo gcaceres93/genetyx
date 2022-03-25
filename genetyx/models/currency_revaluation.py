@@ -506,11 +506,15 @@ class WizardCurrencyRevaluation(models.TransientModel):
                                         ii = moveasi.move_id.line_ids.filtered(lambda r: r.credit > 0)
                                         _logger.info('4')
                                         moveasi.with_context(check_move_validity=False).debit = 0
+                                        _logger.info('4.1')
                                         ii.with_context(check_move_validity=False).credit = 0
-
+                                        _logger.info('4.2')
                                         moveasi.with_context(check_move_validity=False).credit = abs(balance)
+                                        _logger.info('4.3')
                                         ii.with_context(check_move_validity=False).debit = abs(balance)
+                                        _logger.info('4.4')
                                         moveasi.with_context(check_move_validity=False).balance = balance
+                                        _logger.info('4.5')
                                         ii.with_context(check_move_validity=False).balance = balance
                                     else:
                                         # revaluation_loss_account_id
