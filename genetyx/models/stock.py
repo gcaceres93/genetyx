@@ -5,6 +5,17 @@ from datetime import datetime, timedelta
 from num2words import num2words
 # from odoo.tools import float_round, round
 
+class stock_picking_class (models.Model):
+    _inherit = "stock.picking"
+
+    @api.multi
+    def do_unreserve(self):
+        for picking in self:
+            picking.move_lines._do_unreserve()
+            picking.move_line_ids_without_package._do_unreserve()
+            picking.package_level_ids.filtered(lambda p: not p.move_ids).unlink()
+
+
 class stock_move_class (models.Model):
     _inherit = "stock.move"
 
