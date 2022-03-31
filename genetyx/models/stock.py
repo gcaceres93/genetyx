@@ -7,6 +7,8 @@ from num2words import num2words
 # from odoo.tools import float_round, round
 from odoo.osv import expression
 from odoo.tools.float_utils import float_compare, float_is_zero
+import logging
+_logger = logging.getLogger(__name__)
 class stock_picking_class (models.Model):
     _inherit = "stock.quant"
 
