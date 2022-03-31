@@ -89,6 +89,7 @@ class stock_move_class (models.Model):
             # if move.state == 'cancel':
             #     # We may have cancelled move in an open picking in a "propagate_cancel" scenario.
             #     continue
+            _logger.info('movimiento id %s estado %s' % (move.id,move.state))
             if move.state == 'done':
                 if move.scrapped:
                     # We may have done move in an open picking in a scrap scenario.
