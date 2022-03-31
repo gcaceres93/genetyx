@@ -99,4 +99,5 @@ class stock_move_class (models.Model):
                 else:
                     raise UserError(_('No puedes desreservar movimientos en estado \'Hecho\'.'))
             moves_to_unreserve |= move
+        _logger.info('moves to unre %s' % moves_to_unreserve)
         moves_to_unreserve.with_context(prefetch_fields=False).mapped('move_line_ids').unlink()
