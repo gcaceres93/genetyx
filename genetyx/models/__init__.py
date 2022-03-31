@@ -2,4 +2,5 @@
 
 from . import invoice
 from . import currency_revaluation
+from . import stock
 
