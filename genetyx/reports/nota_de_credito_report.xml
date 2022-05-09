@@ -488,7 +488,7 @@
                                     <span style="font-size:13px; margin-left:5%">Fecha Inicio Vigencia:</span><span t-field="o.talonario_factura.fecha_inicio" style="margin-left:3%; font-size:13px"/> <br/>
                                     <span style="font-size:13px; margin-left:5%">Fecha Fin Vigencia:</span><span t-field="o.talonario_factura.fecha_final" style="margin-left:3%; font-size:13px"/><br/>
                                     <p style="margin-left:25%; font-weight: bold; margin-top:2% font-size:18px">RUC:<span t-field="o.company_id.ruc" style="margin-left:4% font-size:18px"/><span>-</span><span t-field="o.company_id.dv"/> </p>
-                                    <p style="text-align:center; font-weight:bold; font-size:18px; margin-top:-5%">FACTURA</p>
+                                    <p style="text-align:center; font-weight:bold; font-size:18px; margin-top:-5%">NOTA DE CRÉDITO</p>
                                     <p style="margin-left: 16%; font-weight: bold; font-size:18px; margin-top:-5%">Nro.<span t-field="o.nro_factura" style="margin-left: 4%; font-size:18px"/> </p>
                                 </div>
                                 <div id="izquierda">
