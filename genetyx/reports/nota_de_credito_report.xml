@@ -511,7 +511,7 @@
                               <div id="derecha2">
                                 <p style="margin-left:-25%; font-size:14px; margin-top:0.30cm">CONDICION DE VENTA: </p>
                                  <p style="margin-left:-20%; font-size:14px; margin-top:-0.30cm;"><span>CONTADO:</span><span>|_<t t-if="o.tipofactura(o.tipo_factura) == 'Contado'"><span>X</span></t></span>_| <span>CREDITO: </span><span>|_<t t-if="o.tipofactura(o.tipo_factura) == 'Credito'"><span>X</span></t>_|</span></p>
-                                  <p style="margin-left:-17%; font-size:14px; margin-top:-0.37cm">NOTA DE REMISION N°: </p>
+                                  <p style="margin-left:-14%; font-size:14px; margin-top:-0.37cm">NOTA DE REMISION N°: </p>
                                   <p style="margin-left:-14%; font-size:14px; margin-top:-0.30cm;">TELEFONO:<span t-field="o.partner_id.phone" style="margin-left:1%;"/> </p>
 <!--                                   <t t-if=" 2 == o.tipo_factura">
                                       <t t-foreach="o.payment_term_id.line_ids" t-as="l">
