@@ -553,6 +553,9 @@
                                     <t t-else="">
                                       <p style="font-size:14px; margin-right:1cm; margin-top:-0.37cm">RUC O CEDULA DE IDENTIDAD: <span t-field="o.ruc_factura" style="margin-left:1%;"/></p>
                                     </t>
+                                     <t t-if="o.factura_afectada">
+                                      <span t-field="o.factura_afectada.nro_factura"/>
+                                      </t>
                                     <p style="font-size:14px; margin-right:1cm; margin-top:-0.30cm">DIRECCION:<span t-field="o.partner_shipping_id.street" style="margin-left:1%"/> </p>
                                 </div>
                           </div>
