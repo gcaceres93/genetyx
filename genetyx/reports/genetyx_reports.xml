@@ -32,6 +32,7 @@
         string="Nota de Credito Genetyx"
         name="genetyx.report_nota_de_credito"
         file="genetyx.report_nota_de_credito"
+        paperformat="paperformat_factura_genetyx"
         report_type="qweb-pdf"/>
 
 </odoo>
