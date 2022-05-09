@@ -15,6 +15,7 @@ div#derecha{
     height: 165px;
     border: 1px solid black;
     float:right;
+    color:red;
     /*text-align: center;*/
 }
 
