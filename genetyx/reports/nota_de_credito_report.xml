@@ -556,7 +556,7 @@
                                      <t t-if="o.factura_afectada">
                                       <p style="font-size:14px; margin-right:1cm; margin-top:-0.30cm"><span t-field="o.factura_afectada.nro_factura"/></p>
                                       </t>
-                                    <p style="font-size:14px; margin-right:1cm; margin-top:-0.35cm">DIRECCION:<span t-field="o.partner_shipping_id.street" style="margin-left:1%"/> </p>
+                                    <p style="font-size:14px; margin-right:1cm; margin-top:-0.20cm">DIRECCION:<span t-field="o.partner_shipping_id.street" style="margin-left:1%"/> </p>
                                 </div>
                           </div>
 
