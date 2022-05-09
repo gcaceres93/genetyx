@@ -511,7 +511,7 @@
                               <div id="derecha2">
 
                                   <p style="margin-left:-14%; font-size:14px; margin-top:-0.20cm">NOTA DE REMISION N°:  </p>
-                                  <p style="margin-left:-14%; font-size:14px; margin-top:-0.30cm;">TELEFONO:<span t-field="o.partner_id.phone" style="margin-left:1%;"/> </p>
+<!--                                  <p style="margin-left:-14%; font-size:14px; margin-top:-0.30cm;">TELEFONO:<span t-field="o.partner_id.phone" style="margin-left:1%;"/> </p>-->
                                     <t t-if="o.factura_afectada">
                                       <p style="font-size:14px; margin-right:1cm; margin-top:-0.35cm"><span t-field="o.factura_afectada.nro_factura"/></p>
                                       </t>
