@@ -300,6 +300,7 @@ td{
 #id_cantidad_seccion{
     /*border: 1px solid black;*/
     width: 3cm;
+    color:red;
 }
 #id_partes_seccion{
     /*border: 1px solid black;*/
