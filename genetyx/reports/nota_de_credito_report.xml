@@ -514,7 +514,7 @@
                                   <p id="telefono">TELEFONO:<span t-field="o.partner_id.phone"/> </p>
 
                                   <t t-if="o.factura_afectada">
-                                      <p style="font-size:14px; margin-right:1cm; margin-top:-0.35cm">FACTURA AFECTADA <span t-field="o.factura_afectada.nro_factura"/></p>
+                                      <p style="font-size:14px; margin-right:1cm; margin-top:-0.35cm">FACTURA AFECTADA: <span t-field="o.factura_afectada.nro_factura"/></p>
                                       </t>
                                   <!--
   <t t-if=" 2 == o.tipo_factura">
@@ -534,7 +534,7 @@
                                                <!--  <p style="margin-left:2% font-size:11px; margin-top:-0.60cm;font-weight:bold;">Factura credito <span t-field="l.days"/> <span>dias</span></p>-->
                                                <!--</t>-->
                                                <!--    <t t-else="">-->
-                                                       <p style="margin-left:-1cm; font-size:11px; margin-top:-0.60cm;font-weight:bold;">Factura credito <span t-field="o.payment_term_id.name"/></p>
+                                                       <p style="margin-left:1cm; font-size:11px; margin-top:-0.40cm;font-weight:bold;">Factura credito: <span t-field="o.payment_term_id.name"/></p>
 
                                                    <!--</t>-->
                                                  <!--</t>-->
