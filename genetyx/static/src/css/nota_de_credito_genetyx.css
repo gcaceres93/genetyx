@@ -261,7 +261,7 @@ td{
 }
 #telefono
 {
-    /*style="margin-left:-14%; font-size:14px; margin-top:-0.20cm;"*/
+    top: 1cm;
 }
 #tel
 {
