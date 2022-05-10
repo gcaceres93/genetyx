@@ -514,7 +514,7 @@
                                   <p id="telefono">TELEFONO:<span t-field="o.partner_id.phone"/> </p>
 
                                   <t t-if="o.factura_afectada">
-                                      <p style="font-size:14px; margin-right:1cm; margin-top:-0.35cm"><span t-field="o.factura_afectada.nro_factura"/></p>
+                                      <p style="font-size:14px; margin-right:1cm; margin-top:-0.35cm">FACTURA AFECTADA <span t-field="o.factura_afectada.nro_factura"/></p>
                                       </t>
                                   <!--
   <t t-if=" 2 == o.tipo_factura">
