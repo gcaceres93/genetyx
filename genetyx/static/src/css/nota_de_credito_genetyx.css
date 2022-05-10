@@ -261,8 +261,11 @@ td{
 }
 #telefono
 {
-    top: 1cm;
+    top: 1.10cm;
+    font-size:13px;
+
 }
+
 #tel
 {
     font-size:13px;
