@@ -259,6 +259,10 @@ td{
     /*border:1px solid black;*/
     line-height: 0.60cm;
 }
+#telefono
+{
+    /*style="margin-left:-14%; font-size:14px; margin-top:-0.20cm;"*/
+}
 #tel
 {
     font-size:13px;
