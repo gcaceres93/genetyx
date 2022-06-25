@@ -10,6 +10,7 @@
     <orderEntry type="module" module-name="ventix" />
     <orderEntry type="module" module-name="cvsa" />
     <orderEntry type="module" module-name="accounting_reports_paraguay" />
+    <orderEntry type="module" module-name="account_payment" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
