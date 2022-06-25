@@ -477,7 +477,13 @@
                             <span style="position:absolute; top:38.40cm; left:1.10cm; font-size:15px; font-weight:bold;">ORIGINAL: Cliente</span>
                             <span style="position:absolute; top:38.40cm; left:8.10cm; font-size:15px; font-weight:bold;">DUPLICADO: Arch.Tributario</span>
                             <span style="position:absolute; top:38.40cm; left:16.10cm; font-size:15px; font-weight:bold;">TRIPLICADO: Contabilidad</span>
-                          </p>                          <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: 350050013237</p>
+                          </p>
+                          <t t-if="o.company_id.cod_autoimpresor">
+                              <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: <span t-field="o.company_id.cod_autoimpresor"/> </p>
+                          </t>
+                          <t t-else="">
+                              <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: 350050013237</p>
+                          </t>
                           <p style="position:absolute; top:8.70cm; left:10.0cm; font-size:15px;">DESCRIPCION</p>
                       </body>
                   </span>

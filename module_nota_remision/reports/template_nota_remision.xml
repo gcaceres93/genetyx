@@ -202,8 +202,12 @@
                                              <span style="position:absolute; top:54.90cm; left:17.10cm; font-size:18px; font-weight:bold;">TRIPLICADO: Contabilidad</span>
                                              <span style="position:absolute; top:54.90cm; left:24.10cm; font-size:18px; font-weight:bold;">CUADRUPLICADO: Contabilidad</span>
                                          </p>
-                                        <p style="position:absolute; top:56.10cm; font-size:18px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: 350010009443</p>
-
+                          <t t-if="o.company_id.cod_autoimpresor">
+                              <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: <span t-field="o.company_id.cod_autoimpresor"/> </p>
+                          </t>
+                          <t t-else="">
+                              <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: 350050013237</p>
+                          </t>
                                 </div>
 
                         </body>
