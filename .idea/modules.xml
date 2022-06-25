@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$USER_HOME$/odoo/12/.idea/12.iml" filepath="$USER_HOME$/odoo/12/.idea/12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../account-payment/.idea/account-payment.iml" filepath="$PROJECT_DIR$/../account-payment/.idea/account-payment.iml" />
       <module fileurl="file://$PROJECT_DIR$/../account_payment/.idea/account_payment.iml" filepath="$PROJECT_DIR$/../account_payment/.idea/account_payment.iml" />
       <module fileurl="file://$PROJECT_DIR$/../accounting_reports_paraguay/.idea/accounting_reports_paraguay.iml" filepath="$PROJECT_DIR$/../accounting_reports_paraguay/.idea/accounting_reports_paraguay.iml" />
       <module fileurl="file://$PROJECT_DIR$/../cvsa/.idea/cvsa.iml" filepath="$PROJECT_DIR$/../cvsa/.idea/cvsa.iml" />

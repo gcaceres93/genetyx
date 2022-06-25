@@ -11,6 +11,7 @@
     <orderEntry type="module" module-name="cvsa" />
     <orderEntry type="module" module-name="accounting_reports_paraguay" />
     <orderEntry type="module" module-name="account_payment" />
+    <orderEntry type="module" module-name="account-payment" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

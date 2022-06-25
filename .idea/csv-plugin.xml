@@ -3,6 +3,20 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="$PROJECT_DIR$/../account-payment/account_payment_return_import_iso20022/data/payment.return.reason.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../account-payment/setup/account_payment_return_import_iso20022/odoo/addons/account_payment_return_import_iso20022/data/payment.return.reason.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../odoo_paraguay/restringir_descuento_ventas/security/ir.model.access.csv">
           <value>
             <Attribute>
