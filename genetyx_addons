@@ -1,0 +1,7 @@
+[options]
+addons_path=/home/gcc/odoo/12/odoo/addons,/home/gcc/odoo/12/enterprise,/home/gcc/PycharmProjects/odoo_paraguay,/home/gcc/PycharmProjects/account_payment,/home/gcc/PycharmProjects/accounting_reports_paraguay,/home/gcc/PycharmProjects/ticket_invoice,/home/gcc/PycharmProjects/ticket_task_material,/home/gcc/PycharmProjects/tesaka,/home/gcc/PycharmProjects/genetyx,/home/gcc/PycharmProjects/batch_invoice_sati,/home/gcc/PycharmProjects/account-financial-reporting,/home/gcc/PycharmProjects/account-closing,/home/gcc/PycharmProjects/account-payment,/home/gcc/PycharmProjects/bank-payment,/home/gcc/PycharmProjects/mis-builder,/home/gcc/PycharmProjects/reporting-engine,/home/gcc/PycharmProjects/server-backend,/home/gcc/PycharmProjects/server-tools,/home/gcc/PycharmProjects/server-ux,/home/gcc/PycharmProjects/web
+limit_memory_soft = 2147483648
+limit_request = 8192
+limit_time_cpu = 10000
+limit_time_real = 10000
+

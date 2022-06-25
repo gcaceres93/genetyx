@@ -8,6 +8,8 @@
     <orderEntry type="module" module-name="12" />
     <orderEntry type="module" module-name="tesaka" />
     <orderEntry type="module" module-name="ventix" />
+    <orderEntry type="module" module-name="cvsa" />
+    <orderEntry type="module" module-name="accounting_reports_paraguay" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
