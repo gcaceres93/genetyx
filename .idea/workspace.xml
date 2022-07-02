@@ -1,8 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a9923b8-3d45-415c-b39f-d5a4a310cb1d" name="Default Changelist" comment="">
+    <list default="true" id="9a9923b8-3d45-415c-b39f-d5a4a310cb1d" name="Default Changelist" comment="se quitan submodules OCA">
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/ReadMe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/models/inventory_adjustment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/security/inventory_adjustment_group.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/security/ir.model.access.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/Banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/after_cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/after_valid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/bi_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/demanded/all_in_one_pos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/demanded/bi_generic_import.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/demanded/branch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/demanded/customer_overdue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/demanded/generic_excel_reports.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/demanded/sale_commision.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/features/access.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/features/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/features/draft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/features/serial.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/related/bi_product_low_stock_notification.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/related/bi_sale_stock_check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/related/stock_landed_cost_automate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/related/stock_move_cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/related/stock_picking_cancel_extended.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/related/stock_reservation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/reset.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/setting_conf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/static/description/valid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi_inventory_adjustment_cancel_reverse/views/inventory_adjustment_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/ReadMe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/models/inventory_adjustment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/security/inventory_adjustment_group.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/security/ir.model.access.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/Banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/after_cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/after_valid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/bi_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/demanded/all_in_one_pos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/demanded/bi_generic_import.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/demanded/branch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/demanded/customer_overdue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/demanded/generic_excel_reports.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/demanded/sale_commision.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/features/access.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/features/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/features/draft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/features/serial.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/related/bi_product_low_stock_notification.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/related/bi_sale_stock_check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/related/stock_landed_cost_automate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/related/stock_move_cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/related/stock_picking_cancel_extended.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/related/stock_reservation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/reset.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/setting_conf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/static/description/valid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/bi_inventory_adjustment_cancel_reverse/views/inventory_adjustment_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/models/currency_revaluation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/models/invoice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/models/stock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/reports/factura_report.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/reports/genetyx_reports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/reports/nota_de_credito_report.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/security/menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/security/security.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/static/src/css/factura_genetyx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/static/src/css/nota_de_credito_genetyx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/genetyx/views/account_invoice.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/controllers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/controllers/controllers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/demo/demo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/models/account_chek.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/models/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/reports/reports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/reports/template_custom_cheque.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/security/ir.model.access.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/static/src/css/estilos_cheque.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/views/account_check_view_inherit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/views/templates.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/views/views.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/wizard/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/wizard/wizard_cheque.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_cheque_genetyx/wizard/wizard_cheque.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/controllers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/controllers/controllers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/demo/demo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/models/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/models/stock_picking.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/reports/reports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/reports/template_nota_remision.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/security/ir.model.access.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/static/src/css/estilos_nota_remision.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/views/stock_picking_view_inherit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/views/templates.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcaceres93/module_nota_remision/views/views.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genetyx/models/currency_revaluation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genetyx/models/stock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genetyx/reports/nota_de_credito_report.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genetyx/security/menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genetyx/security/security.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genetyx/static/src/css/nota_de_credito_genetyx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/controllers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/controllers/controllers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/demo/demo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/models/account_chek.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/models/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/reports/reports.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/reports/template_custom_cheque.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/security/ir.model.access.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/static/src/css/estilos_cheque.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/views/account_check_view_inherit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/views/templates.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/views/views.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/wizard/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/wizard/wizard_cheque.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_cheque_genetyx/wizard/wizard_cheque.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetyx/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genetyx/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetyx/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genetyx/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetyx/models/invoice.py" beforeDir="false" afterPath="$PROJECT_DIR$/genetyx/models/invoice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetyx/reports/factura_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/genetyx/reports/factura_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetyx/reports/genetyx_reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/genetyx/reports/genetyx_reports.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetyx/static/src/css/factura_genetyx.css" beforeDir="false" afterPath="$PROJECT_DIR$/genetyx/static/src/css/factura_genetyx.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetyx/views/account_invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/genetyx/views/account_invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_nota_remision/reports/template_nota_remision.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module_nota_remision/reports/template_nota_remision.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_nota_remision/static/src/css/estilos_nota_remision.css" beforeDir="false" afterPath="$PROJECT_DIR$/module_nota_remision/static/src/css/estilos_nota_remision.css" afterDir="false" />
     </list>
     <list id="0559fb80-480d-4c2e-9fac-3d16426e3291" name="Revert &quot;Revert &quot;Revert &quot;Revert &quot;calculo de iva y redondeo correcto&quot;&quot;&quot;&quot;" comment="Revert &quot;Revert &quot;Revert &quot;Revert &quot;calculo de iva y redondeo correcto&quot;&quot;&quot;&quot;&#10;&#10;This reverts commit 853b3866" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,17 +170,20 @@
         <entry key="$PROJECT_DIR$/gcaceres93/odoo_paraguay" value="14825c74c834496aa3be1e695682fec1185e0225" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../tesaka" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../genetyx" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1wxV3mFI0P6i6eysNHRREpoVH3o" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -39,6 +195,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -57,6 +214,10 @@
       <workItem from="1631385038094" duration="284000" />
       <workItem from="1631557264540" duration="760000" />
       <workItem from="1631826534269" duration="7000" />
+      <workItem from="1656156065656" duration="298000" />
+      <workItem from="1656157279885" duration="285000" />
+      <workItem from="1656166145953" duration="427000" />
+      <workItem from="1656771842475" duration="1355000" />
     </task>
     <task id="LOCAL-00001" summary="Se comenta funcion de redondeo moneda">
       <created>1629688104906</created>
@@ -114,11 +275,18 @@
       <option name="project" value="LOCAL" />
       <updated>1631385079507</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="se quitan submodules OCA">
+      <created>1656772594108</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656772594108</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -158,12 +326,12 @@
             </State>
           </value>
         </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
       </map>
-    </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
@@ -175,97 +343,8 @@
     <MESSAGE value="Se borra carpeta cheque genetyx" />
     <MESSAGE value="Se agrega modulo de cheques" />
     <MESSAGE value="Modulo reversion de inventarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modulo reversion de inventarios" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="258" y="121" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1629400571327">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="258" y="121" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1600.873@0.27.1600.873" timestamp="1629400571327" />
-    <state x="365" y="40" width="860" height="854" key="CommitChangelistDialog2" timestamp="1631385388897">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="365" y="40" width="860" height="854" key="CommitChangelistDialog2/0.27.1600.873@0.27.1600.873" timestamp="1631385388897" />
-    <state x="100" y="127" width="1400" height="673" key="DiffContextDialog" timestamp="1629690151999">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="100" y="127" width="1400" height="673" key="DiffContextDialog/0.27.1600.873@0.27.1600.873" timestamp="1629690151999" />
-    <state x="583" y="221" width="424" height="491" key="FileChooserDialogImpl" timestamp="1631561251768">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="583" y="221" width="424" height="491" key="FileChooserDialogImpl/0.27.1600.873@0.27.1600.873" timestamp="1631561251768" />
-    <state width="1554" height="188" key="GridCell.Tab.0.bottom" timestamp="1629724181251">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="1554" height="188" key="GridCell.Tab.0.bottom/0.27.1600.873@0.27.1600.873" timestamp="1629724181251" />
-    <state width="1554" height="188" key="GridCell.Tab.0.center" timestamp="1629724181250">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="1554" height="188" key="GridCell.Tab.0.center/0.27.1600.873@0.27.1600.873" timestamp="1629724181250" />
-    <state width="1554" height="188" key="GridCell.Tab.0.left" timestamp="1629724181250">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="1554" height="188" key="GridCell.Tab.0.left/0.27.1600.873@0.27.1600.873" timestamp="1629724181250" />
-    <state width="1554" height="188" key="GridCell.Tab.0.right" timestamp="1629724181250">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="1554" height="188" key="GridCell.Tab.0.right/0.27.1600.873@0.27.1600.873" timestamp="1629724181250" />
-    <state width="1554" height="188" key="GridCell.Tab.1.bottom" timestamp="1629724181252">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="1554" height="188" key="GridCell.Tab.1.bottom/0.27.1600.873@0.27.1600.873" timestamp="1629724181252" />
-    <state width="1554" height="188" key="GridCell.Tab.1.center" timestamp="1629724181252">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="1554" height="188" key="GridCell.Tab.1.center/0.27.1600.873@0.27.1600.873" timestamp="1629724181252" />
-    <state width="1554" height="188" key="GridCell.Tab.1.left" timestamp="1629724181251">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="1554" height="188" key="GridCell.Tab.1.left/0.27.1600.873@0.27.1600.873" timestamp="1629724181251" />
-    <state width="1554" height="188" key="GridCell.Tab.1.right" timestamp="1629724181252">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="1554" height="188" key="GridCell.Tab.1.right/0.27.1600.873@0.27.1600.873" timestamp="1629724181252" />
-    <state x="505" y="181" width="580" height="571" key="MultipleFileMergeDialog" timestamp="1629689789247">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="505" y="181" width="580" height="571" key="MultipleFileMergeDialog/0.27.1600.873@0.27.1600.873" timestamp="1629689789247" />
-    <state x="289" y="98" width="1022" height="737" key="SettingsEditor" timestamp="1629400549699">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="289" y="98" width="1022" height="737" key="SettingsEditor/0.27.1600.873@0.27.1600.873" timestamp="1629400549699" />
-    <state x="100" y="127" width="1400" height="673" key="VCS.FileHistoryDialog" timestamp="1629688878203">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="100" y="127" width="1400" height="673" key="VCS.FileHistoryDialog/0.27.1600.873@0.27.1600.873" timestamp="1629688878203" />
-    <state x="395" y="188" width="800" height="558" key="Vcs.Push.Dialog.v2" timestamp="1631385390053">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="395" y="188" width="800" height="558" key="Vcs.Push.Dialog.v2/0.27.1600.873@0.27.1600.873" timestamp="1631385390053" />
-    <state x="472" y="180" width="645" height="573" key="VcsDiffUtil.ChangesDialog" timestamp="1629687940706">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="472" y="180" width="645" height="573" key="VcsDiffUtil.ChangesDialog/0.27.1600.873@0.27.1600.873" timestamp="1629687940706" />
-    <state width="800" height="436" key="XDebugger.FullValuePopup" timestamp="1629688411927">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state width="800" height="436" key="XDebugger.FullValuePopup/0.27.1600.873@0.27.1600.873" timestamp="1629688411927" />
-    <state x="456" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1631557354751">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="456" y="291" key="com.intellij.ide.util.TipDialog/0.27.1600.873@0.27.1600.873" timestamp="1631557354751" />
-    <state x="448" y="202" width="719" height="522" key="find.popup" timestamp="1631561257656">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="448" y="202" width="719" height="522" key="find.popup/0.27.1600.873@0.27.1600.873" timestamp="1631561257656" />
-    <state x="526" y="157" width="537" height="619" key="git4idea.branch.GitSmartOperationDialog" timestamp="1631561324375">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="526" y="157" width="537" height="619" key="git4idea.branch.GitSmartOperationDialog/0.27.1600.873@0.27.1600.873" timestamp="1631561324375" />
-    <state x="453" y="257" width="791" height="448" key="git4idea.merge.GitPullDialog" timestamp="1631044588604">
-      <screen x="0" y="27" width="1600" height="873" />
-    </state>
-    <state x="453" y="257" width="791" height="448" key="git4idea.merge.GitPullDialog/0.27.1600.873@0.27.1600.873" timestamp="1631044588604" />
+    <MESSAGE value="se quitan submodules OCA" />
+    <option name="LAST_COMMIT_MESSAGE" value="se quitan submodules OCA" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
