@@ -85,3 +85,8 @@
 	path = OCA/currency
 	url = git@github.com:OCA/currency.git
 	branch = 12.0
+
+[submodule "OCA/edi"]
+	path = OCA/edi
+	url = git@github.com:OCA/edi.git
+	branch = 12.0
