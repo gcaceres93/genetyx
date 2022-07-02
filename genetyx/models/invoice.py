@@ -13,27 +13,15 @@ class factura (models.Model):
                                         help="ANTES DE IMPRIMIR DEBE VERIFICAR SI ESTA CARGADO EL RUC INTERNACIONAL EN LA FICHA DEL CLIENTE")
     isredondeo = fields.Boolean(string='Redondeo', help="SE APLICA SOLO AL BANCO CENTRAL DEL PARAGUAY")
     comercial = fields.Many2one('res.partner',string="Comercial")
+    user_id = fields.Many2one('res.users', string='Salesperson', track_visibility='onchange',default=lambda self: self.env.user, copy=False)
 
-    @api.constrains('partner_id')
-    def verificar_mora(self):
-        if not self.user_has_groups('keeper.group_aprobar_verificar_mora'):
-            for rec in self:
-                if rec.type == 'out_invoice':
-                    if rec.partner_id.credit_limit > 0:
-                        if rec.partner_id.credit > rec.partner_id.credit_limit:
-                            raise ValidationError("Ha sobrepasado el limite de credito para este Cliente")
 
-                    if rec.partner_id.parent_id:
-                        partner = rec.partner_id.parent_id
-                    else:
-                        partner = rec.partner_id
-                    deudas = self.env['account.invoice'].search(
-                        [('partner_id', '=', partner.id), ('type', '=', 'out_invoice'), ('state', '=', 'open')]).mapped(
-                        'move_id.line_ids').filtered(
-                        lambda x: x.reconciled == False)
-                    # raise ValidationError(rec.partner_id)
-                 
-    # FUNCION PARA EVALUAR LA OPCION POR SECCION
+    @api.multi
+    def calcular_rate(self):
+            tasas = self.env['res.currency.rate'].search([('rate','=',1)])
+            for t in tasas:
+                t.rate = 1 / t.set_venta
+
     @api.multi
     def get_seccion(self, seccion):
         seleccion = 0

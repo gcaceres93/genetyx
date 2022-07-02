@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record id="report_wizar_view_cheque" model="ir.ui.view">
+            <field name="name">genetyx.wizard.cheque</field>
+            <field name="model">genetyx.wizard.cheque</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+<!--                        <field name="cheque" widget="many2many_tags"/>-->
+                        <field name="cheque"/>
+                    </group>
+
+                    <footer>
+
+                        <button name="report_cheque" type="object" string="GENERAR PDF" class="oe_highlight"/>
+                        <button string="CANCELAR" special="cancel"/>
+
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_reporte_cheque" model="ir.actions.act_window">
+             <field name="name">Reporte Cheque</field>
+            <field name="res_model">genetyx.wizard.cheque</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="report_wizar_view_cheque"/>
+            <field name="target">new</field>
+        </record>
+        
+<!--        <menuitem id="parent_generar_cheque" name="Generar Cheques" parent="account_check.menu_issue_check" sequence="10"/>-->
+        <menuitem id="parent_generar_cheque" name="Generar Cheques" parent="account.menu_finance_entries" sequence="10"/>
+        <menuitem id="reporte_cheque" name="Reporte Cheque" action="action_reporte_cheque" parent="parent_generar_cheque" sequence="10"/>
+        
+    </data>
+</odoo>

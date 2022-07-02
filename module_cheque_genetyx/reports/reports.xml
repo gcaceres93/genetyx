@@ -1,0 +1,31 @@
+<odoo>
+  <data>
+
+        <!--HOJA PERSONALIZADA CHEQUE-->
+        <record id="paperformat_cheque" model="report.paperformat">
+            <field name="name">Legal</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">356</field>
+            <field name="page_width">216</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">90</field>
+            </record>
+
+                <report id="report_cheque_genetyx"
+                        string="Cheque Genetyx"
+                        model="genetyx.wizard.cheque"
+                        report_type="qweb-pdf"
+                        file="module_cheque_genetyx.template_cheque"
+                        name="module_cheque_genetyx.template_cheque"
+                        menu="True" multi="True"
+                        paperformat="paperformat_cheque"
+             />
+        </data>
+</odoo>

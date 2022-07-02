@@ -7,6 +7,7 @@ div#body{
     /*border:1px solid black;*/
 }
 
+
 div#derecha{
     margin: auto;
     margin-top: 2%;
@@ -15,6 +16,7 @@ div#derecha{
     height: 165px;
     border: 1px solid black;
     float:right;
+    /*color:red;*/
     /*text-align: center;*/
 }
 
@@ -43,7 +45,7 @@ div#derecha2{
     margin-left: -10%;
     width: 300px;
     height: 125px;
-    /*border: 1px solid black;*/
+    /*border: 1px solid red;*/
     float:right;
 }
 
@@ -257,6 +259,14 @@ td{
     /*border:1px solid black;*/
     line-height: 0.60cm;
 }
+#telefono
+{
+    margin-top: 0.3cm;
+    font-size:13px;
+    /*color: red;*/
+
+}
+
 #tel
 {
     font-size:13px;
@@ -298,6 +308,7 @@ td{
 #id_cantidad_seccion{
     /*border: 1px solid black;*/
     width: 3cm;
+    /*color:red;*/
 }
 #id_partes_seccion{
     /*border: 1px solid black;*/
