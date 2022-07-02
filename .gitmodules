@@ -20,3 +20,8 @@
 	url = git@github.com:gcaceres93/accounting_reports_paraguay.git
 	branch = 12.1
 
+
+[submodule "OCA/account-closing"]
+	path = OCA/account-closing
+	url = git@github.com:OCA/account-closing.git
+	branch = 12.0
