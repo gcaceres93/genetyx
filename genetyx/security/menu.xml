@@ -6,6 +6,7 @@
         <record model="ir.ui.menu" id="sale.sale_menu_root">
           <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
         </record>
+        <!-- comentario -->
 
         <record model="ir.ui.menu" id="purchase.menu_purchase_root">
           <field name="groups_id" eval="[(6,0,[ref('genetyx.all_apps')])]"/>
