@@ -43,7 +43,7 @@
         <field name="perm_unlink" eval="1"/>
         <field name="perm_read" eval="1"/>
         </record>
-
+    <!-- prueba -->
         <record id="vendedores_pedidos_rule" model="ir.rule">
         <field name="name">Pedidos filtrados por vendedor </field>
         <field name="model_id" ref="sale.model_sale_order"/>
