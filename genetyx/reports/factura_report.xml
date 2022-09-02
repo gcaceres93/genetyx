@@ -365,14 +365,19 @@
                               <table border="1" style="width:100%; margin-left:1%;">
 <!--                                  <t t-foreach="o.tax_line_ids" t-as="s">-->
                                   <tr>
-<!--                                      <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>-->
-                                      <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(suma_10_porciento, o.currency_id.name)" style="font-size:15px"/></td>
+                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>-->
+                                      <t t-if="es_igual == 1">
+                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>
+                                      </t>
+                                      <t t-else="">
+                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(suma_10_porciento, o.currency_id.name)" style="font-size:15px"/></td>
+                                      </t>
                                       <t t-if="suma_exenta &gt; 0 or suma_5_porciento &gt; 0">
                                            <td style="font-size:13px;">
 <!--                                               <t t-if="suma_exenta &gt; 0 or suma_5_porciento &gt; 0">-->
                                                    <t t-if="suma_5_porciento==0">
 <!--                                                       <t t-set="redondeo_exenta" t-value="o.get_redondeo(suma_exenta,o.currency_id.name)"/>-->
-                                               <span t-esc="o.agregar_punto_de_miles(suma_exenta,o.currency_id.name)"/>
+                                                    <span t-esc="o.agregar_punto_de_miles(suma_exenta,o.currency_id.name)"/>
                                                    </t>
 <!--                                               </t>-->
                                            </td>
@@ -388,8 +393,13 @@
                                        <t t-else=""><!--SI EL SUMA_10_PORCIENTO ES MAYOR A 0-->
 <!--                                           <t t-set="redondeo_10" t-value="o.get_redondeo(suma_10_porciento,o.currency_id.name)"/>-->
                                            <td style="font-size:15px;">
-                                               <!--<span style="margin-left:4cm"  t-esc="o.agregar_punto_de_miles(suma_10_porciento, o.currency_id.name)"/>-->
-                                               <span style="margin-left:4cm" t-esc="o.agregar_punto_de_miles(suma_10_porciento,o.currency_id.name)"/>
+                                               <t t-if="es_igual == 1">
+                                                  <!--<span style="margin-left:4cm"  t-esc="o.agregar_punto_de_miles(suma_10_porciento, o.currency_id.name)"/>-->
+                                                  <span style="margin-left:4cm" t-esc="o.agregar_punto_de_miles(o.amount_total,o.currency_id.name)"/>
+                                               </t>
+                                               <t t-else="">
+                                                 <span style="margin-left:4cm" t-esc="o.agregar_punto_de_miles(suma_10_porciento,o.currency_id.name)"/>
+                                               </t>
                                            </td>
                                        </t>
                                   </tr>
