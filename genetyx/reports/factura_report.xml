@@ -21,11 +21,11 @@
                                     <span style="position:absolute; top:0.75cm;left:8.20cm; font-size:13px">GENETYX S.A.</span>
                                    <span style="position:absolute; top:1.50cm;left:8.20cm; font-size:13px">Comercio al por mayor de otros productos n.c.p.</span>
                                     <span style="position:absolute; top:2.0cm;left:8.20cm; font-size:13px"> Otras producciones de ganados vacunos n.c.p.</span>
-                                    <span style="position:absolute; top:2.50cm;left:8.20cm; font-size:13px">Casa Matriz: Avda. Bernardino Caballero e/ Ceibo</span>
+                                   <span style="position:absolute; top:2.50cm;left:8.20cm; font-size:13px">Casa Matriz: <span t-field="o.company_id.street"/></span>
                                         <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
-                                     <span id="compa"><span t-field="o.company_id.street"/><span>|<span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/></span></span>
-                                     <span id="tel"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
-                                     <span id="correo"><span t-field="o.company_id.email"/><span> | </span> <span t-field="o.company_id.website"/> </span>
+                                     <span id="compa" style="top:2.90cm;"><span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/></span>
+                                     <span id="tel" style="top:3.40cm;"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
+                                     <span id="correo" style="top:3.80cm;"><span t-field="o.company_id.email"/><span> | </span> <span t-field="o.company_id.website"/> </span>
                                      <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 45%; margin-top:1cm"/>
                                 </div>
                           </div>
