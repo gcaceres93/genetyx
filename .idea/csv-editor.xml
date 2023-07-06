@@ -24,13 +24,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/gcaceres93/odoo_paraguay/assets_paraguay/security/ir.model.access.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/gcaceres93/odoo_paraguay/rg90/security/ir.model.access.csv">
           <value>
             <Attribute>
@@ -46,6 +39,27 @@
           </value>
         </entry>
         <entry key="/gcaceres93/odoo_paraguay/sati_paraguay_currency_revaluation/security/ir.model.access.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../odoo_paraguay15/account_voucher/security/ir.model.access.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../odoo_paraguay15/l10n_py/data/account.account.template.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../odoo_paraguay15/rg90/security/ir.model.access.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
