@@ -16,13 +16,13 @@ class factura (models.Model):
     user_id = fields.Many2one('res.users', string='Salesperson', track_visibility='onchange',default=lambda self: self.env.user, copy=False)
 
 
-    @api.multi
+    
     def calcular_rate(self):
             tasas = self.env['res.currency.rate'].search([('rate','=',1)])
             for t in tasas:
                 t.rate = 1 / t.set_venta
 
-    @api.multi
+    
     def get_seccion(self, seccion):
         seleccion = 0
         if (seccion):
@@ -33,14 +33,14 @@ class factura (models.Model):
         return seleccion
 
     # FUNCION PARA EVALUAR LA LONGITUD DE LAS LINEAS DE PRODUCTOS
-    @api.multi
+    
     def get_procesar_producto(self, lista_producto):
         longitud = len(lista_producto)
         print("Londitud: " + str(longitud))
         return longitud
 
     # FUNCION PARA EVALUAR SI EN LA LINEA DE PRODUCTO INGRESA UNA DECRIPCION DE SECCION
-    @api.multi
+    
     def get_descripcion(self, producto):
         descripcion = ''
         if (type(producto.display_type) is str):
@@ -48,7 +48,7 @@ class factura (models.Model):
         return descripcion
 
     # LA SECCION ES DE TIPO BOOLEAN Y EL NAME ES STR ESO EVALUAMOS PARA ACUMULAR EL PRECIO
-    @api.multi
+    
     def get_prueba(self, tipo):
         tipo = type(tipo)
         bandera = 0
@@ -70,7 +70,7 @@ class factura (models.Model):
             bandera = 0
         return bandera
 
-    @api.multi
+    
     def get_total_precio(self, cantidad, precio_unitario):
         if cantidad > 0:
             cant_entero = int(cantidad)
@@ -81,7 +81,7 @@ class factura (models.Model):
             precio_total = cantidad * precio_unitario
             return precio_total
 
-    @api.multi
+    
     def get_redondeo_iva(self, iva, moneda):
         if 'PYG' in moneda:
             # redondeo_parcial = round(iva, 1)
@@ -90,7 +90,7 @@ class factura (models.Model):
         elif 'USD' in moneda:
             return iva
 
-    @api.multi
+    
     def get_redondeo(self, acumulador_impuesto, moneda):
         if 'PYG' in moneda:
             # redondeo_parcial = round(acumulador_impuesto,1)
@@ -102,12 +102,12 @@ class factura (models.Model):
             # redondeo = round(acumulador_impuesto,2)
             return redondeo
 
-    @api.multi
+    
     def get_pos(self):
         pos = self.env['pos.order'].search([('name', '=', self.reference)])
         return pos
 
-    @api.multi
+    
     def get_monto(self, impuesto):
         i = 0
         j = 0
@@ -151,20 +151,20 @@ class factura (models.Model):
     def sacacoma(self, n):
         return int(n)
 
-    @api.multi
+    
     def tipofactura(self, n):
         if (n == 2):
             return 'Credito'
         elif (n == 1):
             return 'Contado'
 
-    @api.multi
+    
     def calcular_letras(self, numero):
         letras = self.monto_en_letras = num2words(numero, lang='es').upper()
         letras = '--' + 'GUARANIES ' + letras + '--'
         return letras
 
-    @api.multi
+    
     def calcular_letras_dolar(self, numero):
         nuevo_numero = str(numero).split('.')
         entero = num2words(int(nuevo_numero[0]), lang='es').upper()
@@ -179,7 +179,7 @@ class factura (models.Model):
         letras = entero + ' DOLARES ' + ' CON ' + decimal + ' CENTAVOS '
         return letras
 
-    @api.multi
+    
     # def agregar_punto_de_miles(self, numero):
     #     numero_con_punto = '.'.join([str(int(numero))[::-1][i:i + 3] for i in range(0, len(str(int(numero))), 3)])[::-1]
     #     return numero_con_punto

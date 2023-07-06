@@ -100,7 +100,7 @@ class AccountPartialReconciles(models.Model):
 class account_move(models.Model):
     _inherit = 'account.move'
 
-    @api.multi
+    
     def setear_nombre(self):
         asientos_1 = self.env['account.move'].search([('state','=','posted'),('journal_id','=',self.env.user.company_id.currency_exchange_journal_id.id)])
         asientos = asientos_1.filtered(lambda r: not r.ref)

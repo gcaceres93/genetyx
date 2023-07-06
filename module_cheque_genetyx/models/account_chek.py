@@ -81,13 +81,13 @@ class Cheques(models.Model):
     #
 
 
-    @api.multi
+    
     def calcular_letras(self, numero):
         letras = self.monto_en_letras = num2words(numero, lang='es').upper()
         letras = letras + '--.'
         return letras
 
-    @api.multi
+    
     def calcular_letras_dolar(self, numero):
         nuevo_numero = str(numero).split('.')
         entero = num2words(int(nuevo_numero[0]), lang='es').upper()
@@ -102,7 +102,7 @@ class Cheques(models.Model):
         letras = entero +' CON ' + decimal + ' CENTAVOS--.'
         return letras
 
-    @api.multi
+    
     def agregar_punto_de_miles(self, numero, moneda):
         entero = int(numero)
         if 'USD' in moneda:
