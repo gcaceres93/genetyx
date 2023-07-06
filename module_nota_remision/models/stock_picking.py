@@ -14,13 +14,13 @@ class notaRemision (models.Model):
     punto_de_llegada = fields.Char(string="Punto De Llegada: ")
     nro_factura = fields.Char(string="Número Fctura: ")
     #
-    # @api.one
+    # 
     # @api.depends('state')
     # def compute_getFechaEmision(self):
     #     for rec in self:
     #         rec.fecha_estimada = rec.scheduled_date
     #
-    @api.one
+    
     @api.depends('state')
     def compute_getPuntoPartida(self):
         for rec in self:
@@ -29,7 +29,7 @@ class notaRemision (models.Model):
             else:
                 rec.punto_de_partida = rec.company_id.street
 
-    # @api.one
+    # 
     # @api.depends('state')
     # def compute_getPuntoLlegada(self):
     #     for rec in self:
