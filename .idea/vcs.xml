@@ -12,6 +12,7 @@
     <mapping directory="$PROJECT_DIR$/gcaceres93/tesaka" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/gcaceres93/tesaka2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../odoo_paraguay" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../odoo_paraguay15" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../tesaka" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ventix" vcs="Git" />
   </component>
