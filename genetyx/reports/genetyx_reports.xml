@@ -18,7 +18,7 @@
 
     <report
         id="factura_genetyx_boton"
-        model="account.invoice"
+        model="account.move"
         string="Factura Genetyx"
         name="genetyx.report_factura"
         file="genetyx.report_factura"
@@ -28,7 +28,7 @@
     />
      <report
         id="Nota_de_credito_genetyx_boton"
-        model="account.invoice"
+        model="account.move"
         string="Nota de Credito Genetyx"
         name="genetyx.report_nota_de_credito"
         file="genetyx.report_nota_de_credito"

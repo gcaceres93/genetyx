@@ -6,7 +6,7 @@ from num2words import num2words
 # from odoo.tools import float_round, round
 
 class factura (models.Model):
-    _inherit = "account.invoice"
+    _inherit = "account.move"
 
     seccion = fields.Boolean(string="Seccion")
     isrucinternacional = fields.Boolean(string='Imprimir Ruc Internacional',
