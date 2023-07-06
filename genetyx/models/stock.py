@@ -74,7 +74,7 @@ class stock_picking_class (models.Model):
 class stock_picking_class (models.Model):
     _inherit = "stock.picking"
 
-    @api.multi
+    
     def do_unreserve(self):
         for picking in self:
             picking.move_lines._do_unreserve()

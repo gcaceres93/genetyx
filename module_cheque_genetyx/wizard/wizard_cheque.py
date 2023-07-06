@@ -24,14 +24,14 @@ class WizardCheque(models.TransientModel):
             ordenados_por_nombre = self.cheque.sorted(key=lambda r: (r.name))
             return ordenados_por_nombre
 
-    @api.multi
+    
     def report_cheque(self):
         if self.cheque:
             self.ensure_one()
             self.sent = True
             return self.env.ref('module_cheque_genetyx.report_cheque_genetyx').report_action(self)
 
-    @api.multi
+    
     def agregar_punto_de_miles(self, numero, moneda):
         entero = int(numero)
         if 'USD' in moneda:
@@ -67,7 +67,7 @@ class WizardCheque(models.TransientModel):
         b = str(a_nombre_de)
         return b[0:45]
 
-    @api.multi
+    
     def calcular_letras(self, numero):
         entero = int(numero)
         letras = num2words(entero, lang='es').upper()
@@ -76,7 +76,7 @@ class WizardCheque(models.TransientModel):
         return letras
 
 
-    @api.multi
+    
     def calcular_letras_dolar(self, numero):
         nuevo_numero = str(numero).split('.')
         entero = num2words(int(nuevo_numero[0]), lang='es').upper()
