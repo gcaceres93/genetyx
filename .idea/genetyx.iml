@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="account_payment" />
     <orderEntry type="module" module-name="account-payment" />
     <orderEntry type="module" module-name="odoo_paraguay15" />
+    <orderEntry type="module" module-name="account_payment15" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
