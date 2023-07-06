@@ -1,1 +1,7 @@
 reportlab==3.3.0
+dicttoxml==1.7.4
+signxml==2.9.0
+pyOpenSSL==20.0.0
+lxml==4.6.1
+zeep==3.4.0
+cryptography==37.0.2
