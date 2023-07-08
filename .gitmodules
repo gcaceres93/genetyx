@@ -55,3 +55,8 @@
 	path = OCA/account-closing
 	url = git@github.com:OCA/account-closing.git
 	branch = 15.0
+
+[submodule "gcaceres93/facturacion_electronica"]
+	path = gcaceres93/facturacion_electronica
+	url = git@github.com:gcaceres93/facturacion_electronica.git
+	branch = 15.0
