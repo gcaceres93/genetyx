@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 <template id="report_factura">
-
-         <t t-call="web.html_container">
+       <t t-call="web.html_container">
               <t t-foreach="docs" t-as="o">
                   <span t-call="web.basic_layout">
                       <link rel="stylesheet" href="/genetyx/static/src/css/factura_genetyx.css"/>
@@ -250,27 +249,27 @@
                                         </t>
                                                     <t t-if="o.get_prueba(p.display_type) == 0">
                                                         <!--SUMA EL PRECIO DE LOS PRODUCTOS CON IMPUESTO 10 PORCIENTO-->
-                                                        <t t-if="p.invoice_line_tax_ids.id == 1">
+                                                        <t t-if="p.tax_ids.id == 1">
                                                             <t t-set="suma_10_porciento" t-value="suma_10_porciento+p.price_total"/>
                                                             <t t-set="total_10_porciento" t-value="total_10_porciento+p.price_total"/>
                                                         </t>
 
                                                         <!--SUMA EL PRECIO DE LOS PRODUCTOS CON IMPUESTO 5 PORCIENTO-->
-                                                        <t t-if="p.invoice_line_tax_ids.id == 4">
+                                                        <t t-if="p.tax_ids.id == 4">
                                                             <t t-set="suma_5_porciento" t-value="suma_5_porciento+p.price_total"/>
                                                             <t t-set="total_5_porciento" t-value="total_5_porciento+p.price_total"/>
                                                         </t>
 <!--                                                        <t t-set="total" t-value="total+p.price_total"/>-->
 
                                                         <!--SUMA EL PRECIO DE LOS PRODUCTOS CON EXENTOS-->
-                                                        <t t-if="p.invoice_line_tax_ids.id == 6">
+                                                        <t t-if="p.tax_ids.id == 6">
                                                             <t t-set="suma_exenta" t-value="suma_exenta+p.price_total"/>
                                                             <t t-set="total_exento" t-value="total_exento+p.price_total"/>
                                                         </t>
                                                 </t>
                                         <t t-if="longitud == producto">
                                         <t t-set="contador" t-value="contador + 1"/>
-                                            <t t-if="p.invoice_line_tax_ids.id == 1">
+                                            <t t-if="p.tax_ids.id == 1">
                                                 <t t-if="total_10_porciento &gt; 0">
                                                     <td id="id_precio_seccion"><span t-esc="o.agregar_punto_de_miles(total_10_porciento, o.currency_id.name)"/></td>
                                                     <td id="id_exento_seccion"/>
@@ -278,7 +277,7 @@
                                                     <td id="id_10porciento_seccion"><span t-esc="o.agregar_punto_de_miles(total_10_porciento, o.currency_id.name)"/></td>
                                                 </t>
                                             </t>
-                                            <t t-if="p.invoice_line_tax_ids.id == 4">
+                                            <t t-if="p.tax_ids.id == 4">
                                                 <t t-if="total_5_porciento &gt; 0">
                                                     <td id="id_precio_seccion"><span t-esc="o.agregar_punto_de_miles(total_10_porciento, o.currency_id.name)"/></td>
                                                     <td id="id_exento_seccion"/>
@@ -287,7 +286,7 @@
                                                 </t>
                                             </t>
 
-                                        <t t-if="p.invoice_line_tax_ids.id == 6">
+                                        <t t-if="p.tax_ids.id == 6">
                                              <t t-if="total_exento &gt; 0">
                                                 <td id="id_precio_seccion"><span t-esc="o.agregar_punto_de_miles(total_10_porciento, o.currency_id.name)"/></td>
                                                 <td id="id_exento_seccion"><span t-esc="o.agregar_punto_de_miles(total_exento, o.currency_id.name)"/></td>
@@ -337,7 +336,7 @@
                                         <!--Precion Unitario original-->
                                         <td id="precio_unitario"><span t-esc="o.agregar_punto_de_miles(p.price_unit, o.currency_id.name)" style="font-size:13px;"/></td>
                                         <!--Exenta original-->
-                                        <t t-if="p.invoice_line_tax_ids.id == 6">
+                                        <t t-if="p.tax_ids.id == 6">
                                            <!-- <t t-set="suma_exenta" t-value="suma_exenta+p.price_total"/>-->
                                             <t t-set="suma_exenta" t-value="suma_exenta+o.get_total_precio(p.quantity,p.price_unit)"/>
                                             <td id="exenta1"><span t-esc="o.agregar_punto_de_miles(p.price_total, o.currency_id.name)" style="font-size:13px;"/></td>
@@ -345,7 +344,7 @@
                                             <td id="exenta3"/>
                                         </t>
                                         <!--5% original-->
-                                        <t t-if="p.invoice_line_tax_ids.id == 4">
+                                        <t t-if="p.tax_ids.id == 4">
                                             <!--<t t-set="suma_5_porciento" t-value="suma_5_porciento+p.price_total"/>-->
                                             <t t-set="suma_5_porciento" t-value="suma_5_porciento+o.get_total_precio(p.quantity, p.price_unit)"/>
                                             <td id="cinco1"/>
@@ -353,7 +352,7 @@
                                             <td id="cinco3"/>
                                          </t>
                                         <!--10% original-->
-                                        <t t-if="p.invoice_line_tax_ids.id == 1">
+                                        <t t-if="p.tax_ids.id == 1">
                                             <!--<t t-set="suma_10_porciento" t-value="suma_10_porciento+p.price_total"/>-->
 <!--                                            <t t-set="suma_10_porciento" t-value="suma_10_porciento+o.get_total_precio(p.quantity,p.price_unit)"/>-->
                                             <t t-set="suma_10_porciento" t-value="suma_10_porciento+p.price_total"/>
@@ -375,7 +374,7 @@
                               <table border="1" style="width:100%; margin-left:1%;">
 <!--                                  <t t-foreach="o.tax_line_ids" t-as="s">-->
                                   <tr>
-                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>-->
+                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>--&gt;
                                       <t t-if="es_igual == 1">
                                         <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>
                                       </t>
@@ -531,12 +530,12 @@
                             <span style="position:absolute; top:38.40cm; left:8.10cm; font-size:15px; font-weight:bold;">DUPLICADO: Arch.Tributario</span>
                             <span style="position:absolute; top:38.40cm; left:16.10cm; font-size:15px; font-weight:bold;">TRIPLICADO: Contabilidad</span>
                           </p>
-                        <t t-if="o.talonario_factura.cod_autoimpresor">
-                              <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: <span t-field="o.talonario_factura.cod_autoimpresor"/> </p>
-                          </t>
-                          <t t-else="">
+                        <!--<t t-if="o.talonario_factura.cod_autoimpresor">-->
+                        <!--      <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: <span t-field="o.talonario_factura.cod_autoimpresor"/> </p>-->
+                        <!--  </t>-->
+                          <!--<t t-else="">-->
                               <p style="position:absolute; top:39.20cm; left:1.10cm; font-size:15px;width:15cm; font-weight:bold;">AUTORIZADO COMO AUTOIMPRESOR N°: 350050013237</p>
-                          </t>
+                          <!--</t>-->
                           <p style="position:absolute; top:8.70cm; left:10.0cm; font-size:15px;">DESCRIPCION</p>
                       </body>
                   </span>
