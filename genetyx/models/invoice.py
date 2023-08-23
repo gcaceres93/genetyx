@@ -160,7 +160,7 @@ class factura (models.Model):
 
     
     def calcular_letras(self, numero):
-        letras = self.monto_en_letras = num2words(numero, lang='es').upper()
+        letras =  num2words(numero, lang='es').upper()
         letras = '--' + 'GUARANIES ' + letras + '--'
         return letras
 
