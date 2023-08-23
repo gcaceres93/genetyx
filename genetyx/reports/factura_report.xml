@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 <template id="report_factura">
-       <t t-call="web.html_container">
+           <t t-call="web.html_container">
               <t t-foreach="docs" t-as="o">
                   <span t-call="web.basic_layout">
                       <link rel="stylesheet" href="/genetyx/static/src/css/factura_genetyx.css"/>
@@ -18,18 +18,16 @@
                                 </div>
                                 <div id="izquierda">
                                     <span style="position:absolute; top:0.75cm;left:8.20cm; font-size:13px">GENETYX S.A.</span>
-                                   <span style="position:absolute; top:1.50cm;left:8.20cm; font-size:13px">Comercio al por mayor de otros productos n.c.p.</span>
-                                    <span style="position:absolute; top:2.0cm;left:8.20cm; font-size:13px"> Otras producciones de ganados vacunos n.c.p.</span>
-                                   <span style="position:absolute; top:2.50cm;left:8.20cm; font-size:13px">Casa Matriz: <span t-field="o.company_id.street"/></span>
+                                   <span style="position:absolute; top:1.50cm;left:8.20cm; font-size:13px; width:10cm;">Comercio al por mayor de otros productos n.c.p.</span>
+                                    <span style="position:absolute; top:2.0cm;left:8.20cm; font-size:13px; width:10cm;"> Otras producciones de ganados vacunos n.c.p.</span>
+                                   <span style="position:absolute; top:2.50cm;left:8.20cm; font-size:13px;width:10cm;">Casa Matriz: <span t-field="o.company_id.street"/></span>
                                         <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
                                      <span id="compa" style="top:2.90cm;"><span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/></span>
                                      <span id="tel" style="top:3.40cm;"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
-                                     <span id="correo" style="top:3.80cm;"><span t-field="o.company_id.email"/><span> | </span> <span t-field="o.company_id.website"/> </span>
+                                     <span id="correo" style="top:3.80cm;width:15cm;"><span t-field="o.company_id.email"/><span> | </span> <span t-field="o.company_id.website"/> </span>
                                      <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 45%; margin-top:1cm"/>
                                 </div>
                           </div>
-<!--hola mundo -->
-
                           <!-- !!Datos de la factura!! consta de tres divs la mayor contiene a los mas divs mas pequeños vea el CSS-->
                           <div id="body2">
                               <!--datos lado derecho-->
@@ -99,12 +97,12 @@
                           <table class="cabecera_producto">
                               <tr>
                                   <td>CODIGO</td>
-                                  <td style="width:50%">CANTIDAD</td>
+                                  <td style="width:50%;border-right:1px solid white;">CANTIDAD</td>
                               </tr>
                           </table>
                           <table class="cabecera_producto2">
-                              <td><span style="font-size:1px">DESCRIPCION</span></td>
-                              <td style="width:30%">PRECIO UNITARIO</td>
+                              <td><span style="font-size:1px;">DESCRIPCION</span></td>
+                              <td style="border-right:1px solid white;width:30%;">PRECIO UNITARIO</td>
                           </table>
 
                           <table class="cabecera_producto3">
@@ -391,10 +389,10 @@
 
                           <div class="pie">
                           <div>
-                              <table border="1" style="width:100%; margin-left:1%;">
+                              <table border="1" style="width:96%; margin-left:1%;">
 <!--                                  <t t-foreach="o.tax_line_ids" t-as="s">-->
                                   <tr>
-                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>--&gt;
+                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>
                                       <t t-if="es_igual == 1">
                                         <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>
                                       </t>
@@ -435,7 +433,7 @@
 <!--                                  </t>-->
                               </table>
 
-                              <table border="1" style="width:23.90cm; margin-left:1%;">
+                              <table border="1" style="width:23.95cm; margin-left:1%;">
                                   <tr>
                                       <td style="width:18.9cm; text-align:left; font-size:15px;">TOTAL A PAGAR:
                                           <t t-if="'PYG' in o.currency_id.name">
@@ -458,7 +456,7 @@
                               <t t-set="iva_5" t-value="0"/>
                                <t t-set="iva_10" t-value="0"/>
 
-                              <table border="1" style="width:100%;margin-left:1%;">
+                              <table border="1" style="width:96%;margin-left:1%;">
                                   <tr>
 
                                        <td style="text-align:left; font-size:15px">LIQUIDACION DEL IVA: (5%)
@@ -531,8 +529,6 @@
                                        </td>
                                    </tr>
                               </table>
-
-
                           <div style="border: 1px solid black; width:903px; margin-left:1%; height:200px;">
                               <span style="font-size:12px; margin-left: 1%;">GENETYX S.A. no se responsabiliza por las mercaderias retiradas del empaque, ni del uso a que sean sometidas. Uso inseminacion artificial bovina. Producto retirado no retornable. La falta de pago de esta factura a su</span>
                               <span style="font-size:12px; margin-left: 1%;">vencimiento establecerá la mora, en forma automática y sin necesidad de notificación judicial, devengando un interés del .........% mensual, autorizando la inclusión a la Base de Datos de Informconf S.A., conforme a lo</span>
