@@ -374,7 +374,7 @@
                               <table border="1" style="width:100%; margin-left:1%;">
 <!--                                  <t t-foreach="o.tax_line_ids" t-as="s">-->
                                   <tr>
-                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>--&gt;
+                                        <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>
                                       <t t-if="es_igual == 1">
                                         <td style="width:60%; text-align:left; font-size:15px">SUB TOTALES: <span t-esc="o.agregar_punto_de_miles(o.amount_total, o.currency_id.name)" style="font-size:15px"/></td>
                                       </t>
