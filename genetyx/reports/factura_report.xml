@@ -328,7 +328,27 @@
                                         <!--Descripcion original-->
 <!--                                        <t t-if="len(p.product_id.name) &gt; 38">-->
                                             <t t-set="descripcion" t-value="p.product_id.name"/>
-                                            <td id="descripcion"><span t-esc="descripcion[:67]"/></td>
+                                              <td id="descripcion"><span t-esc="descripcion"/>
+                                             <t t-if="o.move_type == 'out_invoice'">
+                                              <t t-foreach="o.invoice_line_ids" t-as="pp">
+                                                <t t-foreach="pp.sale_line_ids.move_ids" t-as="pi">
+                                                  <t t-if="pi.state == 'done'">
+                                                    <t t-foreach="pi.move_line_ids" t-as="ppp">
+                                                      <t t-if="p.product_id.id == ppp.product_id.id">
+                                                        <t t-foreach="ppp.lot_id" t-as="lot">
+                                                        <t t-if="lot.name == ppp.lot_id.name">
+                                                          <span>Nro:</span>
+                                                          <span t-field="ppp.lot_id.name"/>
+                                                          <br/>
+                                                        </t>
+                                                        </t>
+                                                      </t>
+                                                    </t>
+                                                  </t>
+                                                </t>
+                                              </t>
+                                            </t>
+                                          </td>
 <!--                                        </t>-->
 <!--                                        <t t-else="">-->
 <!--                                            <td id="descripcion"><span  t-field="p.product_id.name"></span></td>-->
