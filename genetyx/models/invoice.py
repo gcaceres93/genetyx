@@ -153,9 +153,9 @@ class factura (models.Model):
 
     
     def tipofactura(self, n):
-        if (n == 2):
+        if (n == '2'):
             return 'Credito'
-        elif (n == 1):
+        elif (n == '1'):
             return 'Contado'
 
     
