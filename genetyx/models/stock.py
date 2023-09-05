@@ -18,6 +18,9 @@ class ValuationLayer(models.Model):
 class stock_picking_class (models.Model):
     _inherit = "stock.quant"
 
+    product_categ_id = fields.Many2one('product.category', related='product_id.categ_id',store=True)
+
+
     @api.model
     def _update_reserved_quantity(self, product_id, location_id, quantity, lot_id=None, package_id=None, owner_id=None,
                                   strict=False):
