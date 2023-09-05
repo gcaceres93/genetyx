@@ -9,6 +9,12 @@ from odoo.osv import expression
 from odoo.tools.float_utils import float_compare, float_is_zero
 import logging
 _logger = logging.getLogger(__name__)
+
+class ValuationLayer(models.Model):
+    _inherit = 'stock.valuation.layer'
+
+    categ_id = fields.Many2one('product.category', related='product_id.categ_id',store=True)
+
 class stock_picking_class (models.Model):
     _inherit = "stock.quant"
 
