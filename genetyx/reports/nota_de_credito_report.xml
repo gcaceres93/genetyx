@@ -67,7 +67,7 @@
                                 </div>
                               <!--datos lado izquierdo-->
                                 <div id="izquierda2">
-                                    <p style="font-size:14px; margin-right:1cm; margin-top:0.30cm">FECHA DE EMISION:<span t-field="o.date_invoice" style="margin-left:1%;"/> </p>
+                                    <p style="font-size:14px; margin-right:1cm; margin-top:0.30cm">FECHA DE EMISION:<span t-field="o.invoice_date" style="margin-left:1%;"/> </p>
                                     <p style="font-size:14px; margin-right:1cm; margin-top:-0.30cm">NOMBRE O RAZON SOCIAL:
                                         <t t-if="o.partner_id.parent_id">
                                             <span t-field="o.partner_id.parent_id.name" style="margin-left:1%;"/>
