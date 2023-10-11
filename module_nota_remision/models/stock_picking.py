@@ -4,40 +4,18 @@ from odoo.exceptions import ValidationError
 from datetime import datetime, timedelta
 from num2words import num2words
 
-class notaRemision (models.Model):
+class notaRemision(models.Model):
     _inherit = "stock.picking"
-    # fecha_estimada=fields.Datetime(string="Fecha Emisión: ", compute='compute_getFechaEmision', readonly=False)
-    fecha_estimada=fields.Datetime(string="Fecha Emisión: ")
+    fecha_estimada = fields.Datetime(string="Fecha Emisión: ", compute='compute_getFechaEmision', readonly=False)
+    # fecha_estimada=fields.Datetime(string="Fecha Emisión: ")
     punto_de_partida = fields.Char(string="Punto De Partida: ", compute='compute_getPuntoPartida')
     # punto_de_partida = fields.Char(string="Punto De Partida: ")
-    # punto_de_llegada = fields.Char(string="Punto De Llegada: ", compute='compute_getPuntoLlegada', readonly=False)
-    punto_de_llegada = fields.Char(string="Punto De Llegada: ")
-    nro_factura = fields.Char(string="Número Fctura: ")
-    #
-    # 
-    # @api.depends('state')
-    # def compute_getFechaEmision(self):
-    #     for rec in self:
-    #         rec.fecha_estimada = rec.scheduled_date
-    #
-    
-    @api.depends('state')
-    def compute_getPuntoPartida(self):
-        for rec in self:
-            if rec.company_id.street and rec.company_id.street2:
-                rec.punto_de_partida = rec.company_id.street + ' , ' + rec.company_id.street2
-            else:
-                rec.punto_de_partida = rec.company_id.street
+    punto_de_llegada = fields.Char(string="Punto De Llegada: ", compute='compute_getPuntoLlegada', readonly=False)
+    # punto_de_llegada = fields.Char(string="Punto De Llegada: ")
+    nro_factura = fields.Char(string="Número Fctura: ", related="sale_id.invoice_ids.nro_factura")
 
-    # 
-    # @api.depends('state')
-    # def compute_getPuntoLlegada(self):
-    #     for rec in self:
-    #         if rec.partner_id.street and rec.partner_id.street2:
-    #             rec.punto_de_llegada = rec.partner_id.street + ' , ' + rec.partner_id.street2
-    #         else:
-    #             rec.punto_de_llegada = rec.partner_id.street
-
+    #
+    #
     # marca_vehiculo=fields.Char(string="Marca Vehiculo Transporte")
     # nombre_transportista=fields.Char(string="Nombre Razon Social Transp")
     # ruc_transportista=fields.Char("RUC Transp")
@@ -56,3 +34,25 @@ class notaRemision (models.Model):
     # comprobante_venta=fields.Char(string="Comprob. De Venta")
     # timbrado_numero=fields.Char(string="Timbrado Nro.")
     # direccion_conductor=fields.Char(string="Direccion del Cond.")
+# testing para git
+    @api.depends('state')
+    def compute_getFechaEmision(self):
+        for rec in self:
+            rec.fecha_estimada = rec.scheduled_date
+
+    @api.depends('state')
+    def compute_getPuntoPartida(self):
+        for rec in self:
+            if rec.company_id.street and rec.company_id.street2:
+                rec.punto_de_partida = rec.company_id.street + ' , ' + rec.company_id.street2
+            else:
+                rec.punto_de_partida = rec.company_id.street
+
+    #
+    @api.depends('state')
+    def compute_getPuntoLlegada(self):
+        for rec in self:
+            if rec.partner_id.street and rec.partner_id.street2:
+                rec.punto_de_llegada = rec.partner_id.street + ' , ' + rec.partner_id.street2
+            else:
+                rec.punto_de_llegada = rec.partner_id.street
