@@ -212,5 +212,20 @@ class factura (models.Model):
         elif 'PYG' in moneda:
             return 'Gs.'
 
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+    @api.onchange('currency_id')
+    def _onchange_currency(self):
+        for line in self:
+            company = line.move_id.company_id
+            if line.move_id.move_type != 'in_receipt':
+                if line.move_id.is_invoice(include_receipts=True):
+                    line._onchange_price_subtotal()
+                elif not line.move_id.reversed_entry_id:
+                    balance = line.currency_id._convert(line.amount_currency, company.currency_id, company,
+                                                        line.move_id.date or fields.Date.context_today(line))
+                    line.debit = balance if balance > 0.0 else 0.0
+                    line.credit = -balance if balance < 0.0 else 0.0
+
 
 

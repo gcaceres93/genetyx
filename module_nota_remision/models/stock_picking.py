@@ -56,4 +56,3 @@ class notaRemision(models.Model):
                 rec.punto_de_llegada = rec.partner_id.street + ' , ' + rec.partner_id.street2
             else:
                 rec.punto_de_llegada = rec.partner_id.street
-
