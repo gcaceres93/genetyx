@@ -34,7 +34,7 @@ class notaRemision(models.Model):
     # comprobante_venta=fields.Char(string="Comprob. De Venta")
     # timbrado_numero=fields.Char(string="Timbrado Nro.")
     # direccion_conductor=fields.Char(string="Direccion del Cond.")
-# testing para git
+# testing para gitcc
     @api.depends('state')
     def compute_getFechaEmision(self):
         for rec in self:
