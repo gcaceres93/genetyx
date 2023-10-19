@@ -15,7 +15,19 @@ class factura (models.Model):
     comercial = fields.Many2one('res.partner',string="Comercial")
     user_id = fields.Many2one('res.users', string='Salesperson', track_visibility='onchange',default=lambda self: self.env.user, copy=False)
 
+    @api.onchange('date', 'currency_id')
+    def _onchange_currency(self):
+        currency = self.currency_id or self.company_id.currency_id
 
+        if self.is_invoice(include_receipts=False):
+            for line in self._get_lines_onchange_currency():
+                line.currency_id = currency
+                line._onchange_currency()
+        else:
+            for line in self.line_ids:
+                line._onchange_currency()
+
+        self._recompute_dynamic_lines(recompute_tax_base_amount=True)
     
     def calcular_rate(self):
             tasas = self.env['res.currency.rate'].search([('rate','=',1)])
