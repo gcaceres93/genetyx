@@ -110,20 +110,36 @@ class factura (models.Model):
         #         self.env.cr.execute(second_query, params)
         if self.amount_total != self.amount_residual and self.move_type != 'entry':
             query = """
-                    update account_move_line set price_unit = - (Select amount_total from account_move where id = move_id),
-                    amount_currency = (Select (case when account_move.move_type='out_refund' then - amount_total else amount_total end) from account_move where id = move_id),
-                    price_subtotal = - (Select amount_total from account_move where id = move_id),
-                    price_total = - (Select amount_total from account_move where id = move_id),
-                    amount_residual_currency = (Select (case when account_move.move_type='out_refund' then - amount_total else amount_total end) from account_move where id = move_id)
-                    where move_id = %s and account_id in (select id from account_account where user_type_id = (select id from account_account_type where "name" = 'Receivable' and "type" = 'receivable'))
-                """
+                    UPDATE account_move_line SET 
+                        price_unit = - (SELECT amount_total FROM account_move WHERE id = move_id),
+                        amount_currency = (SELECT CASE 
+                                               WHEN account_move.move_type IN ('out_invoice', 'in_refund') THEN amount_total 
+                                               WHEN account_move.move_type IN ('in_invoice', 'out_refund') THEN - amount_total 
+                                           END 
+                                           FROM account_move WHERE id = move_id),
+                        price_subtotal = - (SELECT amount_total FROM account_move WHERE id = move_id),
+                        price_total = - (SELECT amount_total FROM account_move WHERE id = move_id),
+                        amount_residual_currency = (SELECT CASE 
+                                                        WHEN account_move.currency_id = account_move.company_currency_id THEN amount_total
+                                                        WHEN account_move.move_type IN ('out_invoice', 'in_refund') THEN amount_total
+                                                        WHEN account_move.move_type IN ('in_invoice', 'out_refund') THEN - amount_total
+                                                    END 
+                                                    FROM account_move WHERE id = move_id)
+                    WHERE move_id = %s AND account_id IN (
+                        SELECT id FROM account_account 
+                        WHERE user_type_id IN (
+                            SELECT id FROM account_account_type 
+                            WHERE "name" IN ('Receivable', 'Payable') AND "type" IN ('receivable', 'payable')
+                        )
+                    )
+            """
             params = [self.id]
-            second_params = [self.id]
             second_query = """
-            update account_move set amount_residual = amount_total where id = %s
+                UPDATE account_move SET amount_residual = amount_total WHERE id = %s
             """
             self.env.cr.execute(query, params)
-            self.env.cr.execute(second_query, second_params)
+            self.env.cr.execute(second_query, params)
+
         return res
 
     @api.onchange('date', 'currency_id')
