@@ -113,17 +113,16 @@ class factura (models.Model):
                     UPDATE account_move_line SET 
                         price_unit = - (SELECT amount_total FROM account_move WHERE id = move_id),
                         amount_currency = (SELECT CASE 
-                                               WHEN account_move.move_type='out_refund' THEN - amount_total 
-                                               WHEN account_move.move_type='in_refund' THEN - amount_total 
-                                               ELSE amount_total 
+                                               WHEN account_move.move_type IN ('out_invoice', 'in_refund') THEN amount_total 
+                                               WHEN account_move.move_type IN ('in_invoice', 'out_refund') THEN - amount_total 
                                            END 
                                            FROM account_move WHERE id = move_id),
                         price_subtotal = - (SELECT amount_total FROM account_move WHERE id = move_id),
                         price_total = - (SELECT amount_total FROM account_move WHERE id = move_id),
                         amount_residual_currency = (SELECT CASE 
-                                                        WHEN account_move.move_type='out_refund' THEN - amount_total 
-                                                        WHEN account_move.move_type='in_refund' THEN - amount_total 
-                                                        ELSE amount_total 
+                                                        WHEN account_move.currency_id = account_move.company_currency_id THEN amount_residual
+                                                        WHEN account_move.move_type IN ('out_invoice', 'in_refund') THEN amount_residual 
+                                                        WHEN account_move.move_type IN ('in_invoice', 'out_refund') THEN - amount_residual 
                                                     END 
                                                     FROM account_move WHERE id = move_id)
                     WHERE move_id = %s AND account_id IN (
