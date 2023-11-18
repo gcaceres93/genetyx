@@ -12,7 +12,9 @@ class notaRemision(models.Model):
     # punto_de_partida = fields.Char(string="Punto De Partida: ")
     punto_de_llegada = fields.Char(string="Punto De Llegada: ", compute='compute_getPuntoLlegada', readonly=False)
     # punto_de_llegada = fields.Char(string="Punto De Llegada: ")
-    nro_factura = fields.Char(string="Número Fctura: ", related="sale_id.invoice_ids.nro_factura")
+    #nro_factura = fields.Char(string="Número Fctura: ", related="sale_id.invoice_ids.nro_factura")
+    nro_factura = fields.Char(string="Número Fctura: ")
+
 
     #
     #
