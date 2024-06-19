@@ -1,5 +1,6 @@
 reportlab==3.3.0
 dicttoxml==1.7.4
+signxml==2.9.0
 
 
 
