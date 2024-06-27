@@ -20,7 +20,7 @@
                                     <span style="position:absolute; top:0.75cm;left:8.20cm; font-size:13px">GENETYX S.A.</span>
                                    <span style="position:absolute; top:1.50cm;left:8.20cm; font-size:13px; width:10cm;">Comercio al por mayor de otros productos n.c.p.</span>
                                     <span style="position:absolute; top:2.0cm;left:8.20cm; font-size:13px; width:10cm;"> Otras producciones de ganados vacunos n.c.p.</span>
-                                   <span style="position:absolute; top:2.50cm;left:8.20cm; font-size:13px;width:10cm;">Casa Matriz: <span t-field="o.company_id.street"/></span>
+                                   <span style="position:absolute; top:2.50cm;left:8.20cm; font-size:12px;width:10cm;">Casa Matriz: <span t-field="o.company_id.street"/></span>
                                         <!--<span style="position:absolute; top:2.50cm; left:8.60cm; font-size:13px"><span t-field="o.company_id.razon_social"/> </span>-->
                                      <span id="compa" style="top:2.90cm;"><span t-field="o.company_id.city"/>, <span t-field="o.company_id.country_id.name"/></span>
                                      <span id="tel" style="top:3.40cm;"><span t-field="o.company_id.phone"/></span><!--Agregar una linea de telefono celular-->
