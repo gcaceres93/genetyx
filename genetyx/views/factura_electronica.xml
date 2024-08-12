@@ -6,7 +6,7 @@
             <field name="inherit_id" ref="paraguay_backoffice.ruc_documentos_timbrados_form_view"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='timbrado_electronico']" position="attributes">
-                    <attribute name="attrs">{'required': [('company_id.name', '=', 'GENETYX S.A.')]}</attribute>
+                    <attribute name="attrs">{'required': [('company_name', '=', 'GENETYX S.A.')]}</attribute>
                 </xpath>
             </field>
         </record>
