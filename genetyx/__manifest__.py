@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from genetyx.models.invoice import factura
-
 {
     'name': "genetyx",
 
