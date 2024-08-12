@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from genetyx.models.invoice import factura
+
 {
     'name': "genetyx",
 
@@ -19,7 +21,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','account','stock','sale'],
+    'depends': ['base','account','stock','sale','factura_electronica'],
 
     # always loaded
     'data': [
