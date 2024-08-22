@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Extender la vista del reporte -->
+        <template id="report_factura_kude_inherit_remision" inherit_id="factura_electronica.report_factura_kude_2">
+        <xpath expr="//div[@class='col-6']/p/span[@t-field='o.partner_shipping_id.street']" position="after">
+                  <t t-if="o.remision_ids">
+                      <p>Nota de Remisión Nro:
+                          <t t-foreach="o.remision_ids" t-as="remision">
+                              <span t-esc="remision.numero_remision"/>,
+                          </t>
+                      </p>
+                  </t>
+    </xpath>
+
+<xpath expr="//div[@class='pie']/following-sibling::p" position="after">
+    <div>
+        <!-- Título Cuentas a Depositar -->
+        <p><strong>Cuentas a Depositar:</strong></p>
+
+        <!-- Bloques para Cuentas a Depositar en tres columnas -->
+        <div class="row">
+            <!-- Cuentas de banco en columnas -->
+            <div class="col-4">
+                <p><strong>BANCO ITAÚ:</strong></p>
+                <p>CTA CTE GS: 701560971</p>
+                <p>CTA USD: 750502555</p>
+            </div>
+            <div class="col-4 text-center">
+                <p><strong>BANCO INTERFISA:</strong></p>
+                <p>CTA CTE GS: 229042304</p>
+                <p>CTA USD: 221042305</p>
+            </div>
+            <div class="col-4 text-right">
+                <p><strong>BANCO GNB:</strong></p>
+                <p>CTA CTE GS: 12914575001</p>
+                <p>CTA USD: 12914575004</p>
+            </div>
+        </div>
+    </div>
+</xpath>
+
+
+        </template>
+    </data>
+</odoo>
