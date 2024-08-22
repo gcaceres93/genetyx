@@ -19,13 +19,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','account','stock','sale'],
+    'depends': ['base','account','stock','sale','factura_electronica'],
 
     # always loaded
     'data': [
         'security/security.xml',
         'security/menu.xml',
         'views/account_invoice.xml',
+        'views/factura_electronica.xml',
         'reports/factura_report.xml',
         'reports/nota_de_credito_report.xml',
         'reports/genetyx_reports.xml'
