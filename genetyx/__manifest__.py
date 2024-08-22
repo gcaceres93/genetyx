@@ -28,6 +28,7 @@
         'views/account_invoice.xml',
         # 'views/factura_electronica.xml',
         'reports/factura_report.xml',
+        'reports/kude_view.xml',
         'reports/nota_de_credito_report.xml',
         'reports/genetyx_reports.xml'
     ],
