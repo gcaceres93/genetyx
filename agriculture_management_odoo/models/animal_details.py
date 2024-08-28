@@ -21,7 +21,7 @@
 #############################################################################
 '''Module for Creating Animal Records'''
 from odoo import models, fields
-from odoo.odoo import api
+from odoo import api
 from odoo.exceptions import UserError, ValidationError
 
 
