@@ -101,7 +101,7 @@ class AnimalDetails(models.Model):
     andrologico = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')],
 
-        string='Andrologico', required=True, tracking=True)
+        string='Andrologico', tracking=True)
 
     archivo_multimedia = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')], string='Se agregó archivo multimedia?', required='True')
