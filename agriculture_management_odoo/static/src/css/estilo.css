@@ -1,0 +1,6 @@
+/* mi_modulo/static/src/css/mi_estilo.css */
+
+.horizontal-radio .o_radio {
+    display: inline-block;
+    margin-right: 20px; /* Ajusta este valor según la separación que desees entre los botones */
+}

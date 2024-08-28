@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_crop_request_kanban" model="ir.ui.view">
+        <field name="name">crop.request.kanban</field>
+        <field name="model">crop.requests</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state"
+                    class="o_kanban_small_column o_kanban_project_tasks"
+                    records_draggable="true" default_order="state"
+                    examples="project"
+                    js_class="project_task_kanban" sample="1">
+                <field name="ref"/>
+                <field name="veterinario_id"/>
+                <field name="request_date"/>
+                <field name="tags_id" widget="many2many_tags"
+                       options="{'color_field': 'color'}"/>
+                  <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <strong>
+                                    <field name="ref"/>
+                                    <br/>
+                                    <field name="veterinario_id" string="Propietario"/>
+                                    <br/>
+                                    <field name="animal_id" string="Animal"/>
+                                    <br/>
+                                    <field name="request_date" string="Fecha de Ingreso"/>
+                                    <br/>
+                                    <field name="state" string="Ubicación"/>
+                                    <br/>
+                                </strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="view_crop_request_tree" model="ir.ui.view">
+        <field name="name">crop.request.tree</field>
+        <field name="model">crop.requests</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="animal_id"/>
+                <field name="veterinario_id"/>
+                <field name="state" string="Ubicación"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_crop_request_tree" model="ir.ui.view">
+        <field name="name">crop.production.tree</field>
+        <field name="model">crop.production</field>
+        <field name="arch" type="xml">
+            <tree>
+                 <field name="salto"/>
+                                        <field name="cod_toro"/>
+                                        <field name="codigo_coletador"/>
+                                        <field name="metodo_coleta"/>
+                                        <field name="lote"/>
+                                        <field name="vol_ml"/>
+                                        <field name="conc"/>
+                                        <field name="con_total"/>
+                                        <field name="motil"/>
+                                        <field name="vigor"/>
+                                        <field name="sptz"/>
+                                        <field name="def_mayores"/>
+                                        <field name="def_totales"/>
+                                        <field name="calc_paletas"/>
+                                        <field name="vol_inicial"/>
+                                        <field name="vol_final"/>
+                                        <field name="vol_agregar"/>
+                                        <field name="paletas_envasadas"/>
+                                        <field name="paletas_producidas"/>
+                                        <field name="resultado_final"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_crop_request_form" model="ir.ui.view">
+        <field name="name">crop.request.form</field>
+        <field name="model">crop.requests</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button id="button_cuarentena" name="action_cuarentena"
+                            string="Cuarentena"
+                            class="btn-primary"
+                            type="object" states="s_cuarentena,enfermeria,residente"/>
+                    <button id="button_residente" name="action_residente"
+                            string="Residente" class="btn-primary"
+                            type="object" states="cuarentena,s_cuarentena,enfermeria"/>
+                    <button id="button_s_cuarentena" name="action_s_cuarentena"
+                            string="Salida de Cuarentena" class="btn-primary"
+                            type="object" states="cuarentena,enfermeria,residente"/>
+                    <button id="button_enfermeria" name="action_enfermeria"
+                            string="Enfermeria" class="btn-primary"
+                            type="object" states="cuarentena,s_cuarentena,residente"/>
+                    <button id="button_cancel" name="action_cancel"
+                            string="Cancelled" class="btn-primary"
+                            type="object"
+                            states="cuarentena,s_cuarentena,enfermeria,residente"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,cuarentena,s_cuarentena,enfermeria,residente"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="ref"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="veterinario_id"/>
+                            <field name="user_id" string="Ingresado por:"/>
+                            <field name="animal_id" readonly = "0" force_save="1"/>
+
+                        </group>
+                        <group>
+                            <field name="request_date"/>
+                            <field name="location_id"/>
+                            <field name="tags_id" widget="many2many_tags"
+                                   options="{'color_field': 'color'}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <!--
+                        <page string="Machinery" name="used_machinery">
+                            <field name="machinery_ids">
+                                <tree editable="bottom">
+                                    <field name="vehicle_id"/>
+                                    <field name="qty"/>
+                                </tree>
+                            </field>
+                        </page>
+                        -->
+
+                        <page string="Ficha de Entrada" attrs="{'invisible': [('state', '!=', 'cuarentena')]}">
+                                <group>
+                                    <field name="guia_senacsa" widget="radio"/>
+                                    <field name="enfermedades_scuarentena" widget="radio" string="Analisis"/>
+
+<!--                                    <field name="gta"/>-->
+<!--                                    <field name="nota_fiscal"/>-->
+<!--                                    <field name="rp" string="RP"/>-->
+<!--                                    <field name="d_veterinario"/>-->
+                                </group>
+                        </page>
+                        <page string="Ficha de Analisis en Cuarentena" attrs="{'invisible': [('state', '!=', 'cuarentena')]}">
+                                  <group>
+                                <group string="Examen de Diarrea Viral Bovina">
+                                    <field name="enfermedades_diarrea" widget="radio"/>
+                                    <field name="fecha_analisis_dv"/>
+                                </group>
+                                <group string="Examen de Tuberculosis">
+                                    <field name="enfermedades_tuberculosis" widget="radio"/>
+                                    <field name="fecha_analisis_tb"/>
+                                </group>
+                            </group>
+
+                            <group>
+                                <group string="Examen de Campylobacteriosis">
+                                    <field name="enfermedades_campylobacteriosis" widget="radio"/>
+                                    <field name="fecha_analisis_camp"/>
+                                </group>
+                                <group string="Examen de Trincomaniasis">
+                                    <field name="enfermedades_tricomaniasis" widget="radio"/>
+                                    <field name="fecha_analisis_trico"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Documentos del Animal" attrs="{'invisible': [('state', '!=', 'residente')]}">
+                                <group>
+                                    <field name="gta"/>
+                                    <field name="nota_fiscal"/>
+                                    <field name="rp" string="RP"/>
+                                    <field name="d_veterinario"/>
+                                </group>
+
+                        </page>
+                          <page string="Ficha de Producción" attrs="{'invisible': [('state', '!=', 'residente')]}">
+                                <group>
+                                   <field name="produccion_ids">
+                                <tree editable="bottom">
+                                        <field name="salto"/>
+                                        <field name="codigo_coletador"/>
+                                        <field name="metodo_coleta"/>
+                                        <field name="lote"/>
+                                        <field name="vol_ml"/>
+                                        <field name="conc"/>
+                                        <field name="con_total"/>
+                                        <field name="motil"/>
+                                        <field name="vigor"/>
+                                        <field name="sptz"/>
+                                        <field name="def_mayores"/>
+                                        <field name="def_totales"/>
+                                        <field name="calc_paletas"/>
+                                        <field name="vol_inicial"/>
+                                        <field name="vol_final"/>
+                                        <field name="vol_agregar"/>
+                                        <field name="paletas_envasadas"/>
+                                        <field name="paletas_producidas"/>
+                                        <field name="resultado_final"/>
+                                </tree>
+                            </field>
+                                </group>
+                        </page>
+                        <page string="Ficha de Salida" attrs="{'invisible': [('state', '!=', 's_cuarentena')]}">
+                                <group>
+                                     <field name="examen_fisico_cuarentena" widget="radio"/>
+                                     <field name="examen_andrologico_cuarentena" widget="radio"/>
+                                     <field name="enfermedades_scuarentena" widget="radio"/>
+                                    <field name="guia_senacsa_cuarentena" widget="radio"/>
+                                     <field name="analisis_cuarentena" widget="radio"/>
+                                    <field name="fecha_analisis_cuarentena" attrs="{'invisible': [('analisis_cuarentena', '!=', 'ok')]}"/>
+                                           </group>
+                        </page>
+
+                         <page string="Medicamentos" name="used_medicine" attrs="{'invisible': [('state', '!=', 'enfermeria')]}">
+                            <field name="insumos_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id" string="Medicamento"/>
+                                    <field name="qty"/>
+                                    <field name="price"/>
+                                    <field name="motivo_uso"/>
+                                    <field name="fecha"/>
+                                </tree>
+                            </field>
+                        </page>
+<!--                        <page string="Sintomas" name="animal_sintoms" attrs="{'invisible': [('state', '!=', 'enfermeria')]}">-->
+<!--                            <field name="sintomas_ids">-->
+<!--                                <tree editable="bottom">-->
+<!--                                    <field name="sintomas"/>-->
+
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+                        <page string="Description" name="description">
+                            <field name="note"
+                                   placeholder="Crop Description........"/>
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>

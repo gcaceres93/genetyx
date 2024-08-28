@@ -1,0 +1,96 @@
+<odoo>
+    <data>
+        <!-- Vista Árbol -->
+        <record id="view_crop_eventos_tree" model="ir.ui.view">
+            <field name="name">crop.eventos.tree</field>
+            <field name="model">crop.eventos</field>
+            <field name="arch" type="xml">
+               <tree editable="bottom">
+                    <field name="sintomas" string="Síntomas"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Formulario -->
+        <record id="view_crop_eventos_form" model="ir.ui.view">
+            <field name="name">crop.eventos.form</field>
+            <field name="model">crop.eventos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="sintomas" string="Síntomas"/>
+                      </group>
+                </form>
+            </field>
+        </record>
+         <record id="view_crop_tratamiento_tree" model="ir.ui.view">
+            <field name="name">crop.tratamiento.tree</field>
+            <field name="model">crop.tratamiento</field>
+            <field name="arch" type="xml">
+               <tree editable="bottom">
+                    <field name="tratamiento" string="Tratamiento"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Formulario -->
+        <record id="view_crop_tratamiento_form" model="ir.ui.view">
+            <field name="name">crop.tratamiento.form</field>
+            <field name="model">crop.tratamiento</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="tratamiento" string="Tratamiento"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+         <record id="view_crop_uso_tree" model="ir.ui.view">
+            <field name="name">crop.uso.tree</field>
+            <field name="model">crop.uso</field>
+            <field name="arch" type="xml">
+               <tree editable="bottom">
+                    <field name="motivo_uso" string="Motivo Uso"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Formulario -->
+        <record id="view_crop_motivo_form" model="ir.ui.view">
+            <field name="name">crop.motivo.form</field>
+            <field name="model">crop.uso</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="motivo_uso" string="Motivo Uso"/>
+
+                    </group>
+                </form>
+            </field>
+        </record>
+         <record id="view_crop_reacciones_tree" model="ir.ui.view">
+            <field name="name">crop.reacciones.tree</field>
+            <field name="model">crop.reacciones</field>
+            <field name="arch" type="xml">
+               <tree editable="bottom">
+                    <field name="reacciones_alergicas" string="Reacciones Alergicas"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Formulario -->
+        <record id="view_crop_reacciones_form" model="ir.ui.view">
+            <field name="name">crop.reacciones.form</field>
+            <field name="model">crop.reacciones</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="reacciones_alergicas" string="Reacciones Alergicas"/>
+
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
