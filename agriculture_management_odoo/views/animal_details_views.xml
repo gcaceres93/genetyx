@@ -78,6 +78,7 @@
                                     <field name="contrato" widget="radio"/>
                                     <field name="examen_andrologico" widget="radio" string="Examen Andrologico"/>
                                     <field name="certificado_vacunacion" widget="radio" string="Certificado de vacunacion"/>
+                                    <field name="analisis_laboratoriales" widget="radio" string="Analisis laboratoriales"/>
                                     <field name="motivos" attrs="{'invisible': [('examen_andrologico', '!=', 'no')]}"/>
                                 </group>
                             </group>

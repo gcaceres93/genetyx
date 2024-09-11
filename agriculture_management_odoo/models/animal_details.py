@@ -57,6 +57,8 @@ class AnimalDetails(models.Model):
         [('ok', 'Ok'), ('no', 'No')], string='Examen Fisico Normal?', required=True, tracking=True)
     certificado_vacunacion = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')], string='Certificado de vacunacion', required=True, tracking=True)
+    analisis_laboratoriales = fields.Selection(
+        [('ok', 'Ok'), ('no', 'No')], string='Analisis laboratoriales', required=False, tracking=True)
     examen_andrologico = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')],
 
