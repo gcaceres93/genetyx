@@ -55,6 +55,8 @@ class AnimalDetails(models.Model):
     motivos = fields.Text(string='Descripción del Motivo')
     examen_fisico = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')], string='Examen Fisico Normal?', required=True, tracking=True)
+    certificado_vacunacion = fields.Selection(
+        [('ok', 'Ok'), ('no', 'No')], string='Certificado de vacunacion', required=True, tracking=True)
     examen_andrologico = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')],
 
