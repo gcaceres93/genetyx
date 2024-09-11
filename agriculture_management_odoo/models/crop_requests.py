@@ -63,7 +63,7 @@ class CropRequests(models.Model):
         [('ok', 'Ok'), ('no', 'No')], string="Enfermedades")
     fecha_analisis_cuarentena = fields.Date(string='Fecha de último analisis')
     enfermedades_cuarentena = fields.Selection(
-        [('ok', 'Ok'), ('no', 'No')], string="Enfermedades")
+        [('ok', 'Ok'), ('no', 'No')], string="Enfermedades", required=True)
     d_veterinario = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')])
 
@@ -74,10 +74,14 @@ class CropRequests(models.Model):
         string='Examen Andrologico', tracking=True)
 
     examen_fisico_scuarentena = fields.Selection(
-        [('ok', 'Ok'), ('no', 'No')], string='Examen Fisico Normal?', tracking=True)
+        [('ok', 'Ok'), ('no', 'No')], string='Examen Fisico Normal?', tracking=True, required=True)
+    pedigree = fields.Selection(
+        [('ok', 'Ok'), ('no', 'No')], string='Pedigree', tracking=True, required=True)
+    analisis_laboratorio = fields.Selection(
+        [('ok', 'Ok'), ('no', 'No')], string='Analisis de laboratorio', tracking=True, required=True)
     examen_andrologico_scuarentena = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')],
-        string='Examen Andrologico',tracking=True)
+        string='Examen Andrologico',tracking=True, required=True)
 
     enfermedades_diarrea = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')],

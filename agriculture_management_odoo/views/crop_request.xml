@@ -210,6 +210,8 @@
                         <page string="Ficha de Salida" attrs="{'invisible': [('state', '!=', 's_cuarentena')]}">
                                 <group>
                                      <field name="examen_fisico_cuarentena" widget="radio"/>
+                                    <field name="pedigree" widget="radio"/>
+                                    <field name="analisis_laboratorio" widget="radio"/>
                                      <field name="examen_andrologico_cuarentena" widget="radio"/>
                                      <field name="enfermedades_scuarentena" widget="radio"/>
                                     <field name="guia_senacsa_cuarentena" widget="radio"/>
