@@ -69,12 +69,12 @@
                                 <group string="Documentación Necesaria">
                                     <field name="guia_movilizacion"/>
                                     <field name="pedigree" widget="radio"/>
-                                    <field name="nota_fiscal" widget="radio"/>
-                                    <field name="registro" widget="radio"/>
+<!--                                    <field name="nota_fiscal" widget="radio"/>-->
+<!--                                    <field name="registro" widget="radio"/>-->
 
                                 </group>
                                 <group string="Documentación Necesaria">
-                                    <field name="gta" widget="radio"/>
+<!--                                    <field name="gta" widget="radio"/>-->
                                     <field name="contrato" widget="radio"/>
                                     <field name="examen_andrologico" widget="radio" string="Examen Andrologico"/>
                                     <field name="motivos" attrs="{'invisible': [('examen_andrologico', '!=', 'no')]}"/>
