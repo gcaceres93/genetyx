@@ -177,7 +177,7 @@
                             </group>
                         </page>
 
-                        <page string="Estudios a Realizar" attrs="{'invisible': [('country_id', '=', False)]}">
+                        <page string="Estudios a Realizar">
                             <field name="study_ids">
                                 <tree editable="bottom">
                                     <field name="study_name" string="Nombre del Estudio"/>
