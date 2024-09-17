@@ -177,11 +177,10 @@
                             </group>
                         </page>
 
-                        <page string="Estudios a Realizar">
+                       <page string="Estudios a Realizar">
                             <field name="study_ids">
                                 <tree editable="bottom">
-                                    <field name="study_name" string="Nombre del Estudio"/>
-                                    <field name="result" string="Resultado"/>
+                                    <field name="name" string="Nombre del Estudio"/>
                                 </tree>
                             </field>
                         </page>

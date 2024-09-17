@@ -18,7 +18,9 @@ class CropRequests(models.Model):
     produccion_ids = fields.One2many('crop.production', 'cro', string='Producción')
 
     nombre = fields.Char(string="Nombre")
-    
+
+    animals_id = fields.Many2one('animal.details', string="Animal Details")
+
     insumos_ids = fields.One2many('crop.insumos', 'pro', string='Insumos')
 
     price = fields.Float(string='Precio', related='insumos_ids.product_id.list_price', store=True)
@@ -126,6 +128,20 @@ class CropRequests(models.Model):
             return activity
         return False
 
+    @api.onchange('animals_id')
+    def _onchange_animals_id(self):
+        if self.animals_id:
+            self.country_id = self.animals_id.country_id.id
+
+    @api.depends('country_id')
+    def _compute_study_ids(self):
+        for record in self:
+            # Lógica para obtener estudios según el país
+            if record.country_id:
+                studies = self.env['crop.request.studies'].search([('country_id', '=', record.country_id.id)])
+                record.study_ids = studies
+            else:
+                record.study_ids = False
     @api.onchange('animal_id')
     def _onchange_animal_id(self):
         if self.animal_id:
@@ -302,4 +318,4 @@ class CropRequestStudies(models.Model):
     request_id = fields.Many2one('crop.requests', string="Solicitud de Cuarentena")
     country_id = fields.Many2one('res.country', string="País")
     study_name = fields.Char(string="Nombre del Estudio")
-    result = fields.Selection([('pending', 'Pendiente'), ('done', 'Realizado')], string="Resultado")
+    crop_request_id = fields.Many2one('crop.requests', string="Crop Request")
