@@ -116,6 +116,7 @@ class AnimalDetails(models.Model):
     breed = fields.Char(string='Animal', required=True, tracking=True)
     peso = fields.Integer(string='Peso(en Kg)', required=True)
     age = fields.Char(string='Edad', required=True, tracking=True)
+    country_id = fields.Many2one('res.country', string='País de Exportación', required=True, tracking=True)
     state = fields.Selection(
         [('ingresado', 'Ingresado'), ('no_ingresado', 'No ingresado')],
         default="no_ingresado",
