@@ -127,6 +127,10 @@ class AnimalDetails(models.Model):
 
     ingreso = fields.Many2one('crop.request')
 
+    breed_id = fields.Many2one('animal.breed', string='Raza', required=True, tracking=True)
+    fur_type_id = fields.Many2one('animal.fur', string='Pelaje', required=True, tracking=True)
+
+
     def copiar_a_formulario_destino(self):
         destino_obj = self.env['crop.request']
 
@@ -162,3 +166,16 @@ class AnimalDetails(models.Model):
             raise ValidationError('Se debe adjuntar VIDEOS y FOTOS de la llegada del animal, favor adjuntar la evidencia en el chatter.')
 
 
+class AnimalBreed(models.Model):
+    _name = 'animal.breed'
+    _description = 'Animal Breeds'
+
+    name = fields.Char(string='Breed Name', required=True)
+    description = fields.Text(string='Description')
+
+class AnimalFur(models.Model):
+    _name = 'animal.fur'
+    _description = 'Animal Fur Types'
+
+    name = fields.Char(string='Pelaje', required=True)
+    description = fields.Text(string='Description')

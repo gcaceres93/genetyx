@@ -55,6 +55,8 @@
                                 <group>
                                     <field name="puntuacion_corporal" string="Condición Corporal 1-5"/>
                                     <field name="peso"/>
+                                     <field name=" fur_type_id"/>
+                                    <field name="breed_id"/>
 
                                 </group>
                                 <group>
