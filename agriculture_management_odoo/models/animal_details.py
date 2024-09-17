@@ -170,7 +170,7 @@ class AnimalBreed(models.Model):
     _name = 'animal.breed'
     _description = 'Animal Breeds'
 
-    name = fields.Char(string='Breed Name', required=True)
+    name = fields.Char(string='Raza', required=True)
     description = fields.Text(string='Description')
 
 class AnimalFur(models.Model):
