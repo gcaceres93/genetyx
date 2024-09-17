@@ -44,7 +44,7 @@ access_crop_uso,access.crop.uso,model_crop_uso,base.group_user,1,1,1,1
 
 access_crop_reacciones,access.crop.reacciones,model_crop_reacciones,base.group_user,1,1,1,1
 
-access_fur_type,animal.breed,animal.breed,base.group_user,1,1,1,1
+access_fur_type,access.animal.breed,model_animal_breed,base.group_user,1,1,1,1
 
-access_breed_type,animal.fur,animal.fur,base.group_user,1,1,1,1
+access_breed_type,access.animal.fur,model_animal_fur,base.group_user,1,1,1,1
 
