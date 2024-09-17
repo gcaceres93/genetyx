@@ -109,6 +109,7 @@ class CropRequests(models.Model):
         ids_asignados = asignados.mapped('location_name')
         return [('id', 'not in', ids_asignados)]
 
+    country_id = fields.Many2one('res.country', string="País")
     @api.model
     def _create_analysis_activity(self, record_id):
         record = self.env['crop.requests'].browse(record_id)
@@ -230,7 +231,7 @@ class CropProdutcion(models.Model):
     paletas_envasadas = fields.Char(string='Paletas Envasadas')
     paletas_producidas = fields.Char(string='Paletas Producidas')
     resultado_final = fields.Char(string='Resultado Final')
-    country_id = fields.Many2one('res.country', string="País")
+
 
 class CropMachinery(models.Model):
     '''Model For Attaching Vehicles'''
