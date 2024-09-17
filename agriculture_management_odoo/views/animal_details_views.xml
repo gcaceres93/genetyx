@@ -62,6 +62,7 @@
                                 <group>
                                     <field name="perimetro_escrotal"/>
                                     <field name="examen_fisico" widget="radio" string="Examen Físico"/>
+                                    <field name="exportacion_animal" widget="radio" string="Exportacion"/>
                                     <field name="motivos" attrs="{'invisible': [('examen_fisico', '!=', 'no')]}"/>
                                 </group>
                             </group>
