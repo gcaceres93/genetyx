@@ -230,7 +230,7 @@ class CropProdutcion(models.Model):
     paletas_envasadas = fields.Char(string='Paletas Envasadas')
     paletas_producidas = fields.Char(string='Paletas Producidas')
     resultado_final = fields.Char(string='Resultado Final')
-    country_id = fields.Many2one('res.country', string="País")
+
 
 class CropMachinery(models.Model):
     '''Model For Attaching Vehicles'''

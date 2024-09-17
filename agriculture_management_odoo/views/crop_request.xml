@@ -108,6 +108,11 @@
                            statusbar_visible="draft,cuarentena,s_cuarentena,enfermeria,residente"/>
                 </header>
                 <sheet>
+                    <group>
+
+                    <field name="country_id" attrs="{'invisible': [('country_id', '=', False)]}" />
+
+                </group>
                     <h1>
                         <field name="ref"/>
                     </h1>
