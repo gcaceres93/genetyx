@@ -92,6 +92,7 @@ class CropRequests(models.Model):
         [('ok', 'Ok'), ('no', 'No')],
 
         string='Tuberculose',  tracking=True)
+    study_ids = fields.One2many('crop.request.studies', 'request_id', string="Estudios en Cuarentena")
     fecha_analisis_tb = fields.Date(string='Fecha de Analisis')
     enfermedades_campylobacteriosis = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')],
@@ -292,3 +293,12 @@ class Reacciones(models.Model):
     _name = 'crop.reacciones'
 
     reacciones_alergicas = fields.Char(string='Reacciones Alergicas')
+
+class CropRequestStudies(models.Model):
+    _name = 'crop.request.studies'
+    _description = 'Estudios en Cuarentena'
+
+    request_id = fields.Many2one('crop.requests', string="Solicitud de Cuarentena")
+    country_id = fields.Many2one('res.country', string="País")
+    study_name = fields.Char(string="Nombre del Estudio")
+    result = fields.Selection([('pending', 'Pendiente'), ('done', 'Realizado')], string="Resultado")

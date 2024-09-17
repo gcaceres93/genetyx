@@ -171,6 +171,16 @@
                                 </group>
                             </group>
                         </page>
+
+                        <page string="Estudios a Realizar" attrs="{'invisible': [('country_id', '=', False)]}">
+                            <field name="study_ids">
+                                <tree editable="bottom">
+                                    <field name="study_name" string="Nombre del Estudio"/>
+                                    <field name="result" string="Resultado"/>
+                                </tree>
+                            </field>
+                        </page>
+
                         <page string="Documentos del Animal" attrs="{'invisible': [('state', '!=', 'residente')]}">
                                 <group>
                                     <field name="gta"/>
