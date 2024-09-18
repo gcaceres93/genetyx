@@ -185,7 +185,7 @@
                             </field>
                         </page>
 
-                        <page string="Documentos del Animal">
+                        <page string="Documentos del Animal" attrs="{'invisible': [('state', '!=', 'residente')]}">
                                 <group>
                                     <field name="gta"/>
                                     <field name="nota_fiscal"/>
