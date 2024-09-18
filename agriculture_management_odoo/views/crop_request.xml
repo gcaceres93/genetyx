@@ -180,12 +180,12 @@
                        <page string="Estudios a Realizar">
                             <field name="study_ids">
                                 <tree editable="bottom">
-                                    <field name="name" string="Nombre del Estudio"/>
+                                    <field name="study_name" string="Nombre del Estudio"/>
                                 </tree>
                             </field>
                         </page>
 
-                        <page string="Documentos del Animal" attrs="{'invisible': [('state', '!=', 'residente')]}">
+                        <page string="Documentos del Animal">
                                 <group>
                                     <field name="gta"/>
                                     <field name="nota_fiscal"/>
