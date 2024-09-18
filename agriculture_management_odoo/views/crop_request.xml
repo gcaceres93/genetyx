@@ -174,16 +174,23 @@
                                     <field name="enfermedades_tricomaniasis" widget="radio"/>
                                     <field name="fecha_analisis_trico"/>
                                 </group>
+                                <group-left string="Estudios a Realizar">
+                                    <field name="study_ids">
+                                        <tree editable="bottom">
+                                            <field name="study_name" string="Nombres del Estudios"/>
+                                        </tree>
+                                    </field>
+                                </group-left>
                             </group>
                         </page>
 
-                       <page string="Estudios a Realizar">
-                            <field name="study_ids">
-                                <tree editable="bottom">
-                                    <field name="study_name" string="Nombres del Estudios"/>
-                                </tree>
-                            </field>
-                        </page>
+<!--                       <page string="Estudios a Realizar">-->
+<!--                            <field name="study_ids">-->
+<!--                                <tree editable="bottom">-->
+<!--                                    <field name="study_name" string="Nombres del Estudios"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
 
                         <page string="Documentos del Animal" attrs="{'invisible': [('state', '!=', 'residente')]}">
                                 <group>
