@@ -228,7 +228,7 @@ class CropRequests(models.Model):
     @api.depends('produccion_ids')
     def _compute_dosis_producidas(self):
         for record in self:
-            total_producido = sum(record.produccion_ids.mapped('cantidad_producida'))  # 'cantidad_producida' es un ejemplo
+            total_producido = sum(record.produccion_ids.mapped('paletas_producidas'))  
             record.dosis_producidas = total_producido        
 
     @api.constrains('dosis_producidas', 'dosis_contratadas')
