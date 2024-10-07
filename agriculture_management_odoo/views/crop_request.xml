@@ -227,7 +227,7 @@
                                 </tree>
                             </field>
                                 </group>
-                                <field name="dosis_contratadas"/>
+                                <field name="dosis_contratadas" string="Dosis contratadas"/>
                                 <field name="dosis_producidas" readonly="1"/>
 
                         </page>
