@@ -228,8 +228,6 @@
                                 <field name="dosis_contratadas"/>
                                 <field name="dosis_producidas" readonly="1"/>
                             </field>
-                                <field name="dosis_contratadas"/>
-                                <field name="dosis_producidas" readonly="1"/>
                                 </group>
                                 
 
