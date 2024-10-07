@@ -225,7 +225,7 @@
                                         <field name="paletas_producidas"/>
                                         <field name="resultado_final"/>
                                 </tree>
-                                <field name="dosis_contratadas"/>
+                                <field name="dosis_contratadas"/> 
                                 <field name="dosis_producidas" readonly="1"/>
                             </field>
                                 </group>

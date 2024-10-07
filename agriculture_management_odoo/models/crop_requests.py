@@ -241,7 +241,7 @@ class CropRequests(models.Model):
                         'title': "Advertencia de Contrato",
                         'message': f"El animal ha alcanzado el {porcentaje_producido:.2f}% de las dosis contratadas. El contrato está cerca de finalizar. El animal podría pasar a hotelería.",
                     }
-                    return {'warning': warning_message}
+                    return {'warning': warning_message} 
    # @api.onchange('dosis_producidas')
     #def _onchange_dosis_producidas(self):
      #   for record in self:
