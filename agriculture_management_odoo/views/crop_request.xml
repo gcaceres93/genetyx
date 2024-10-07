@@ -225,10 +225,13 @@
                                         <field name="paletas_producidas"/>
                                         <field name="resultado_final"/>
                                 </tree>
-                            </field>
-                                </group>
-                                <field name="dosis_contratadas" string="Dosis contratadas"/>
+                                <field name="dosis_contratadas"/>
                                 <field name="dosis_producidas" readonly="1"/>
+                            </field>
+                                <field name="dosis_contratadas"/>
+                                <field name="dosis_producidas" readonly="1"/>
+                                </group>
+                                
 
                         </page>
                         <page string="Ficha de Salida" attrs="{'invisible': [('state', '!=', 's_cuarentena')]}">
