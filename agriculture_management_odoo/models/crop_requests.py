@@ -84,6 +84,9 @@ class CropRequests(models.Model):
     examen_andrologico_scuarentena = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')],
         string='Examen Andrologico',tracking=True, required=True)
+    
+    dosis_contratadas = fields.Integer(string="Dosis Contratadas", tracking=True)
+    dosis_producidas = fields.Integer(string="Dosis Producidas", compute="_compute_dosis_producidas", store=True)
 
     enfermedades_diarrea = fields.Selection(
         [('ok', 'Ok'), ('no', 'No')],
@@ -221,7 +224,30 @@ class CropRequests(models.Model):
             estado = 'Cuarentena'
 
         return estado
+    
+    @api.depends('produccion_ids')
+    def _compute_dosis_producidas(self):
+        for record in self:
+            total_producido = sum(record.produccion_ids.mapped('cantidad_producida'))  # 'cantidad_producida' es un ejemplo
+            record.dosis_producidas = total_producido        
 
+    @api.constrains('dosis_producidas', 'dosis_contratadas')
+    def _check_dosis_limite(self):
+        for record in self:
+            if record.dosis_contratadas and record.dosis_producidas:
+                porcentaje_producido = (record.dosis_producidas / record.dosis_contratadas) * 100
+                if porcentaje_producido >= 80:
+                    warning_message = {
+                        'title': "Advertencia de Contrato",
+                        'message': f"El animal ha alcanzado el {porcentaje_producido:.2f}% de las dosis contratadas. El contrato está cerca de finalizar. El animal podría pasar a hotelería.",
+                    }
+                    return {'warning': warning_message}
+   # @api.onchange('dosis_producidas')
+    #def _onchange_dosis_producidas(self):
+     #   for record in self:
+      #      if record.dosis_producidas >= record.dosis_contratadas:
+       #         record.state = 'hoteleria'  
+            
 
 class CropProdutcion(models.Model):
     _name = 'crop.production'
