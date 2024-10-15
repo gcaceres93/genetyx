@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_crop_states_report" model="ir.actions.report">
+        <field name="name">Reporte de Ingresos/Estados</field>
+        <field name="model">crop.requests</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">agriculture_management_odoo.crop_states_report</field>
+        <field name="report_file">agriculture_management_odoo.crop_states_report</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
+

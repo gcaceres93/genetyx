@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_animal_details_tree" model="ir.ui.view">
+        <field name="name">animal.details.tree</field>
+        <field name="model">animal.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="breed"/>
+                <field name="age"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <record id="view_animals_details_form" model="ir.ui.view">
+        <field name="name">animal.details.form</field>
+        <field name="model">animal.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button id="button_no_ingresado"
+                            name="action_no_ingresado" string="No Ingresado"
+                            class="btn-primary"
+                            type="object" states="ingresado"/>
+                    <button id="button_ingresado" name="action_ingresado"
+                            string="Set To Ingresado" class="btn-primary"
+                            type="object" states="no_ingresado,sold"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="ingresado,no_ingresado,sold"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="breed" placeholder="Apodo del animal"/>
+                    </h1>
+                   <h2>
+                        <field name="propietario" placeholder="Asignar propietario..."/>
+                    </h2>
+                    <group>
+                        <group>
+                            <field name="codigo"/>
+                            <field name="name"/>
+                            <field name="codigo_taurus"/>
+                            <field name="nacimiento"/>
+                            <field name="age"/>
+                            <field name="fecha_llegada"/>
+                            <field name="archivo_multimedia" widget="radio"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Datos de Entrada">
+                            <group>
+                                <group>
+                                    <field name="puntuacion_corporal" string="Condición Corporal 1-5"/>
+                                    <field name="peso"/>
+                                     <field name="fur_type_id"/>
+                                    <field name="breed_id"/>
+
+                                </group>
+                                <group>
+                                    <field name="perimetro_escrotal"/>
+                                    <field name="examen_fisico" widget="radio" string="Examen Físico"/>
+                                    <field name="exportacion_animal" widget="radio" string="Exportacion"/>
+                                    <field name="country_id"/>
+                                    <field name="motivos" attrs="{'invisible': [('examen_fisico', '!=', 'no')]}"/>
+                                </group>
+                            </group>
+                         </page>
+                        <page string="Documentación">
+                            <group>
+                                <group string="Documentación Necesaria">
+                                    <field name="guia_movilizacion"/>
+                                    <field name="pedigree" widget="radio"/>
+<!--                                    <field name="nota_fiscal" widget="radio"/>-->
+<!--                                    <field name="registro" widget="radio"/>-->
+
+                                </group>
+                                <group string="Documentación Necesaria">
+<!--                                    <field name="gta" widget="radio"/>-->
+                                    <field name="contrato" widget="radio"/>
+                                    <field name="examen_andrologico" widget="radio" string="Examen Andrologico"/>
+                                    <field name="certificado_vacunacion" widget="radio" string="Certificado de vacunacion"/>
+                                    <field name="analisis_laboratoriales" widget="radio" string="Analisis laboratoriales"/>
+                                    <field name="motivos" attrs="{'invisible': [('examen_andrologico', '!=', 'no')]}"/>
+                                </group>
+                            </group>
+                         </page>
+
+                        <page string="Ficha de Analisis">
+                            <group>
+                                <group string="Examen de Diarrea Viral Bovina">
+                                    <field name="enfermedades_diarrea" widget="radio"/>
+                                </group>
+                                <group string="Examen de Tuberculosis/Brucelose">
+                                    <field name="enfermedades_tuberculosis" widget="radio"/>
+                                    <field name="enfermedades" widget="radio"/>
+                                </group>
+                            </group>
+
+                            <group>
+                                <group string="Examen de Campylobacteriosis">
+                                    <field name="enfermedades_campylobacteriosis" widget="radio"/>
+                                </group>
+                                <group string="Examen de Trincomaniasis">
+                                    <field name="enfermedades_tricomaniasis" widget="radio"/>
+                                </group>
+                            </group>
+                         </page>
+                                <page string="Descripciones Extras">
+                                    <field name="note" placeholder="Descripciones..."/>
+                                </page>
+                    </notebook>
+
+<!--                    -->
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+</odoo>
