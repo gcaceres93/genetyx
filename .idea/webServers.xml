@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="74222aee-11d3-4ee9-bc32-a96bc8899275" name="Technoma">
+        <fileTransfer accessType="SFTP" host="44.205.119.237" port="22" sshConfigId="2763442a-80ac-4c00-8a58-a2d62adc5c4b" sshConfig="ubuntu@44.205.119.237:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

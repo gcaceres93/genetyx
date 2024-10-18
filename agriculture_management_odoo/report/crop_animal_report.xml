@@ -1,0 +1,81 @@
+<odoo>
+    <template id="animal_crop">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <strong>
+                            <h1>Crop Animal Report</h1>
+                        </strong>
+                        <table class="table table-sm"
+                               style="border: 2px solid black;">
+                            <tr>
+                                <td>CODIGO</td>
+                                <td>:</td>
+                                <td>
+                                    <t t-esc="doc.ref"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>PROPIETARIO</td>
+                                <td>:</td>
+                                <td>
+                                    <t t-esc="doc.propietario.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CODIGO TAURUS</td>
+                                <td>:</td>
+                                <td>
+                                    <t t-esc="doc.codigo_taurus"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LOCATION</td>
+                                <td>:</td>
+                                <td>
+                                    <t t-esc="doc.location_id.location_name"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <br>
+                        </br>
+                        <style>
+                            table, thead, th, td, tr, tbody {
+                            border: 1px solid black;
+                            border-collapse: collapse;
+                            padding: 5px;
+                            }
+                        </style>
+                        <table class="table table-sm"
+                               style="border: 2px solid black;">
+                            <thead>
+                                <tr>
+                                    <strong>
+                                        <th>Animal</th>
+                                        <th>Quantity</th>
+                                    </strong>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.animal_ids" t-as="line">
+                                    <td>
+                                        <span t-esc="line.animal_id.breed"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.qty"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+
+
+</odoo>

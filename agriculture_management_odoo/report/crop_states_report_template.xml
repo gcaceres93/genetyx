@@ -1,0 +1,120 @@
+<odoo>
+    <template id="crop_states_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <t t-set="estado" t-value="doc.estadosMayus()"/>
+                        <strong style="text-align:center; font-size:14px">
+                            <h1>Reporte de Estado de Animales en  <t t-esc="estado"/></h1>
+                        </strong>
+                        <table class="table table-sm"
+                               style="border: 2px solid black;">
+                            <tr>
+                                <td><strong>CODIGO</strong></td>
+                                <td>
+                                    <t t-esc="doc.animal_id.codigo"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>CODIGO TAURUS</strong></td>
+                                <td>
+                                    <t t-esc="doc.animal_id.codigo_taurus"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>PROPIETARIO</strong></td>
+                                <td>
+                                    <t t-esc="doc.animal_id.propietario.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>LOCATION</strong></td>
+                                <td>
+                                    <t t-esc="doc.location_id.location_name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>UBICACION</strong></td>
+                                <td>
+                                    <t t-if = "doc.state == 'enfermeria'">
+                                    Enfermeria
+                                    </t>
+                                    <t t-if = "doc.state == 's_cuarentena'">
+                                    Salido de Cuarentena
+                                    </t>
+                                    <t t-if = "doc.state == 'cuarentena'">
+                                    Cuarentena
+                                    </t>
+                                    <t t-if = "doc.state == 'residente'">
+                                    Residente
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <br>
+                        </br>
+                        <style>
+                            table, thead, th, td, tr, tbody {
+                            border: 1px solid black;
+                            border-collapse: collapse;
+                            padding: 5px;
+                            }
+                        </style>
+                        <t t-if="doc.state == 'enfermeria'">
+                        <table class="table table-sm"
+                               style="border: 2px solid black;">
+                            <thead>
+                                <tr>
+                                   <th><strong>Medicamentos</strong></th>
+                                    <th><strong>Precio</strong></th>
+                                    <th><strong>Motivo de Uso</strong></th>
+                                    <th><strong>Fecha de Uso</strong></th>
+                                    <th><strong>Cantidad</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr t-foreach="doc.insumos_ids" t-as="line">
+                                    <td>
+                                        <span t-esc="line.product_id.name"/>
+                                     </td>
+                                    <td>
+                                        <span t-esc="line.price"/>
+                                    </td>
+                                    <td>
+                                    <span t-esc="line.motivo_uso"/>
+                                    </td>
+                                    <td>
+                                    <span t-esc="line.fecha"/>
+                                    </td>
+                                    <td>
+                                    <span t-esc="line.qty"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            <table class="table table-sm"
+                               style="border: 2px solid black;">
+                            <thead>
+                                <tr>
+                                   <th><strong>Sintomas</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr t-foreach="doc.sintomas_ids" t-as="sin">
+                                    <td>
+                                        <span t-esc="sin.sintomas"/>
+                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                         </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
